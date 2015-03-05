@@ -1,4 +1,5 @@
 <?php
+
 //Memory
 ini_set('memory_limit', '3500M');
 ini_set('max_execution_time', '0');
@@ -32,39 +33,42 @@ ini_set('display_startup_errors', true);
  * | and give it the Closure to execute when that URI is requested.
  * |
  */
-//Route::when('*', 'csrf', array(
-//	'post',
-//	'put',
-//	'delete'
-//));
 
-//Route::group(array('after' => 'auth'), function () {
-Route::get('/', 'HomeController@index');
-Route::post('login', 'HomeController@login');
-//});
+Route::when('*', 'csrf', array(
+	'post',
+	'put',
+	'delete'
+));
+
+Route::group(array('after' => 'auth'), function () {
+	Route::get('e1', function () {
+		$locales = Local::lists('nombreLocal', 'idLocal');
+
+		return View::make('landings.e1')->withLocales($locales);
+	});
+
+	Route::get('e2', function () {
+		return View::make('landings.e2');
+	});
+
+	Route::resource('clientes', 'ClienteController');
+	Route::resource('ejecutivos', 'EjecutivoController');
+
+	Route::get('SvlAmicarRead/servlet/ReadAmicar', 'ServletController@readAmicar');
+	Route::get('SolicitudCotizacionAmicar', 'ServletController@clickAmicar');
+});
 
 //Route::group(array('before' => 'auth'), function () {
-Route::get('logout', 'HomeController@logout');
-Route::group(array('prefix' => 'dashboard'), function () {
-	//	Consolidados
-	Route::get('/', 'ConsolidadoController@index');
-	Route::group(array('prefix' => 'consolidado'), function () {
-		//  Individual
-		Route::get('individual', 'ConsolidadoController@consolidadoIndividual');
-	});
-	//	Consultas
-	Route::group(array('prefix' => 'consulta'), function () {
-		//	Individual
-		Route::get('individual', 'ConsultaController@individual');
-	});
-	//	Informes
-	Route::get('informes', 'InformeController@index');
-	//	Administración
-	Route::group(array('prefix' => 'admin'), function () {
-		//	Usuarios
-		Route::get('usuarios', 'AdminController@adminUsuarios');
-		//	Carga de planes
-		Route::get('carga/planes', 'AdminController@adminCargaPlanes');
-	});
-});
 //});
+Route::get('crypto', array(
+	function () {
+		$mcrypt = new App\Util\MCrypt();
+
+		$encrypted = $mcrypt->encrypt("1369");
+		var_dump($encrypted);
+
+		#Decrypt
+		$decrypted = $mcrypt->decrypt("eeae04e6afb437c7e713045cc675b5ac");
+		var_dump($decrypted);
+	}
+));

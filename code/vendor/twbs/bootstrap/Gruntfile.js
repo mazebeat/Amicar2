@@ -280,12 +280,17 @@ module.exports = function (grunt) {
 
     copy: {
       fonts: {
+        expand: true,
         src: 'fonts/*',
         dest: 'dist/'
       },
       docs: {
-        src: 'dist/*/*',
-        dest: 'docs/'
+        expand: true,
+        cwd: 'dist/',
+        src: [
+          '**/*'
+        ],
+        dest: 'docs/dist/'
       }
     },
 
@@ -330,7 +335,6 @@ module.exports = function (grunt) {
         ignore: [
           'Attribute "autocomplete" not allowed on element "button" at this point.',
           'Attribute "autocomplete" not allowed on element "input" at this point.',
-          'Bad value "X-UA-Compatible" for attribute "http-equiv" on element "meta".',
           'Element "img" is missing required attribute "src".'
         ]
       },
@@ -370,7 +374,7 @@ module.exports = function (grunt) {
           throttled: 10,
           maxRetries: 3,
           maxPollRetries: 4,
-          urls: ['http://127.0.0.1:3000/js/tests/index.html'],
+          urls: ['http://127.0.0.1:3000/js/tests/index.html?hidepassed'],
           browsers: grunt.file.readYAML('grunt/sauce_browsers.yml')
         }
       }

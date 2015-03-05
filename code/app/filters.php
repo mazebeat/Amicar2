@@ -10,18 +10,14 @@
  * |
  */
 
+use App\Util\MessageLog;
 use Illuminate\Support\Facades\Auth;
-use Monolog\Handler\StreamHandler;
-use Monolog\Logger;
 
 App::before(function ($request) {
-	$logFile = storage_path() . '/logs/request.log';
+	$msg = 'Method ' . $request->method() . ' Path ' . $request->path();
 
-	$log = 'Method ' . $request->method() . ' Path ' . $request->path();
-
-	$monolog = new Logger('log');
-	$monolog->pushHandler(new StreamHandler($logFile), Logger::INFO);
-	$monolog->info($log, compact('bindings', 'time'));
+	$log = new MessageLog('request');
+	$log->info($msg, compact('bindings', 'time'));
 });
 
 App::after(function ($request, $response) {
@@ -96,9 +92,6 @@ Route::filter('guest', function () {
  */
 
 Route::filter('csrf', function () {
-	if (Request::forged()) {
-		return Response::error('500');
-	}
 	if (Session::token() != Input::get('_token')) {
 		throw new Illuminate\Session\TokenMismatchException;
 	}

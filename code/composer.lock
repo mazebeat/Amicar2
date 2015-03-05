@@ -4,8 +4,43 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5d1684dfd9622658d6582a0e60b6cb82",
+    "hash": "234a60579b3c5453ac9a4d035850d982",
     "packages": [
+        {
+            "name": "adamkearsley/convert-migrations",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/adamkearsley/laravel-convert-migrations.git",
+                "reference": "7e12cd73949c39ecf87da1083b126c00b050034d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/adamkearsley/laravel-convert-migrations/zipball/7e12cd73949c39ecf87da1083b126c00b050034d",
+                "reference": "7e12cd73949c39ecf87da1083b126c00b050034d",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "4.2.*",
+                "illuminate/support": "4.2.*",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Adamkearsley\\ConvertMigrations": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Adam Kearsley",
+                    "email": "adam@email.com"
+                }
+            ],
+            "description": "Artisan command to convert your current SQL database schema into a Laravel 4 Migration file.",
+            "time": "2015-01-22 12:18:11"
+        },
         {
             "name": "barryvdh/laravel-debugbar",
             "version": "v1.8.7",
@@ -104,6 +139,93 @@
                 "vendor"
             ],
             "time": "2014-08-21 11:40:40"
+        },
+        {
+            "name": "bramus/ansi-php",
+            "version": "2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bramus/ansi-php.git",
+                "reference": "4943fa90e24bfcdcbcb6b388667d0782233b08eb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bramus/ansi-php/zipball/4943fa90e24bfcdcbcb6b388667d0782233b08eb",
+                "reference": "4943fa90e24bfcdcbcb6b388667d0782233b08eb",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Bramus\\Ansi\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bramus Van Damme",
+                    "email": "bramus@bram.us",
+                    "homepage": "https://www.bram.us/"
+                }
+            ],
+            "description": "ANSI Control Functions and ANSI Control Sequences (Colors, Erasing, etc.) for PHP CLI Apps",
+            "time": "2015-01-07 15:03:19"
+        },
+        {
+            "name": "bramus/monolog-colored-line-formatter",
+            "version": "1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bramus/monolog-colored-line-formatter.git",
+                "reference": "b0ac934cf5b3ae501eea748b0689c267c4b058fa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bramus/monolog-colored-line-formatter/zipball/b0ac934cf5b3ae501eea748b0689c267c4b058fa",
+                "reference": "b0ac934cf5b3ae501eea748b0689c267c4b058fa",
+                "shasum": ""
+            },
+            "require": {
+                "bramus/ansi-php": "~2.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "monolog/monolog": "~1.0",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Bramus\\Monolog\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bramus Van Damme",
+                    "email": "bramus@bram.us",
+                    "homepage": "https://www.bram.us/"
+                }
+            ],
+            "description": "Colored Line Formatter for Monolog",
+            "time": "2015-01-06 15:17:59"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -389,16 +511,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v4.2.16",
+            "version": "v4.2.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "31fe6a5747bbe3c2df21dc4cc8f291e75ab6144f"
+                "reference": "3359de6d6cd322e8a1b251c2f8d9dd42a3e4e232"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/31fe6a5747bbe3c2df21dc4cc8f291e75ab6144f",
-                "reference": "31fe6a5747bbe3c2df21dc4cc8f291e75ab6144f",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/3359de6d6cd322e8a1b251c2f8d9dd42a3e4e232",
+                "reference": "3359de6d6cd322e8a1b251c2f8d9dd42a3e4e232",
                 "shasum": ""
             },
             "require": {
@@ -409,7 +531,7 @@
                 "jeremeamia/superclosure": "~1.0.1",
                 "monolog/monolog": "~1.6",
                 "nesbot/carbon": "~1.0",
-                "patchwork/utf8": "1.1.*",
+                "patchwork/utf8": "~1.1",
                 "php": ">=5.4.0",
                 "phpseclib/phpseclib": "0.3.*",
                 "predis/predis": "0.8.*",
@@ -500,20 +622,20 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2014-12-22 20:56:10"
+            "time": "2015-02-11 20:37:15"
         },
         {
             "name": "maximebf/debugbar",
-            "version": "v1.10.3",
+            "version": "v1.10.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/maximebf/php-debugbar.git",
-                "reference": "060fbaf6a4e2d328dcdb31cc606d2f2ed145104b"
+                "reference": "7b2006e6e095126b5a061ec33fca3d90ea8a8219"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/maximebf/php-debugbar/zipball/060fbaf6a4e2d328dcdb31cc606d2f2ed145104b",
-                "reference": "060fbaf6a4e2d328dcdb31cc606d2f2ed145104b",
+                "url": "https://api.github.com/repos/maximebf/php-debugbar/zipball/7b2006e6e095126b5a061ec33fca3d90ea8a8219",
+                "reference": "7b2006e6e095126b5a061ec33fca3d90ea8a8219",
                 "shasum": ""
             },
             "require": {
@@ -556,7 +678,7 @@
             "keywords": [
                 "debug"
             ],
-            "time": "2015-01-30 08:24:55"
+            "time": "2015-02-05 07:51:20"
         },
         {
             "name": "monolog/monolog",
@@ -632,16 +754,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.13.0",
+            "version": "1.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "5cb6e71055f7b0b57956b73d324cc4de31278f42"
+                "reference": "9b7665041754eaa9bb2622349bc9adbc1cf61cb8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/5cb6e71055f7b0b57956b73d324cc4de31278f42",
-                "reference": "5cb6e71055f7b0b57956b73d324cc4de31278f42",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/9b7665041754eaa9bb2622349bc9adbc1cf61cb8",
+                "reference": "9b7665041754eaa9bb2622349bc9adbc1cf61cb8",
                 "shasum": ""
             },
             "require": {
@@ -668,13 +790,13 @@
                 }
             ],
             "description": "A simple API extension for DateTime.",
-            "homepage": "https://github.com/briannesbitt/Carbon",
+            "homepage": "http://carbon.nesbot.com",
             "keywords": [
                 "date",
                 "datetime",
                 "time"
             ],
-            "time": "2014-09-26 02:52:02"
+            "time": "2015-03-04 04:50:11"
         },
         {
             "name": "nikic/php-parser",
@@ -723,16 +845,16 @@
         },
         {
             "name": "patchwork/utf8",
-            "version": "v1.1.28",
+            "version": "v1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tchwork/utf8.git",
-                "reference": "ffa082111aa3cb23cf2479a17e6785ace91da982"
+                "reference": "01f0ed1628db7794e2d4e336f55a09daef4248a5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tchwork/utf8/zipball/ffa082111aa3cb23cf2479a17e6785ace91da982",
-                "reference": "ffa082111aa3cb23cf2479a17e6785ace91da982",
+                "url": "https://api.github.com/repos/tchwork/utf8/zipball/01f0ed1628db7794e2d4e336f55a09daef4248a5",
+                "reference": "01f0ed1628db7794e2d4e336f55a09daef4248a5",
                 "shasum": ""
             },
             "require": {
@@ -742,9 +864,15 @@
             "suggest": {
                 "ext-iconv": "Use iconv for best performance",
                 "ext-intl": "Use Intl for best performance",
-                "ext-mbstring": "Use Mbstring for best performance"
+                "ext-mbstring": "Use Mbstring for best performance",
+                "ext-wfio": "Use WFIO for UTF-8 filesystem access on Windows"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2-dev"
+                }
+            },
             "autoload": {
                 "psr-0": {
                     "Patchwork": "class/",
@@ -770,87 +898,30 @@
                 "utf-8",
                 "utf8"
             ],
-            "time": "2015-01-12 08:05:15"
-        },
-        {
-            "name": "phpoffice/phpexcel",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/PHPOffice/PHPExcel.git",
-                "reference": "c40bb233bfa59fe8aadc6f3714cf500ec2c38e0f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/PHPOffice/PHPExcel/zipball/c40bb233bfa59fe8aadc6f3714cf500ec2c38e0f",
-                "reference": "c40bb233bfa59fe8aadc6f3714cf500ec2c38e0f",
-                "shasum": ""
-            },
-            "require": {
-                "ext-xml": "*",
-                "ext-xmlwriter": "*",
-                "php": ">=5.2.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "PHPExcel": "Classes/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "LGPL"
-            ],
-            "authors": [
-                {
-                    "name": "Maarten Balliauw",
-                    "homepage": "http://blog.maartenballiauw.be"
-                },
-                {
-                    "name": "Mark Baker"
-                },
-                {
-                    "name": "Franck Lefevre",
-                    "homepage": "http://blog.rootslabs.net"
-                },
-                {
-                    "name": "Erik Tilt"
-                }
-            ],
-            "description": "PHPExcel - OpenXML - Read, Create and Write Spreadsheet documents in PHP - Spreadsheet engine",
-            "homepage": "http://phpexcel.codeplex.com",
-            "keywords": [
-                "OpenXML",
-                "excel",
-                "php",
-                "spreadsheet",
-                "xls",
-                "xlsx"
-            ],
-            "time": "2014-12-18 21:56:47"
+            "time": "2015-01-29 08:36:50"
         },
         {
             "name": "phpseclib/phpseclib",
-            "version": "0.3.9",
+            "version": "0.3.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/phpseclib.git",
-                "reference": "c6e88ca6e81bc5a2d7161658e16a95b7ef8d6ad1"
+                "reference": "d15bba1edcc7c89e09cc74c5d961317a8b947bf4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/c6e88ca6e81bc5a2d7161658e16a95b7ef8d6ad1",
-                "reference": "c6e88ca6e81bc5a2d7161658e16a95b7ef8d6ad1",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/d15bba1edcc7c89e09cc74c5d961317a8b947bf4",
+                "reference": "d15bba1edcc7c89e09cc74c5d961317a8b947bf4",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.0.0"
             },
             "require-dev": {
-                "phing/phing": "2.7.*",
-                "phpunit/phpunit": "4.0.*",
-                "sami/sami": "1.*",
-                "squizlabs/php_codesniffer": "1.*"
+                "phing/phing": "~2.7",
+                "phpunit/phpunit": "~4.0",
+                "sami/sami": "~2.0",
+                "squizlabs/php_codesniffer": "~1.5"
             },
             "suggest": {
                 "ext-gmp": "Install the GMP (GNU Multiple Precision) extension in order to speed up arbitrary precision integer arithmetic operations.",
@@ -925,7 +996,7 @@
                 "x.509",
                 "x509"
             ],
-            "time": "2014-11-10 03:08:59"
+            "time": "2015-01-28 21:50:33"
         },
         {
             "name": "predis/predis",
@@ -1960,80 +2031,17 @@
             "time": "2015-02-02 16:32:08"
         },
         {
-            "name": "tecnick.com/tcpdf",
-            "version": "6.0.099",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/tecnickcom/TCPDF.git",
-                "reference": "75e7ad39458e060d0cae6fcb7d50a2c9f3af1b01"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/tecnickcom/TCPDF/zipball/75e7ad39458e060d0cae6fcb7d50a2c9f3af1b01",
-                "reference": "75e7ad39458e060d0cae6fcb7d50a2c9f3af1b01",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "fonts",
-                    "config",
-                    "include",
-                    "tcpdf.php",
-                    "tcpdf_parser.php",
-                    "tcpdf_import.php",
-                    "tcpdf_barcodes_1d.php",
-                    "tcpdf_barcodes_2d.php",
-                    "include/tcpdf_colors.php",
-                    "include/tcpdf_filters.php",
-                    "include/tcpdf_font_data.php",
-                    "include/tcpdf_fonts.php",
-                    "include/tcpdf_images.php",
-                    "include/tcpdf_static.php",
-                    "include/barcodes/datamatrix.php",
-                    "include/barcodes/pdf417.php",
-                    "include/barcodes/qrcode.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "LGPLv3"
-            ],
-            "authors": [
-                {
-                    "name": "Nicola Asuni",
-                    "email": "info@tecnick.com",
-                    "homepage": "http://nicolaasuni.tecnick.com"
-                }
-            ],
-            "description": "TCPDF is a PHP class for generating PDF documents and barcodes.",
-            "homepage": "http://www.tcpdf.org/",
-            "keywords": [
-                "PDFD32000-2008",
-                "TCPDF",
-                "barcodes",
-                "datamatrix",
-                "pdf",
-                "pdf417",
-                "qrcode"
-            ],
-            "time": "2014-11-15 12:35:49"
-        },
-        {
             "name": "twbs/bootstrap",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twbs/bootstrap.git",
-                "reference": "0e40c818d9e27d35034b7872ac34d2fa5a886734"
+                "reference": "2f17289ab6665620c52a4a69750294f892a42e81"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/0e40c818d9e27d35034b7872ac34d2fa5a886734",
-                "reference": "0e40c818d9e27d35034b7872ac34d2fa5a886734",
+                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/2f17289ab6665620c52a4a69750294f892a42e81",
+                "reference": "2f17289ab6665620c52a4a69750294f892a42e81",
                 "shasum": ""
             },
             "replace": {
@@ -2071,7 +2079,7 @@
                 "responsive",
                 "web"
             ],
-            "time": "2015-02-03 21:12:24"
+            "time": "2015-03-03 21:11:15"
         }
     ],
     "packages-dev": [
@@ -2604,7 +2612,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "twbs/bootstrap": 20,
-        "phpoffice/phpexcel": 20,
+        "adamkearsley/convert-migrations": 20,
         "doctrine/dbal": 20
     },
     "prefer-stable": false,

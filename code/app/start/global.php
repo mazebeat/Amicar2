@@ -11,11 +11,13 @@
 |
 */
 
-ClassLoader::addDirectories(array(app_path() . '/commands',
-	app_path() . '/controllers',
-	app_path() . '/models',
-	app_path() . '/utils',
-	app_path() . '/database/seeds',));
+ClassLoader::addDirectories(array(
+	                            app_path() . '/commands',
+	                            app_path() . '/controllers',
+	                            app_path() . '/models',
+	                            app_path() . '/utils',
+	                            app_path() . '/database/seeds',
+                            ));
 
 /*
 |--------------------------------------------------------------------------
@@ -47,7 +49,7 @@ App::error(function (Exception $exception, $code) {
 	Log::error($exception);
 });
 
-if(Config::get('api.curlError')) {
+if (Config::get('api.curlError')) {
 	App::error(function (Exception $exception) {
 
 		// if a request is being made using cURL,
@@ -60,7 +62,7 @@ if(Config::get('api.curlError')) {
 		if ($isCurl and $shouldDebug) {
 			return $exception;
 		}
-
+		Log::useFiles(storage_path() . '/logs/curl.log');
 		Log::error($exception);
 
 	});

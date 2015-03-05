@@ -13,8 +13,8 @@ return array(
 	 |
 	 */
 
-//	'enabled'         => Config::get('app.debug'),
-	'enabled'         => false, // Config::get('app.debug'),
+	'enabled'         => Config::get('app.debug'),
+//	'enabled'         => false, // Config::get('app.debug'),
 	/*
 	 |--------------------------------------------------------------------------
 	 | Storage settings
@@ -88,7 +88,7 @@ return array(
 	                           'mail'            => true,  // Catch mail messages
 	                           'logs'            => false, // Add the latest log messages
 	                           'files'           => false, // Show the included files
-	                           'config'          => false, // Display config settings
+	                           'config'          => true, // Display config settings
 	                           'auth'            => true, // Display Laravel authentication status
 	                           'session'         => true, // Display session data in a separate tab
 	),

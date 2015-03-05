@@ -115,10 +115,12 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Barryvdh\Debugbar\ServiceProvider',
-//		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
+		//		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
 		'Fitztrev\LaravelHtmlMinify\LaravelHtmlMinifyServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
-		'Barryvdh\VendorCleanup\VendorCleanupServiceProvider',),
+		'Barryvdh\VendorCleanup\VendorCleanupServiceProvider',
+		'Adamkearsley\ConvertMigrations\ConvertMigrationsServiceProvider'
+	),
 	/*
 	|--------------------------------------------------------------------------
 	| Service Provider Manifest
@@ -184,6 +186,7 @@ return array(
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
 		'View'              => 'Illuminate\Support\Facades\View',
 		'Debugbar'          => 'Barryvdh\Debugbar\Facade',
-		'SoapWrapper' => 'Artisaninweb\SoapWrapper\Facades\SoapWrapper',),
+		'SoapWrapper'       => 'Artisaninweb\SoapWrapper\Facades\SoapWrapper',
+	),
 
 );

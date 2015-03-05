@@ -34,9 +34,7 @@ class Intl
     {
         if (!is_scalar($s)) {
             $hasError = false;
-            set_error_handler(function () use (&$hasError) {
-                $hasError = true;
-            });
+            set_error_handler(function () use (&$hasError) {$hasError = true;});
             $next = substr($s, $start);
             restore_error_handler();
             if ($hasError) {
@@ -48,33 +46,31 @@ class Intl
         } else {
             $s = substr($s, $start);
         }
-        $size  = (int)$size;
-        $type  = (int)$type;
-        $start = (int)$start;
+        $size  = (int) $size;
+        $type  = (int) $type;
+        $start = (int) $start;
 
-        if (!isset($s[0]) || 0 > $size || 0 > $start || 0 > $type || 2 < $type)
-            return false;
-        if (0 === $size)
-            return '';
+        if (!isset($s[0]) || 0 > $size || 0 > $start || 0 > $type || 2 < $type) return false;
+        if (0 === $size) return '';
 
         $next = $start;
 
-        $s = preg_split('/(' . GRAPHEME_CLUSTER_RX . ')/u', "\r\n" . $s, $size + 1, PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE);
+        $s = preg_split('/(' . GRAPHEME_CLUSTER_RX . ')/u', "\r\n" .  $s, $size + 1, PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE);
 
-        if (!isset($s[1]))
-            return false;
+        if (!isset($s[1])) return false;
 
-        $i   = 1;
+        $i = 1;
         $ret = '';
 
-        do {
-            if (GRAPHEME_EXTR_COUNT === $type)
-                --$size; else if (GRAPHEME_EXTR_MAXBYTES === $type)
-                $size -= strlen($s[$i]); else $size -= iconv_strlen($s[$i], 'UTF-8//IGNORE');
+        do
+        {
+            if (GRAPHEME_EXTR_COUNT === $type) --$size;
+            else if (GRAPHEME_EXTR_MAXBYTES === $type) $size -= strlen($s[$i]);
+            else $size -= iconv_strlen($s[$i], 'UTF-8//IGNORE');
 
-            if ($size >= 0)
-                $ret .= $s[$i];
-        } while (isset($s[++$i]) && $size > 0);
+            if ($size >= 0) $ret .= $s[$i];
+        }
+        while (isset($s[++$i]) && $size > 0);
 
         $next += strlen($ret);
 
@@ -84,7 +80,6 @@ class Intl
     static function grapheme_strlen($s)
     {
         preg_replace('/' . GRAPHEME_CLUSTER_RX . '/u', '', $s, -1, $len);
-
         return 0 === $len && '' !== $s ? null : $len;
     }
 
@@ -92,26 +87,19 @@ class Intl
     {
         preg_match_all('/' . GRAPHEME_CLUSTER_RX . '/u', $s, $s);
 
-        $slen  = count($s[0]);
-        $start = (int)$start;
+        $slen = count($s[0]);
+        $start = (int) $start;
 
-        if (0 > $start)
-            $start += $slen;
-        if (0 > $start)
-            return false;
-        if ($start >= $slen)
-            return false;
+        if (0 > $start) $start += $slen;
+        if (0 > $start) return false;
+        if ($start >= $slen) return false;
 
         $rem = $slen - $start;
 
-        if (0 > $len)
-            $len += $rem;
-        if (0 === $len)
-            return '';
-        if (0 > $len)
-            return false;
-        if ($len > $rem)
-            $len = $rem;
+        if (0 > $len) $len += $rem;
+        if (0 === $len) return '';
+        if (0 > $len) return false;
+        if ($len > $rem) $len = $rem;
 
         return implode('', array_slice($s[0], $start, $len));
     }
@@ -120,88 +108,47 @@ class Intl
     {
         // Intl based http://bugs.php.net/62759 and 55562 workaround
 
-        if (2147483647 == $len)
-            return grapheme_substr($s, $start);
+        if (2147483647 == $len) return grapheme_substr($s, $start);
 
         $s .= '';
-        $slen  = grapheme_strlen($s);
-        $start = (int)$start;
+        $slen = grapheme_strlen($s);
+        $start = (int) $start;
 
-        if (0 > $start)
-            $start += $slen;
-        if (0 > $start)
-            return false;
-        if ($start >= $slen)
-            return false;
+        if (0 > $start) $start += $slen;
+        if (0 > $start) return false;
+        if ($start >= $slen) return false;
 
         $rem = $slen - $start;
 
-        if (0 > $len)
-            $len += $rem;
-        if (0 === $len)
-            return '';
-        if (0 > $len)
-            return false;
-        if ($len > $rem)
-            $len = $rem;
+        if (0 > $len) $len += $rem;
+        if (0 === $len) return '';
+        if (0 > $len) return false;
+        if ($len > $rem) $len = $rem;
 
         return grapheme_substr($s, $start, $len);
     }
 
-    static function grapheme_strpos($s, $needle, $offset = 0)
-    {
-        return self::grapheme_position($s, $needle, $offset, 0);
-    }
-
-    static function grapheme_stripos($s, $needle, $offset = 0)
-    {
-        return self::grapheme_position($s, $needle, $offset, 1);
-    }
-
-    static function grapheme_strrpos($s, $needle, $offset = 0)
-    {
-        return self::grapheme_position($s, $needle, $offset, 2);
-    }
-
-    static function grapheme_strripos($s, $needle, $offset = 0)
-    {
-        return self::grapheme_position($s, $needle, $offset, 3);
-    }
-
-    static function grapheme_stristr($s, $needle, $before_needle = false)
-    {
-        return mb_stristr($s, $needle, $before_needle, 'UTF-8');
-    }
-
-    static function grapheme_strstr($s, $needle, $before_needle = false)
-    {
-        return mb_strstr($s, $needle, $before_needle, 'UTF-8');
-    }
+    static function grapheme_strpos  ($s, $needle, $offset = 0) {return self::grapheme_position($s, $needle, $offset, 0);}
+    static function grapheme_stripos ($s, $needle, $offset = 0) {return self::grapheme_position($s, $needle, $offset, 1);}
+    static function grapheme_strrpos ($s, $needle, $offset = 0) {return self::grapheme_position($s, $needle, $offset, 2);}
+    static function grapheme_strripos($s, $needle, $offset = 0) {return self::grapheme_position($s, $needle, $offset, 3);}
+    static function grapheme_stristr ($s, $needle, $before_needle = false) {return mb_stristr($s, $needle, $before_needle, 'UTF-8');}
+    static function grapheme_strstr  ($s, $needle, $before_needle = false) {return mb_strstr ($s, $needle, $before_needle, 'UTF-8');}
 
 
     protected static function grapheme_position($s, $needle, $offset, $mode)
     {
-        if (!preg_match('/./us', $needle .= ''))
-            return false;
-        if (!preg_match('/./us', $s .= ''))
-            return false;
-        if ($offset > 0)
-            $s = self::grapheme_substr($s, $offset); else if ($offset < 0)
-            $offset = 0;
+        if (! preg_match('/./us', $needle .= '')) return false;
+        if (! preg_match('/./us', $s .= '')) return false;
+        if ($offset > 0) $s = self::grapheme_substr($s, $offset);
+        else if ($offset < 0) $offset = 0;
 
-        switch ($mode) {
-            case 0:
-                $needle = iconv_strpos($s, $needle, 0, 'UTF-8');
-                break;
-            case 1:
-                $needle = mb_stripos($s, $needle, 0, 'UTF-8');
-                break;
-            case 2:
-                $needle = iconv_strrpos($s, $needle, 'UTF-8');
-                break;
-            default:
-                $needle = mb_strripos($s, $needle, 0, 'UTF-8');
-                break;
+        switch ($mode)
+        {
+        case 0: $needle = iconv_strpos ($s, $needle, 0, 'UTF-8'); break;
+        case 1: $needle = mb_stripos   ($s, $needle, 0, 'UTF-8'); break;
+        case 2: $needle = iconv_strrpos($s, $needle,    'UTF-8'); break;
+        default: $needle = mb_strripos ($s, $needle, 0, 'UTF-8'); break;
         }
 
         return $needle ? self::grapheme_strlen(iconv_substr($s, 0, $needle, 'UTF-8')) + $offset : $needle;

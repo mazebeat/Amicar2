@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - amicarcotizante@192.168.1.99" uuid="9fd5ccc3-a176-4cb5-81e6-dd3e8732b3dd">
+    <database-info product="MySQL" version="5.1.73-community" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.34 ( Revision: jess.balint@oracle.com-20141014163213-wqbwpf1ok2kvo1om )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="amicarcotizante"/>
+    <table name="body" schema="" catalog="amicarcotizante" type="TABLE">
+      <column name="idBody" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="bodyNombre" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idBody"/>
+    </table>
+    <table name="clientealgoritmo" schema="" catalog="amicarcotizante" type="TABLE">
+      <column name="idClienteAlgoritmo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="idCliente" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="idBody" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="idClienteAlgoritmo"/>
+    </table>
+    <table name="clientes" schema="" catalog="amicarcotizante" type="TABLE">
+      <column name="idCliente" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="rutCliente" sqlType="VARCHAR" precision="12" scale="0" nullable="true" jdbcType="12"/>
+      <column name="emailCliente" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="nombreCliente" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="sexoCliente" sqlType="VARCHAR" precision="2" scale="0" nullable="true" jdbcType="12"/>
+      <column name="fonoCliente" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="automovilCliente" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="idGrupo" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="idBody" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="fecha" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="idCliente"/>
+      <exported-key name="fk_proceso_clientes1" table="proceso" schema="" catalog="amicarcotizante" columns="clientes_idCliente"/>
+    </table>
+    <table name="clientesdiario" schema="" catalog="amicarcotizante" type="TABLE">
+      <column name="idCliente" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="rutCliente" sqlType="VARCHAR" precision="12" scale="0" nullable="true" jdbcType="12"/>
+      <column name="emailCliente" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="nombreCliente" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="sexoCliente" sqlType="VARCHAR" precision="2" scale="0" nullable="true" jdbcType="12"/>
+      <column name="fonoCliente" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="automovilCliente" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="idGrupo" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="idBody" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="fecha" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="idCliente"/>
+    </table>
+    <table name="clientessemanal" schema="" catalog="amicarcotizante" type="TABLE">
+      <column name="idCliente" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="rutCliente" sqlType="VARCHAR" precision="12" scale="0" nullable="true" jdbcType="12"/>
+      <column name="emailCliente" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="nombreCliente" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="sexoCliente" sqlType="VARCHAR" precision="2" scale="0" nullable="true" jdbcType="12"/>
+      <column name="fonoCliente" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="automovilCliente" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="idGrupo" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="idBody" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="fecha" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="idCliente"/>
+    </table>
+    <table name="ejecutivos" schema="" catalog="amicarcotizante" type="TABLE">
+      <column name="idEjecutivo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="nombreEjecutivo" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="correoEjecutivo" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="locales_idLocal1" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="fechaIngreso" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="fechaModificacion" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idEjecutivo"/>
+      <foreign-key name="fk_ejecutivos_locales1" columns="locales_idLocal1" ref-table="locales" ref-schema="" ref-catalog="amicarcotizante" ref-columns="idLocal" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="fk_proceso_ejecutivos1" table="proceso" schema="" catalog="amicarcotizante" columns="ejecutivos_idEjecutivo"/>
+      <index name="fk_ejecutivos_locales1_idx" unique="false" columns="locales_idLocal1"/>
+    </table>
+    <table name="locales" schema="" catalog="amicarcotizante" type="TABLE">
+      <column name="idLocal" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="nombreLocal" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idLocal"/>
+      <exported-key name="fk_ejecutivos_locales1" table="ejecutivos" schema="" catalog="amicarcotizante" columns="locales_idLocal1"/>
+      <exported-key name="fk_vendedores_locales1" table="vendedores" schema="" catalog="amicarcotizante" columns="locales_idLocal"/>
+    </table>
+    <table name="log" schema="" catalog="amicarcotizante" type="TABLE">
+      <column name="idlog" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="idVendedor" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="idCliente" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="idEjecutivo" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="fechaLog" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="idlog"/>
+    </table>
+    <table name="proceso" schema="" catalog="amicarcotizante" type="TABLE">
+      <column name="idProceso" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="fechaEnvio" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="fechaAperturaMail" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="fechaClickLink" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="clientes_idCliente" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="ejecutivos_idEjecutivo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="vendedores_idVendedor" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="idProceso"/>
+      <foreign-key name="fk_proceso_clientes1" columns="clientes_idCliente" ref-table="clientes" ref-schema="" ref-catalog="amicarcotizante" ref-columns="idCliente" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_proceso_ejecutivos1" columns="ejecutivos_idEjecutivo" ref-table="ejecutivos" ref-schema="" ref-catalog="amicarcotizante" ref-columns="idEjecutivo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_proceso_vendedores1" columns="vendedores_idVendedor" ref-table="vendedores" ref-schema="" ref-catalog="amicarcotizante" ref-columns="idVendedor" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="fk_proceso_clientes1_idx" unique="false" columns="clientes_idCliente"/>
+      <index name="fk_proceso_ejecutivos1_idx" unique="false" columns="ejecutivos_idEjecutivo"/>
+      <index name="fk_proceso_vendedores1_idx" unique="false" columns="vendedores_idVendedor"/>
+    </table>
+    <table name="vendedores" schema="" catalog="amicarcotizante" type="TABLE">
+      <column name="idVendedor" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="rutVendedor" sqlType="VARCHAR" precision="12" scale="0" nullable="true" jdbcType="12"/>
+      <column name="nombreVendedor" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="locales_idLocal" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="idVendedor"/>
+      <foreign-key name="fk_vendedores_locales1" columns="locales_idLocal" ref-table="locales" ref-schema="" ref-catalog="amicarcotizante" ref-columns="idLocal" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="fk_proceso_vendedores1" table="proceso" schema="" catalog="amicarcotizante" columns="vendedores_idVendedor"/>
+      <index name="fk_vendedores_locales1_idx" unique="false" columns="locales_idLocal"/>
+    </table>
+  </data-source>
+</component>

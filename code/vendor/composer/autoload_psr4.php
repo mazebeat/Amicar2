@@ -7,5 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
+    'Bramus\\Monolog\\' => array($vendorDir . '/bramus/monolog-colored-line-formatter/src'),
+    'Bramus\\Ansi\\' => array($vendorDir . '/bramus/ansi-php/src'),
     'Barryvdh\\Debugbar\\' => array($vendorDir . '/barryvdh/laravel-debugbar/src'),
 );

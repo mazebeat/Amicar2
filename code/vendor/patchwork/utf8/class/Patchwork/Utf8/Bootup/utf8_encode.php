@@ -10,15 +10,5 @@
 
 use Patchwork\PHP\Shim as s;
 
-function utf8_encode($s)
-{
-	return s\Xml::utf8_encode($s);
-}
-
-;
-function utf8_decode($s)
-{
-	return s\Xml::utf8_decode($s);
-}
-
-;
+function utf8_encode($s) {return s\Xml::utf8_encode($s);};
+function utf8_decode($s) {return s\Xml::utf8_decode($s);};

@@ -1,6 +1,6 @@
 <?php
 
-use App\Util\XLSXWriter;
+use App\Util\MessageLog;
 use Illuminate\Support\Facades\Crypt;
 
 /**
@@ -8,22 +8,11 @@ use Illuminate\Support\Facades\Crypt;
  */
 class ApiController extends BaseController
 {
-	/**
-	 * @var null
-	 */
 	private $token;
-	/**
-	 * @var array
-	 */
 	private $data;
-	/**
-	 * @var int
-	 */
 	private $status;
-	/**
-	 * @var array
-	 */
 	private $headers;
+	private $log;
 
 	/**
 	 * @param null  $token
@@ -41,6 +30,32 @@ class ApiController extends BaseController
 		$this->data    = $data;
 		$this->status  = $status;
 		$this->headers = $headers;
+
+		$this->log = new MessageLog('amicarCotizante');
+	}
+
+	/**
+	 * @return \MessageLog
+	 */
+	public function getLog()
+	{
+		return $this->log;
+	}
+
+	/**
+	 * @param \MessageLog $log
+	 */
+	public function setLog($log)
+	{
+		$this->log = $log;
+	}
+
+	/**
+	 * @return array
+	 */
+	public function getCredentials()
+	{
+		return $this->credentials;
 	}
 
 	/**
@@ -57,22 +72,6 @@ class ApiController extends BaseController
 	public function setToken($token)
 	{
 		$this->token = $token;
-	}
-
-	/**
-	 * @return array
-	 */
-	public function getCredentials()
-	{
-		return $this->credentials;
-	}
-
-	/**
-	 * @param array $credentials
-	 */
-	public function setCredentials($credentials)
-	{
-		$this->credentials = $credentials;
 	}
 
 	/**
@@ -137,5 +136,13 @@ class ApiController extends BaseController
 	public function setHeaders($headers)
 	{
 		$this->headers = $headers;
+	}
+
+	/**
+	 * @param array $credentials
+	 */
+	public function setCredentials($credentials)
+	{
+		$this->credentials = $credentials;
 	}
 }
