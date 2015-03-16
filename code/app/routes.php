@@ -1,6 +1,8 @@
 <?php
 
 //Memory
+use Illuminate\Support\Facades\View;
+
 ini_set('memory_limit', '3500M');
 ini_set('max_execution_time', '0');
 ini_set('set_time_limit', '0');
@@ -23,17 +25,6 @@ error_reporting(E_ALL);
 ini_set('display_errors', true);
 ini_set('display_startup_errors', true);
 
-/**
- * |--------------------------------------------------------------------------
- * | Application Routes
- * |--------------------------------------------------------------------------
- * |
- * | Here is where you can register all of the routes for an application.
- * | It's a breeze. Simply tell Laravel the URIs it should respond to
- * | and give it the Closure to execute when that URI is requested.
- * |
- */
-
 Route::when('*', 'csrf', array(
 	'post',
 	'put',
@@ -41,25 +32,27 @@ Route::when('*', 'csrf', array(
 ));
 
 Route::group(array('after' => 'auth'), function () {
-	Route::get('e1', function () {
-		$locales = Local::lists('nombreLocal', 'idLocal');
-
-		return View::make('landings.e1')->withLocales($locales);
-	});
-
-	Route::get('e2', function () {
-		return View::make('landings.e2');
-	});
-
+	//	Route::get('e1', function () {
+	//		$locales = Local::lists('nombreLocal', 'idLocal');
+	//
+	//		return View::make('landings.e1')->withLocales($locales);
+	//	});
+	//	Route::get('e2', function () {
+	//		return View::make('landings.e2');
+	//	});
 	Route::resource('clientes', 'ClienteController');
 	Route::resource('ejecutivos', 'EjecutivoController');
 
 	Route::get('SvlAmicarRead/servlet/ReadAmicar', 'ServletController@readAmicar');
-	Route::get('SolicitudCotizacionAmicar', 'ServletController@clickAmicar');
+	Route::get('Amicar', 'ServletController@clickAmicar');
+	Route::get('thanks', function() {
+		return View::make('landings.thanks');
+	});
+	Route::get('bye', function() {
+		return View::make('landings.bye');
+	});
 });
 
-//Route::group(array('before' => 'auth'), function () {
-//});
 Route::get('crypto', array(
 	function () {
 		$mcrypt = new App\Util\MCrypt();

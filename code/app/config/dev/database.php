@@ -18,6 +18,38 @@ return array(
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
 		),
+
+		'mysql'  => array(
+			'read'      => array(
+				'host' => '192.168.1.99'
+			),
+			'write'     => array(
+				'host' => '192.168.1.99'
+			),
+			'driver'    => 'mysql',
+			'database'  => 'amicarcotizante',
+			'username'  => 'root',
+			'password'  => 'inteladmin',
+			'charset'   => 'utf8',
+			'collation' => 'utf8_unicode_ci',
+			'prefix'    => '',
+		),
+
+		'mysql2'  => array(
+			'read'      => array(
+				'host' => '127.0.0.1'
+			),
+			'write'     => array(
+				'host' => '127.0.0.1'
+			),
+			'driver'    => 'mysql',
+			'database'  => 'amicarcotizante',
+			'username'  => 'test',
+			'password'  => 'test',
+			'charset'   => 'utf8',
+			'collation' => 'utf8_unicode_ci',
+			'prefix'    => '',
+		),
 		'sqlite' => array(
 			'driver'   => 'sqlite',
 			'database' => __DIR__ . '/../../database/production.sqlite',

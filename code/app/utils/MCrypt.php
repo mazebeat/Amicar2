@@ -9,8 +9,8 @@ class MCrypt
 
 	function __construct()
 	{
-		$this->key = Config::get('api.mcryptKey'); // app/config/api.php -> mcryptKey
-		$this->iv  = Config::get('api.initVector'); // app/config/api.php -> initVector
+		$this->key = Config::get('api.mcrypt.key'); // app/config/api.php -> Key
+		$this->iv  = Config::get('api.mcrypt.iv'); // app/config/api.php -> initVector
 	}
 
 	/**

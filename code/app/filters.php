@@ -14,10 +14,11 @@ use App\Util\MessageLog;
 use Illuminate\Support\Facades\Auth;
 
 App::before(function ($request) {
-	$msg = 'Method ' . $request->method() . ' Path ' . $request->path();
+//	$msg = 'Method ' . $request->method() . ' Path ' . $request->path();
+//
+//	$log = new MessageLog('request');
+//	$log->info($msg, compact('bindings', 'time'));
 
-	$log = new MessageLog('request');
-	$log->info($msg, compact('bindings', 'time'));
 });
 
 App::after(function ($request, $response) {
@@ -93,6 +94,7 @@ Route::filter('guest', function () {
 
 Route::filter('csrf', function () {
 	if (Session::token() != Input::get('_token')) {
-		throw new Illuminate\Session\TokenMismatchException;
+		return Redirect::to('http://www.amicar.cl');
+//		throw new Illuminate\Session\TokenMismatchException;
 	}
 });

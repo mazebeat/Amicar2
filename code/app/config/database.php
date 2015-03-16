@@ -25,7 +25,7 @@ return array(
 	|
 	*/
 
-	'default'     => 'mysql',
+	'default'     => 'mysql2',
 	/*
 	|--------------------------------------------------------------------------
 	| Database Connections

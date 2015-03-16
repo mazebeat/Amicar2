@@ -9,13 +9,17 @@ use Illuminate\Support\Facades\Redirect;
  */
 class ServletController extends ApiController
 {
-	private $idCliente;
-	private $idCotizacion;
-	private $campana;
-
 	function __construct()
 	{
 		parent::__construct();
+		$this->beforeFilter('csrf', array(
+			'on' => array(
+				'post',
+				'put',
+				'patch',
+				'delete'
+			)
+		));
 	}
 
 	/**
@@ -27,7 +31,6 @@ class ServletController extends ApiController
 		$idCliente    = Input::get('cliente', null);
 		$idCotizacion = Input::get('cotizacion', null);
 
-		//		dd(Input::all());
 		$this->getLog()->info("Parametros de entrada: Cliente $idCliente - Cotizacion $idCotizacion");
 		if (isset($idCliente) && isset($idCotizacion)) {
 			$this->setIdCliente($idCliente);
@@ -59,7 +62,7 @@ class ServletController extends ApiController
 		if (isset($idCliente) && isset($idCotizacion)) {
 			try {
 				$process = Proceso::find($idCotizacion);
-				//				dd($process);
+
 				if (isset($process)) {
 					$this->getLog()->info("Proceso encontrado");
 					if ($type == 'read' && $process->fechaAperturaMail == null) {
@@ -86,77 +89,61 @@ class ServletController extends ApiController
 	/**
 	 * @return mixed
 	 */
-	public function getIdCliente()
-	{
-		return $this->idCliente;
-	}
-
-	/**
-	 * @param mixed $idCliente
-	 */
-	public function setIdCliente($idCliente)
-	{
-		$this->idCliente = $idCliente;
-	}
-
-	/**
-	 * @return mixed
-	 */
-	public function getIdCotizacion()
-	{
-		return $this->idCotizacion;
-	}
-
-	/**
-	 * @param mixed $idCotizacion
-	 */
-	public function setIdCotizacion($idCotizacion)
-	{
-		$this->idCotizacion = $idCotizacion;
-	}
-
-	/**
-	 * @return mixed
-	 */
 	public function clickAmicar()
 	{
+		$this->getLog()->info('INGRESANDO LANDING %s', array(__CLASS__));
+
+		$params = new Params(Input::all());
+
+		$this->getLog()->info('PARAMETROS DE ENTRADA: CLIENTE: %s COTIZACION: %s CAMPAÑA: %s', Input::all());
+
+		if ($params->validate()) {
+			$action = $params->getAction();
+
+			if (isset($action) && $action == 'removeSends') {
+				return Redirect::to('bye')->withMessages('<h5>Su solicitud ha sido procesada.</h5><br><h3>Gracias!</h3>')->with('action', $action)->withInput(Input::except('_token'));
+			}
+
+			$idCliente = $params->getIdCliente();
+			$campana   = $params->getCampana();
+
+			return Redirect::route('clientes.edit', array($idCliente))->withTemplate($campana)->withAction('')->withInput(Input::except('_token'));
+		}
+
+		return Redirect::to(Config::get('api.company.url'));
+	}
+
+	public function clickAmicar2()
+	{
 		$this->getLog()->info("Click");
+
 		$idCliente    = Input::get('cliente', null);
 		$idCotizacion = Input::get('cotizacion', null);
 		$campana      = Input::get('campana', null);
 
-		//		dd(Input::all());
 		$this->getLog()->info("Parametros de entrada: Cliente $idCliente - Cotizacion $idCotizacion");
+
 		if (isset($idCliente) && isset($idCotizacion)) {
 			$this->setIdCliente($idCliente);
-			$this->setIdCotizacion($idCotizacion);
+			//  $this->setIdCotizacion($idCotizacion);
 			$this->setCampana($campana);
 
-			$this->getLog()->info("Actualizando registro click");
-			$this->updateProcess('click');
+			//  $this->getLog()->info("Actualizando registro click");
+			//  $this->updateProcess('click');
 
+			//  Con campaña
 			if (isset($campana)) {
 				return Redirect::route('clientes.edit', array($idCliente))->withTemplate($campana);
 			}
 
+			//  Sin campaña
 			return Redirect::route('clientes.edit', array($idCliente));
 		}
 
-	}
+		if (Input::get('response') == 'nomore') {
+			// do something to say thanks
+		}
 
-	/**
-	 * @return mixed
-	 */
-	public function getCampana()
-	{
-		return $this->campana;
-	}
-
-	/**
-	 * @param mixed $campana
-	 */
-	public function setCampana($campana)
-	{
-		$this->campana = $campana;
+		return Redirect::to(Config::get('api.company.url'));
 	}
 }

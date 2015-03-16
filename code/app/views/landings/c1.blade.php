@@ -1,69 +1,106 @@
 @extends('layouts.landing.cliente.master')
 
 @section('title')
-	Landing Cliente
+	Bienvenido {{ $cliente->nombreCliente }}
 @endsection
 
 @section('text-style')
 	<style>
 		.lead-big {
-			font-size: 24px;
-			line-height: 24px;
+			line-height: 30px;
+			color: #e76113;
 		}
 
-		.logo {
-			margin-top: 10px;
-		}
-
-		.main {
-			background: rgba(0, 0, 0, 0.6);
-			padding: 10px;
-		}
-
-		.col-centered {
+		.center-block {
 			float: none;
-			margin: 0 auto;
+		}
+
+		h1 small {
+			color: #e76113;
+		}
+
+		h3 {
+			color: #666666;
+		}
+
+		.aa, .aa:active, .aa:focus, .aa:visited, a.aa, a.aa:active, a.aa:focus, a.aa:visited {
+			padding: 10px 6px;
+			font-size: larger;
+			font-weight: bold;
+			background: #e76113;
+			border: 1px solid #e76113;
+			color: #ffffff !important;
+			-webkit-border-radius: 5px;
+			-moz-border-radius: 5px;
+			border-radius: 5px;
+			-webkit-box-shadow: 0px 5px 0px #de3214;
+			-moz-box-shadow: 0px 5px 0px #de3214;
+			box-shadow: 0px 5px 0px #de3214;
+		}
+
+		.aa:active, a.aa:active {
+			-webkit-box-shadow: 0px 5px 0px #de3214;
+			-moz-box-shadow: 0px 5px 0px #de3214;
+			box-shadow: 0px 5px 0px #de3214;
+			position: relative;
+			top: 6px;
 		}
 	</style>
 @endsection
 
 @section('content')
-	@if(isset($messages))
-		{{ HTML::ul($messages) }}
+	{{--@if(isset($messages))--}}
+		{{--{{ HTML::ul($messages) }}--}}
+	{{--@endif--}}
+
+	@if((isset($campana) && $campana == 1) || !isset($campana))
+		<div class="row text-center">
+			<div class="center-block col-md-6">
+				<h1 class="lead-big"><strong>EN AMICAR</strong><br/>
+					<small>tenemos la couta perfecta para ti.</small>
+				</h1>
+				<h3 class="">Para agilizar nuestro contacto necesitamos que actualices tus datos.</h3>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="center-block col-md-4">
+				@include('landings.form')
+			</div>
+		</div>
+	@elseif(isset($campana) && ($campana == 2 || $campana == 3))
+		<div class="row">
+			<div class="col-md-8">
+				<div class="row">
+					<div class="col-md-11">
+						<h1 class="lead-big"><strong>EN AMICAR</strong><br/>
+							<small>tenemos la couta perfecta para ti.</small>
+						</h1>
+					</div>
+					<div class="col-md-12">
+						@if($campana == 2)
+							{{ HTML::image('images/parlante.png', '', array('class', 'img-responsive')) }}
+						@else
+							{{ HTML::image('images/gopro.png', '', array('class', 'img-responsive')) }}
+						@endif
+					</div>
+					<div class="col-md-8">
+						<h3 class="">Para agilizar nuestro contacto necesitamos que actualices tus datos.</h3>
+					</div>
+					<div class="col-md-8">
+						@if($campana == 2)
+							<h3 class="">No olvides que al adquirir tu vehículo recibirás de <strong>REGALO</strong> un increíble <strong>parlante X mini</strong></h3>
+						@else
+							<h3 class="">No olvide que al adquirir tu vehículo, estarás participando en el sorteo de una espectacular cámara <strong>Go Pro Hero 3 White Edition</strong></h3>
+						@endif
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				@include('landings.form')
+			</div>
+		</div>
 	@endif
-	<h1 class="cover-heading">Estimado cliente.</h1>
-	{{ Form::model($cliente, array('route' => array('clientes.update', $cliente->idCliente), 'method' => 'PUT', 'class' => 'form-inline lead-big', 'role' => 'form')) }}
-	<p class="lead">
-		Para poder facilitar el contacto por favor confirma o actualiza los siguientes datos:
-
-	<div class="form-group">
-		{{ Form::label('nombreCliente', 'Nombre:') }}
-		{{ Form::text('nombreCliente', Input::old('nombreCliente'), array('placeholder' => '...', 'required')) }}
-		{{ $errors->first('nombreCliente') }}
-	</div>
-	<div class="form-group">
-		{{ Form::label('apellidoCliente', 'Apellidos:') }}
-		{{ Form::text('apellidoCliente', Input::old('apellidoCliente'), array('placeholder' => '...', 'required')) }}
-		{{ $errors->first('apellidoCliente') }}
-	</div>
-	<div class="form-group">
-		{{ Form::label('fonoCliente', 'Celular:') }}
-		{{ Form::input('tel', 'fonoCliente', Input::old('fonoCliente'), array('placeholder' => '+56 9 999 9999')) }}
-		{{ $errors->first('fonoCliente') }}
-	</div>
-	<span class="hidden-xs"><br></span>
-	<div class="form-group">
-		{{ Form::label('emailCliente', 'Email:') }}
-		{{ Form::email('emailCliente', Input::old('emailCliente'), array('placeholder' => 'cliente@email.cl')) }}
-		{{ $errors->first('emailCliente') }}
-	</div>
-	</p>
-
-	<p class="lead">
-		<button type="submit" class="btn btn-lg btn-primary">Enviar Datos</button>
-	</p>
-	</form>
-	{{ Form::close() }}
 @endsection
 
 @section('text-script')

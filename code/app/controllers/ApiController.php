@@ -12,6 +12,7 @@ class ApiController extends BaseController
 	private $data;
 	private $status;
 	private $headers;
+	private $credentials;
 	private $log;
 
 	/**
@@ -31,7 +32,7 @@ class ApiController extends BaseController
 		$this->status  = $status;
 		$this->headers = $headers;
 
-		$this->log = new MessageLog('amicarCotizante');
+		$this->log = new MessageLog('AmicarLanding');
 	}
 
 	/**
@@ -72,6 +73,14 @@ class ApiController extends BaseController
 	public function setToken($token)
 	{
 		$this->token = $token;
+	}
+
+	/**
+	 * @param array $credentials
+	 */
+	public function setCredentials($credentials)
+	{
+		$this->credentials = $credentials;
 	}
 
 	/**
@@ -138,11 +147,4 @@ class ApiController extends BaseController
 		$this->headers = $headers;
 	}
 
-	/**
-	 * @param array $credentials
-	 */
-	public function setCredentials($credentials)
-	{
-		$this->credentials = $credentials;
-	}
 }
