@@ -79,11 +79,10 @@ class ClienteController extends ApiController
 	{
 		$mcrypt = new MCrypt();
 		$id     = $mcrypt->decrypt($id);
-
 		try {
 			$cliente = Cliente::find($id);
 
-			if (isset($cliente)) {
+			if (isset($cliente) && !$cliente->isDesinscrito()) {
 				return View::make('landings.c1')->withCliente($cliente)->withCampana(Session::get('campana', 1));
 			}
 			else {

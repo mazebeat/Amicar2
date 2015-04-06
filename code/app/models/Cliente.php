@@ -27,8 +27,26 @@ class Cliente extends Eloquent
 			'emailCliente'  => 'required|email',
 			'nombreCliente' => 'required',
 		);
+	private   $errors;
 
-	private $errors;
+	public function scopeDesiscritos($query)
+	{
+		return $query->where('desinscrito', 1);
+	}
+
+	public function scopeInscritos($query)
+	{
+		return $query->where('desinscrito', 0);
+	}
+
+	public function isDesinscrito()
+	{
+		if ($this->desinscrito) {
+			return true;
+		}
+
+		return false;
+	}
 
 	public function validate($inputs)
 	{

@@ -1,7 +1,7 @@
 @extends('layouts.landing.cliente.master')
 
 @section('title')
-	Gracias!
+	Hasta pronto!
 @endsection
 
 @section('text-style')

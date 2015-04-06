@@ -1,6 +1,5 @@
 <?php
 use App\Util\MCrypt;
-use Carbon\Carbon;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 
@@ -12,6 +11,7 @@ class ServletController extends ApiController
 	function __construct()
 	{
 		parent::__construct();
+
 		$this->beforeFilter('csrf', array(
 			'on' => array(
 				'post',
@@ -30,15 +30,12 @@ class ServletController extends ApiController
 		$this->getLog()->info("Lectura");
 		$idCliente    = Input::get('cliente', null);
 		$idCotizacion = Input::get('cotizacion', null);
-
 		$this->getLog()->info("Parametros de entrada: Cliente $idCliente - Cotizacion $idCotizacion");
 		if (isset($idCliente) && isset($idCotizacion)) {
 			$this->setIdCliente($idCliente);
 			$this->setIdCotizacion($idCotizacion);
-
 			$this->getLog()->info("Actualizando lectura");
 			$this->updateProcess('read');
-
 			$this->getLog()->info("Insertando imagen");
 			header('Content-Type', 'image/png');
 			$image = File::get(public_path() . '/images/blank.png');
@@ -56,13 +53,11 @@ class ServletController extends ApiController
 		$mcrypt       = new MCrypt();
 		$idCliente    = $mcrypt->decrypt($this->getIdCliente());
 		$idCotizacion = $mcrypt->decrypt($this->getIdCotizacion());
-
 		//		dd($this);
 		$this->getLog()->info("Actualizando registro para: Cliente $idCliente - Cotizacion $idCotizacion");
 		if (isset($idCliente) && isset($idCotizacion)) {
 			try {
 				$process = Proceso::find($idCotizacion);
-
 				if (isset($process)) {
 					$this->getLog()->info("Proceso encontrado");
 					if ($type == 'read' && $process->fechaAperturaMail == null) {
@@ -107,7 +102,7 @@ class ServletController extends ApiController
 			$idCliente = $params->getIdCliente();
 			$campana   = $params->getCampana();
 
-			return Redirect::route('clientes.edit', array($idCliente))->withTemplate($campana)->withAction('')->withInput(Input::except('_token'));
+			return Redirect::route('clientes.edit', array($idCliente))->withCampana($campana)->withAction('')->withInput(Input::except('_token'));
 		}
 
 		return Redirect::to(Config::get('api.company.url'));
@@ -116,21 +111,16 @@ class ServletController extends ApiController
 	public function clickAmicar2()
 	{
 		$this->getLog()->info("Click");
-
 		$idCliente    = Input::get('cliente', null);
 		$idCotizacion = Input::get('cotizacion', null);
 		$campana      = Input::get('campana', null);
-
 		$this->getLog()->info("Parametros de entrada: Cliente $idCliente - Cotizacion $idCotizacion");
-
 		if (isset($idCliente) && isset($idCotizacion)) {
 			$this->setIdCliente($idCliente);
-			//  $this->setIdCotizacion($idCotizacion);
+			$this->setIdCotizacion($idCotizacion);
 			$this->setCampana($campana);
-
-			//  $this->getLog()->info("Actualizando registro click");
-			//  $this->updateProcess('click');
-
+			$this->getLog()->info("Actualizando registro click");
+			$this->updateProcess('click');
 			//  Con campaña
 			if (isset($campana)) {
 				return Redirect::route('clientes.edit', array($idCliente))->withTemplate($campana);
@@ -139,7 +129,6 @@ class ServletController extends ApiController
 			//  Sin campaña
 			return Redirect::route('clientes.edit', array($idCliente));
 		}
-
 		if (Input::get('response') == 'nomore') {
 			// do something to say thanks
 		}

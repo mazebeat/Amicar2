@@ -2,6 +2,22 @@
 
 use Illuminate\Support\Facades\Config;
 
+/**
+ * HOW TO USE?
+ * $mcrypt = new App\Util\MCrypt();
+ *
+ * $encrypted = $mcrypt->encrypt("1369");
+ * var_dump($encrypted);
+ *
+ * #Decrypt
+ * $decrypted = $mcrypt->decrypt("eeae04e6afb437c7e713045cc675b5ac");
+ * var_dump($decrypted);
+ *
+ * Class MCrypt
+ *
+ * @package App\Util
+ *
+ */
 class MCrypt
 {
 	private $iv;

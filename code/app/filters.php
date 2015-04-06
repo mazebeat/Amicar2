@@ -10,14 +10,11 @@
  * |
  */
 
-use App\Util\MessageLog;
-use Illuminate\Support\Facades\Auth;
-
 App::before(function ($request) {
-//	$msg = 'Method ' . $request->method() . ' Path ' . $request->path();
-//
-//	$log = new MessageLog('request');
-//	$log->info($msg, compact('bindings', 'time'));
+	//	$msg = 'Method ' . $request->method() . ' Path ' . $request->path();
+	//
+	//	$log = new MessageLog('request');
+	//	$log->info($msg, compact('bindings', 'time'));
 
 });
 
@@ -50,6 +47,7 @@ Route::filter('auth', function () {
 	}
 });
 
+
 Route::filter('auth.basic', function () {
 	return Auth::basic('username');
 });
@@ -61,6 +59,12 @@ Route::filter('basic.once', function () {
 Route::filter('admin', function () {
 	if (!(Auth::check() && Auth::user()->perfil == 'ADM')) {
 		return Redirect::to('/');
+	}
+});
+
+Route::filter('process', function () {
+	if (!Input::has('cliente')) {
+		return Redirect::to(Config::get('api.company.url'));
 	}
 });
 
@@ -95,6 +99,6 @@ Route::filter('guest', function () {
 Route::filter('csrf', function () {
 	if (Session::token() != Input::get('_token')) {
 		return Redirect::to('http://www.amicar.cl');
-//		throw new Illuminate\Session\TokenMismatchException;
+		//		throw new Illuminate\Session\TokenMismatchException;
 	}
 });

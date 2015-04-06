@@ -50,7 +50,7 @@
 
 @section('content')
 	{{--@if(isset($messages))--}}
-		{{--{{ HTML::ul($messages) }}--}}
+	{{--{{ HTML::ul($messages) }}--}}
 	{{--@endif--}}
 
 	@if((isset($campana) && $campana == 1) || !isset($campana))
@@ -77,7 +77,14 @@
 							<small>tenemos la couta perfecta para ti.</small>
 						</h1>
 					</div>
-					<div class="col-md-12">
+					<div class="col-md-12 hidden-xs">
+						@if($campana == 2)
+							{{ HTML::image('images/parlante.png', '', array('class', 'img-responsive')) }}
+						@else
+							{{ HTML::image('images/gopro.png', '', array('class', 'img-responsive')) }}
+						@endif
+					</div>
+					<div class="col-md-12 text-center visible-xs">
 						@if($campana == 2)
 							{{ HTML::image('images/parlante.png', '', array('class', 'img-responsive')) }}
 						@else

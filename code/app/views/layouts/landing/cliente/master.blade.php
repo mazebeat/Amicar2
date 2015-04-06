@@ -58,7 +58,7 @@
 	<header class="row">
 		<div class="col-md-12">
 			<div class="logo">
-				{{ HTML::image('images/landing/logo.png', '', array('class' => 'img-responsive center-block')) }}
+				{{ HTML::image('images/logo.png', '', array('class' => 'img-responsive center-block')) }}
 			</div>
 		</div>
 	</header>
