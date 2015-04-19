@@ -25,7 +25,7 @@ return array(
 	|
 	*/
 
-	'url'             => 'http://homestead.app',
+	'url' => '',
 	/*
 	|--------------------------------------------------------------------------
 	| Application Timezone

@@ -30,7 +30,12 @@ ClassLoader::addDirectories(array(
 |
 */
 
-Log::useFiles(storage_path() . '/logs/app.log');
+if (Config::get('config.logs.path', storage_path() . '/logs/') != '') {
+	Log::useFiles(Config::get('config.logs.path') . 'app.log');
+}
+else {
+	Log::useFiles(storage_path() . '/logs/app.log');
+}
 
 /*
 |--------------------------------------------------------------------------
@@ -62,7 +67,12 @@ if (Config::get('api.curlError')) {
 		if ($isCurl and $shouldDebug) {
 			return $exception;
 		}
-		Log::useFiles(storage_path() . '/logs/curl.log');
+		if (Config::get('config.logs.path', '') != '') {
+			Log::useFiles(Config::get('config.logs.path') . 'curl.log');
+		}
+		else {
+			Log::useFiles(storage_path() . '/logs/curl.log');
+		}
 		Log::error($exception);
 
 	});

@@ -1,5 +1,4 @@
 <?php
-
 // You could also do some check before logging, if you only wanted to log your events.
 
 /**
@@ -11,5 +10,10 @@
 Event::listen('illuminate.query', function ($sql, $bindings, $time) {
 	$time_now = (new DateTime)->format('Y-m-d H:i:s');;
 	$log = $time_now . ' | ' . $sql . ' | ' . $time . 'ms' . PHP_EOL;
-	File::append(storage_path() . '/logs/query.log', $log);
+	if (Config::get('config.logs.path', '') != '') {
+		File::append(Config::get('config.logs.path') . 'query.log', $log);
+	}
+	else {
+		File::append(storage_path() . '/logs/query.log', $log);
+	}
 });

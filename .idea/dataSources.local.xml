@@ -1,19 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="MySQL - amicarcotizante@192.168.1.99" uuid="9fd5ccc3-a176-4cb5-81e6-dd3e8732b3dd">
-      <secret-storage>master_key</secret-storage>
-      <user-name>root</user-name>
-      <schema-pattern>amicarcotizante.*</schema-pattern>
-      <default-schemas>amicarcotizante.*</default-schemas>
-      <ssh-properties>
-        <enabled>false</enabled>
-        <proxy-host>192.162.1.86</proxy-host>
-        <proxy-port>22</proxy-port>
-        <secret-storage>memory</secret-storage>
-        <user>webdes</user>
-        <use-password>true</use-password>
-      </ssh-properties>
-    </data-source>
+    <data-source name="MySQL - amicarcotizante@192.168.1.99" uuid="9fd5ccc3-a176-4cb5-81e6-dd3e8732b3dd" />
   </component>
 </project>

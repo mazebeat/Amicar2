@@ -9,7 +9,7 @@
  */
 return array(
 	// ApiKey
-	'apiKey'       => '',
+	'apiKey'       => 'amicarCotizante2015',
 	// MCrypt Class
 	'mcrypt'       => array(
 		'key' => 'amicarCotizantes',
@@ -21,17 +21,16 @@ return array(
 		'administrator' => 'ADM',
 		'public'        => 'PUB',
 	),
-	'testUsername' => 'Test User',
 	'company'      => array(
-		'name' => 'amicar',
+		'name' => 'Amicar',
 		'url'  => 'http://www.amicar.cl'
 	),
-	'demo'         => true,
+	'demo'         => false,
 	'curlError'    => false,
 	// Text Global
 	'text'         => array(
-		'cliente'    => 'cliente',
-		'ejecutivo'  => 'ejecutivo',
-		'cotizacion' => 'cotizacion'
+		'cliente'    => 'Cliente',
+		'ejecutivo'  => 'Ejecutivo',
+		'cotizacion' => 'Cotizacion'
 	)
 );

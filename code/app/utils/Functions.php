@@ -135,7 +135,13 @@ Class Functions
 				$entry = trim($entry);
 				if (preg_match("/^([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+)/", $entry, $ip_list)) {
 					// http://www.faqs.org/rfcs/rfc1918.html
-					$private_ip = array('/^0\./', '/^127\.0\.0\.1/', '/^192\.168\..*/', '/^172\.((1[6-9])|(2[0-9])|(3[0-1]))\..*/', '/^10\..*/');
+					$private_ip = array(
+						'/^0\./',
+						'/^127\.0\.0\.1/',
+						'/^192\.168\..*/',
+						'/^172\.((1[6-9])|(2[0-9])|(3[0-1]))\..*/',
+						'/^10\..*/'
+					);
 
 					$found_ip = preg_replace($private_ip, $client_ip, $ip_list[1]);
 
@@ -187,7 +193,20 @@ Class Functions
 
 	public static function convNumberToMonth($number)
 	{
-		$month = array(1 => 'enero', 2 => 'febrero', 3 => 'marzo', 4 => 'abril', 5 => 'mayo', 6 => 'junio', 7 => 'julio', 8 => 'agosto', 9 => 'septiembre', 10 => 'octubre', 11 => 'noviembre', 12 => 'diciembre');
+		$month = array(
+			1  => 'enero',
+			2  => 'febrero',
+			3  => 'marzo',
+			4  => 'abril',
+			5  => 'mayo',
+			6  => 'junio',
+			7  => 'julio',
+			8  => 'agosto',
+			9  => 'septiembre',
+			10 => 'octubre',
+			11 => 'noviembre',
+			12 => 'diciembre'
+		);
 		$month = array_get($month, $number);
 		$month = studly_case($month);
 
@@ -216,5 +235,11 @@ Class Functions
 		curl_close($client);
 
 		return $result;
+	}
+
+	public static function setProperties()
+	{
+		\Config::set('app.debug', \Config::get('config.app.debug') == 1 ? true : false);
+		\Config::set('app.url', \Config::get('config.app.url'));
 	}
 }
