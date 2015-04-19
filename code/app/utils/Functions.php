@@ -236,10 +236,4 @@ Class Functions
 
 		return $result;
 	}
-
-	public static function setProperties()
-	{
-		\Config::set('app.debug', \Config::get('config.app.debug') == 1 ? true : false);
-		\Config::set('app.url', \Config::get('config.app.url'));
-	}
 }
