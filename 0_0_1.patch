@@ -1,0 +1,1159 @@
+Index: code/app/config/api.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\n\n/*\n | ------------------------------------------------------\n | Api Configurator\n | ------------------------------------------------------\n | Use this file to declare all api values to call later\n |\n */\nreturn array(\n\t// ApiKey\n\t'apiKey'       => '',\n\t// MCrypt Class\n\t'mcrypt'       => array(\n\t\t'key' => 'amicarCotizantes',\n\t\t'iv'  => 'a1m2i3c4a5r6C7o8',\n\t),\n\t// Landing Setup\n\t'title'        => 'Amicar 2.0',\n\t'profiles'     => array(\n\t\t'administrator' => 'ADM',\n\t\t'public'        => 'PUB',\n\t),\n\t'testUsername' => 'Test User',\n\t'company'      => array(\n\t\t'name' => 'amicar',\n\t\t'url'  => 'http://www.amicar.cl'\n\t),\n\t'demo'         => true,\n\t'curlError'    => false,\n\t// Text Global\n\t'text'         => array(\n\t\t'cliente'    => 'cliente',\n\t\t'ejecutivo'  => 'ejecutivo',\n\t\t'cotizacion' => 'cotizacion'\n\t)\n);
+===================================================================
+--- code/app/config/api.php	(date 1428354577000)
++++ code/app/config/api.php	(revision )
+@@ -9,7 +9,7 @@
+  */
+ return array(
+ 	// ApiKey
+-	'apiKey'       => '',
++	'apiKey'       => 'amicarCotizante2015',
+ 	// MCrypt Class
+ 	'mcrypt'       => array(
+ 		'key' => 'amicarCotizantes',
+@@ -21,17 +21,16 @@
+ 		'administrator' => 'ADM',
+ 		'public'        => 'PUB',
+ 	),
+-	'testUsername' => 'Test User',
+ 	'company'      => array(
+-		'name' => 'amicar',
++		'name' => 'Amicar',
+ 		'url'  => 'http://www.amicar.cl'
+ 	),
+-	'demo'         => true,
++	'demo'         => false,
+ 	'curlError'    => false,
+ 	// Text Global
+ 	'text'         => array(
+-		'cliente'    => 'cliente',
+-		'ejecutivo'  => 'ejecutivo',
+-		'cotizacion' => 'cotizacion'
++		'cliente'    => 'Cliente',
++		'ejecutivo'  => 'Ejecutivo',
++		'cotizacion' => 'Cotizacion'
+ 	)
+ );
+\ No newline at end of file
+Index: code/app/config/app.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\n\nreturn array(\n\n\t/*\n\t|--------------------------------------------------------------------------\n\t| Application Debug Mode\n\t|--------------------------------------------------------------------------\n\t|\n\t| When your application is in debug mode, detailed error messages with\n\t| stack traces will be shown on every error that occurs within your\n\t| application. If disabled, a simple generic error page is shown.\n\t|\n\t*/\n\n\t'debug'           => true,\n\t/*\n\t|--------------------------------------------------------------------------\n\t| Application URL\n\t|--------------------------------------------------------------------------\n\t|\n\t| This URL is used by the console to properly generate URLs when using\n\t| the Artisan command line tool. You should set this to the root of\n\t| your application so that it is used when running Artisan tasks.\n\t|\n\t*/\n\n\t'url'             => 'http://homestead.app',\n\t/*\n\t|--------------------------------------------------------------------------\n\t| Application Timezone\n\t|--------------------------------------------------------------------------\n\t|\n\t| Here you may specify the default timezone for your application, which\n\t| will be used by the PHP date and date-time functions. We have gone\n\t| ahead and set this to a sensible default for you out of the box.\n\t|\n\t*/\n\n\t'timezone'        => 'America/Santiago',\n\t/*\n\t|--------------------------------------------------------------------------\n\t| Application Locale Configuration\n\t|--------------------------------------------------------------------------\n\t|\n\t| The application locale determines the default locale that will be used\n\t| by the translation service provider. You are free to set this value\n\t| to any of the locales which will be supported by the application.\n\t|\n\t*/\n\n\t'locale'          => 'es',\n\t/*\n\t|--------------------------------------------------------------------------\n\t| Application Fallback Locale\n\t|--------------------------------------------------------------------------\n\t|\n\t| The fallback locale determines the locale to use when the current one\n\t| is not available. You may change the value to correspond to any of\n\t| the language folders that are provided through your application.\n\t|\n\t*/\n\n\t'fallback_locale' => 'en',\n\t/*\n\t|--------------------------------------------------------------------------\n\t| Encryption Key\n\t|--------------------------------------------------------------------------\n\t|\n\t| This key is used by the Illuminate encrypter service and should be set\n\t| to a random, 32 character string, otherwise these encrypted strings\n\t| will not be safe. Please do this before deploying an application!\n\t|\n\t*/\n\n\t'key'             => '95jB1tRGhFCjo5m4WUSKR4q03dORVNZN',\n\t'cipher'          => MCRYPT_RIJNDAEL_128,\n\t/*\n\t|--------------------------------------------------------------------------\n\t| Autoloaded Service Providers\n\t|--------------------------------------------------------------------------\n\t|\n\t| The service providers listed here will be automatically loaded on the\n\t| request to your application. Feel free to add your own services to\n\t| this array to grant expanded functionality to your applications.\n\t|\n\t*/\n\n\t'providers'       => array(\n\n\t\t'Illuminate\\Foundation\\Providers\\ArtisanServiceProvider',\n\t\t'Illuminate\\Auth\\AuthServiceProvider',\n\t\t'Illuminate\\Cache\\CacheServiceProvider',\n\t\t'Illuminate\\Session\\CommandsServiceProvider',\n\t\t'Illuminate\\Foundation\\Providers\\ConsoleSupportServiceProvider',\n\t\t'Illuminate\\Routing\\ControllerServiceProvider',\n\t\t'Illuminate\\Cookie\\CookieServiceProvider',\n\t\t'Illuminate\\Database\\DatabaseServiceProvider',\n\t\t'Illuminate\\Encryption\\EncryptionServiceProvider',\n\t\t'Illuminate\\Filesystem\\FilesystemServiceProvider',\n\t\t'Illuminate\\Hashing\\HashServiceProvider',\n\t\t'Illuminate\\Html\\HtmlServiceProvider',\n\t\t'Illuminate\\Log\\LogServiceProvider',\n\t\t'Illuminate\\Mail\\MailServiceProvider',\n\t\t'Illuminate\\Database\\MigrationServiceProvider',\n\t\t'Illuminate\\Pagination\\PaginationServiceProvider',\n\t\t'Illuminate\\Queue\\QueueServiceProvider',\n\t\t'Illuminate\\Redis\\RedisServiceProvider',\n\t\t'Illuminate\\Remote\\RemoteServiceProvider',\n\t\t'Illuminate\\Auth\\Reminders\\ReminderServiceProvider',\n\t\t'Illuminate\\Database\\SeedServiceProvider',\n\t\t'Illuminate\\Session\\SessionServiceProvider',\n\t\t'Illuminate\\Translation\\TranslationServiceProvider',\n\t\t'Illuminate\\Validation\\ValidationServiceProvider',\n\t\t'Illuminate\\View\\ViewServiceProvider',\n\t\t'Illuminate\\Workbench\\WorkbenchServiceProvider',\n\t\t'Barryvdh\\Debugbar\\ServiceProvider',\n\t\t//\t\t'Barryvdh\\LaravelIdeHelper\\IdeHelperServiceProvider',\n\t\t'Fitztrev\\LaravelHtmlMinify\\LaravelHtmlMinifyServiceProvider',\n\t\t'Way\\Generators\\GeneratorsServiceProvider',\n\t\t'Barryvdh\\VendorCleanup\\VendorCleanupServiceProvider',\n\t\t'Adamkearsley\\ConvertMigrations\\ConvertMigrationsServiceProvider'\n\t),\n\t/*\n\t|--------------------------------------------------------------------------\n\t| Service Provider Manifest\n\t|--------------------------------------------------------------------------\n\t|\n\t| The service provider manifest is used by Laravel to lazy load service\n\t| providers which are not needed for each request, as well to keep a\n\t| list of all of the services. Here, you may set its storage spot.\n\t|\n\t*/\n\n\t'manifest'        => storage_path() . '/meta',\n\t/*\n\t|--------------------------------------------------------------------------\n\t| Class Aliases\n\t|--------------------------------------------------------------------------\n\t|\n\t| This array of class aliases will be registered when this application\n\t| is started. However, feel free to register as many as you wish as\n\t| the aliases are \"lazy\" loaded so they don't hinder performance.\n\t|\n\t*/\n\n\t'aliases'         => array(\n\n\t\t'App'               => 'Illuminate\\Support\\Facades\\App',\n\t\t'Artisan'           => 'Illuminate\\Support\\Facades\\Artisan',\n\t\t'Auth'              => 'Illuminate\\Support\\Facades\\Auth',\n\t\t'Blade'             => 'Illuminate\\Support\\Facades\\Blade',\n\t\t'Cache'             => 'Illuminate\\Support\\Facades\\Cache',\n\t\t'Carbon'            => 'Carbon\\Carbon',\n\t\t'ClassLoader'       => 'Illuminate\\Support\\ClassLoader',\n\t\t'Config'            => 'Illuminate\\Support\\Facades\\Config',\n\t\t'Controller'        => 'Illuminate\\Routing\\Controller',\n\t\t'Cookie'            => 'Illuminate\\Support\\Facades\\Cookie',\n\t\t'Crypt'             => 'Illuminate\\Support\\Facades\\Crypt',\n\t\t'DB'                => 'Illuminate\\Support\\Facades\\DB',\n\t\t'Eloquent'          => 'Illuminate\\Database\\Eloquent\\Model',\n\t\t'Event'             => 'Illuminate\\Support\\Facades\\Event',\n\t\t'File'              => 'Illuminate\\Support\\Facades\\File',\n\t\t'Form'              => 'Illuminate\\Support\\Facades\\Form',\n\t\t'Hash'              => 'Illuminate\\Support\\Facades\\Hash',\n\t\t'HTML'              => 'Illuminate\\Support\\Facades\\HTML',\n\t\t'Input'             => 'Illuminate\\Support\\Facades\\Input',\n\t\t'Lang'              => 'Illuminate\\Support\\Facades\\Lang',\n\t\t'Log'               => 'Illuminate\\Support\\Facades\\Log',\n\t\t'Mail'              => 'Illuminate\\Support\\Facades\\Mail',\n\t\t'Paginator'         => 'Illuminate\\Support\\Facades\\Paginator',\n\t\t'Password'          => 'Illuminate\\Support\\Facades\\Password',\n\t\t'Queue'             => 'Illuminate\\Support\\Facades\\Queue',\n\t\t'Redirect'          => 'Illuminate\\Support\\Facades\\Redirect',\n\t\t'Redis'             => 'Illuminate\\Support\\Facades\\Redis',\n\t\t'Request'           => 'Illuminate\\Support\\Facades\\Request',\n\t\t'Response'          => 'Illuminate\\Support\\Facades\\Response',\n\t\t'Route'             => 'Illuminate\\Support\\Facades\\Route',\n\t\t'Schema'            => 'Illuminate\\Support\\Facades\\Schema',\n\t\t'Seeder'            => 'Illuminate\\Database\\Seeder',\n\t\t'Session'           => 'Illuminate\\Support\\Facades\\Session',\n\t\t'SoftDeletingTrait' => 'Illuminate\\Database\\Eloquent\\SoftDeletingTrait',\n\t\t'SSH'               => 'Illuminate\\Support\\Facades\\SSH',\n\t\t'Str'               => 'Illuminate\\Support\\Str',\n\t\t'URL'               => 'Illuminate\\Support\\Facades\\URL',\n\t\t'Validator'         => 'Illuminate\\Support\\Facades\\Validator',\n\t\t'View'              => 'Illuminate\\Support\\Facades\\View',\n\t\t'Debugbar'          => 'Barryvdh\\Debugbar\\Facade',\n\t\t'SoapWrapper'       => 'Artisaninweb\\SoapWrapper\\Facades\\SoapWrapper',\n\t),\n\n);\n
+===================================================================
+--- code/app/config/app.php	(date 1428354577000)
++++ code/app/config/app.php	(revision )
+@@ -25,7 +25,7 @@
+ 	|
+ 	*/
+ 
+-	'url'             => 'http://homestead.app',
++	'url' => '',
+ 	/*
+ 	|--------------------------------------------------------------------------
+ 	| Application Timezone
+Index: code/app/start/local.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\n\n// You could also do some check before logging, if you only wanted to log your events.\n\n/**\n *  1. Before you start with this create a file in your logs folder (eg : 'query.log') and grant laravel write access to it.\n *    2. Place the snippet in your '/app/start/local.php' file. (or routes.php or anywhere...)\n *    3. Access artisan from your console and type this -\n *    $php artisan tail --path=\"app/storage/logs/query.log\" (better use full path)\n */\nEvent::listen('illuminate.query', function ($sql, $bindings, $time) {\n\t$time_now = (new DateTime)->format('Y-m-d H:i:s');;\n\t$log = $time_now . ' | ' . $sql . ' | ' . $time . 'ms' . PHP_EOL;\n\tFile::append(storage_path() . '/logs/query.log', $log);\n});\n
+===================================================================
+--- code/app/start/local.php	(date 1428354577000)
++++ code/app/start/local.php	(revision )
+@@ -1,5 +1,4 @@
+ <?php
+-
+ // You could also do some check before logging, if you only wanted to log your events.
+ 
+ /**
+@@ -11,5 +10,10 @@
+ Event::listen('illuminate.query', function ($sql, $bindings, $time) {
+ 	$time_now = (new DateTime)->format('Y-m-d H:i:s');;
+ 	$log = $time_now . ' | ' . $sql . ' | ' . $time . 'ms' . PHP_EOL;
++	if (Config::get('config.logs.path', '') != '') {
++		File::append(Config::get('config.logs.path') . 'query.log', $log);
++	}
++	else {
+-	File::append(storage_path() . '/logs/query.log', $log);
++		File::append(storage_path() . '/logs/query.log', $log);
++	}
+ });
+Index: .idea/dataSources.local.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"dataSourceStorageLocal\">\n    <data-source name=\"MySQL - amicarcotizante@192.168.1.99\" uuid=\"9fd5ccc3-a176-4cb5-81e6-dd3e8732b3dd\">\n      <secret-storage>master_key</secret-storage>\n      <user-name>root</user-name>\n      <schema-pattern>amicarcotizante.*</schema-pattern>\n      <default-schemas>amicarcotizante.*</default-schemas>\n      <ssh-properties>\n        <enabled>false</enabled>\n        <proxy-host>192.162.1.86</proxy-host>\n        <proxy-port>22</proxy-port>\n        <secret-storage>memory</secret-storage>\n        <user>webdes</user>\n        <use-password>true</use-password>\n      </ssh-properties>\n    </data-source>\n  </component>\n</project>
+===================================================================
+--- .idea/dataSources.local.xml	(date 1428354577000)
++++ .idea/dataSources.local.xml	(revision )
+@@ -1,19 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="dataSourceStorageLocal">
+-    <data-source name="MySQL - amicarcotizante@192.168.1.99" uuid="9fd5ccc3-a176-4cb5-81e6-dd3e8732b3dd">
+-      <secret-storage>master_key</secret-storage>
+-      <user-name>root</user-name>
+-      <schema-pattern>amicarcotizante.*</schema-pattern>
+-      <default-schemas>amicarcotizante.*</default-schemas>
+-      <ssh-properties>
+-        <enabled>false</enabled>
+-        <proxy-host>192.162.1.86</proxy-host>
+-        <proxy-port>22</proxy-port>
+-        <secret-storage>memory</secret-storage>
+-        <user>webdes</user>
+-        <use-password>true</use-password>
+-      </ssh-properties>
+-    </data-source>
++    <data-source name="MySQL - amicarcotizante@192.168.1.99" uuid="9fd5ccc3-a176-4cb5-81e6-dd3e8732b3dd" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" readonly=\"true\" id=\"2e8b902c-d24b-4a2e-873f-db4dadfc22a0\" name=\"Default\" comment=\"0.0.0\">\n      <change type=\"NEW\" beforePath=\"\" afterPath=\"$PROJECT_DIR$/code/app/config/observers.php\" />\n      <change type=\"DELETED\" beforePath=\"E:\\Projects\\Php\\Amicar2\\code\\public\\images\\logo_header.png\" afterPath=\"\" />\n      <change type=\"MODIFICATION\" beforePath=\"$PROJECT_DIR$/code/app/models/Cliente.php\" afterPath=\"$PROJECT_DIR$/code/app/models/Cliente.php\" />\n      <change type=\"MODIFICATION\" beforePath=\"$PROJECT_DIR$/code/app/controllers/ClienteController.php\" afterPath=\"$PROJECT_DIR$/code/app/controllers/ClienteController.php\" />\n      <change type=\"MODIFICATION\" beforePath=\"$PROJECT_DIR$/code/app/utils/MCrypt.php\" afterPath=\"$PROJECT_DIR$/code/app/utils/MCrypt.php\" />\n      <change type=\"MODIFICATION\" beforePath=\"$PROJECT_DIR$/code/app/controllers/ServletController.php\" afterPath=\"$PROJECT_DIR$/code/app/controllers/ServletController.php\" />\n      <change type=\"MODIFICATION\" beforePath=\"$PROJECT_DIR$/code/app/views/landings/bye.blade.php\" afterPath=\"$PROJECT_DIR$/code/app/views/landings/bye.blade.php\" />\n      <change type=\"MODIFICATION\" beforePath=\"$PROJECT_DIR$/code/app/views/landings/c1.blade.php\" afterPath=\"$PROJECT_DIR$/code/app/views/landings/c1.blade.php\" />\n      <change type=\"MODIFICATION\" beforePath=\"$PROJECT_DIR$/code/app/config/database.php\" afterPath=\"$PROJECT_DIR$/code/app/config/database.php\" />\n      <change type=\"MODIFICATION\" beforePath=\"$PROJECT_DIR$/code/app/config/dev/database.php\" afterPath=\"$PROJECT_DIR$/code/app/config/dev/database.php\" />\n      <change type=\"MODIFICATION\" beforePath=\"$PROJECT_DIR$/.idea/encodings.xml\" afterPath=\"$PROJECT_DIR$/.idea/encodings.xml\" />\n      <change type=\"MODIFICATION\" beforePath=\"$PROJECT_DIR$/code/app/filters.php\" afterPath=\"$PROJECT_DIR$/code/app/filters.php\" />\n      <change type=\"MODIFICATION\" beforePath=\"$PROJECT_DIR$/code/app/views/layouts/landing/cliente/master.blade.php\" afterPath=\"$PROJECT_DIR$/code/app/views/layouts/landing/cliente/master.blade.php\" />\n      <change type=\"MODIFICATION\" beforePath=\"$PROJECT_DIR$/code/app/routes.php\" afterPath=\"$PROJECT_DIR$/code/app/routes.php\" />\n      <change type=\"MODIFICATION\" beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" />\n    </list>\n    <ignored path=\"tracking_correos.iws\" />\n    <ignored path=\".idea/workspace.xml\" />\n    <ignored path=\".idea/dataSources.local.xml\" />\n    <option name=\"EXCLUDED_CONVERTED_TO_IGNORED\" value=\"true\" />\n    <option name=\"TRACKING_ENABLED\" value=\"true\" />\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"ChangesViewManager\" flattened_view=\"true\" show_ignored=\"false\" />\n  <component name=\"ComposerSettings\">\n    <pharConfigPath>E:\\Projects\\Php\\tracking_correos\\code\\composer.json</pharConfigPath>\n    <pharPath>E:\\Projects\\Php\\tracking_correos\\code\\composer.phar</pharPath>\n    <phpPath>php.exe</phpPath>\n  </component>\n  <component name=\"CreatePatchCommitExecutor\">\n    <option name=\"PATCH_PATH\" value=\"\" />\n  </component>\n  <component name=\"DaemonCodeAnalyzer\">\n    <disable_hints />\n  </component>\n  <component name=\"DatabaseView\">\n    <option name=\"FLATTEN\" value=\"false\" />\n    <option name=\"GROUP_BY_TYPE\" value=\"true\" />\n    <option name=\"SORT_CHILDREN\" value=\"false\" />\n    <option name=\"SHOW_TABLE_CONSTRAINTS\" value=\"true\" />\n    <PATH>\n      <PATH_ELEMENT>\n        <option name=\"myItemId\" />\n        <option name=\"myItemType\" value=\"com.intellij.database.view.DbRootNodeDescriptor\" />\n      </PATH_ELEMENT>\n      <PATH_ELEMENT>\n        <option name=\"myItemId\" value=\"MySQL - amicarcotizante@192.168.1.99\" />\n        <option name=\"myItemType\" value=\"com.intellij.database.view.DbNodeDescriptor\" />\n      </PATH_ELEMENT>\n      <PATH_ELEMENT>\n        <option name=\"myItemId\" value=\"amicarcotizante\" />\n        <option name=\"myItemType\" value=\"com.intellij.database.view.DbNodeDescriptor\" />\n      </PATH_ELEMENT>\n    </PATH>\n    <PATH>\n      <PATH_ELEMENT>\n        <option name=\"myItemId\" />\n        <option name=\"myItemType\" value=\"com.intellij.database.view.DbRootNodeDescriptor\" />\n      </PATH_ELEMENT>\n      <PATH_ELEMENT>\n        <option name=\"myItemId\" value=\"MySQL - amicarcotizante@192.168.1.99\" />\n        <option name=\"myItemType\" value=\"com.intellij.database.view.DbNodeDescriptor\" />\n      </PATH_ELEMENT>\n      <PATH_ELEMENT>\n        <option name=\"myItemId\" value=\"amicarcotizante\" />\n        <option name=\"myItemType\" value=\"com.intellij.database.view.DbNodeDescriptor\" />\n      </PATH_ELEMENT>\n      <PATH_ELEMENT>\n        <option name=\"myItemId\" value=\"proceso\" />\n        <option name=\"myItemType\" value=\"com.intellij.database.view.DbNodeDescriptor\" />\n      </PATH_ELEMENT>\n    </PATH>\n  </component>\n  <component name=\"ExecutionTargetManager\" SELECTED_TARGET=\"default_target\" />\n  <component name=\"FavoritesManager\">\n    <favorites_list name=\"tracking_correos\" />\n  </component>\n  <component name=\"FileEditorManager\">\n    <leaf>\n      <file leaf-file-name=\"routes.php\" pinned=\"false\" current-in-tab=\"false\">\n        <entry file=\"file://$PROJECT_DIR$/code/app/routes.php\">\n          <provider selected=\"true\" editor-type-id=\"text-editor\">\n            <state vertical-scroll-proportion=\"-13.884615\" vertical-offset=\"695\" max-vertical-offset=\"1681\">\n              <caret line=\"48\" column=\"39\" selection-start-line=\"48\" selection-start-column=\"32\" selection-end-line=\"48\" selection-end-column=\"39\" />\n              <folding>\n                <element signature=\"e#7#44#0#PHP\" expanded=\"true\" />\n                <element signature=\"e#816#1093#1#PHP\" expanded=\"true\" />\n                <element signature=\"e#852#908#1#PHP\" expanded=\"true\" />\n                <element signature=\"e#930#983#1#PHP\" expanded=\"true\" />\n                <element signature=\"e#1140#1267#1#PHP\" expanded=\"true\" />\n              </folding>\n            </state>\n          </provider>\n        </entry>\n      </file>\n      <file leaf-file-name=\"session.php\" pinned=\"false\" current-in-tab=\"false\">\n        <entry file=\"file://$PROJECT_DIR$/code/app/config/session.php\">\n          <provider selected=\"true\" editor-type-id=\"text-editor\">\n            <state vertical-scroll-proportion=\"-0.0\" vertical-offset=\"0\" max-vertical-offset=\"3397\">\n              <caret line=\"0\" column=\"0\" selection-start-line=\"0\" selection-start-column=\"0\" selection-end-line=\"0\" selection-end-column=\"0\" />\n              <folding />\n            </state>\n          </provider>\n        </entry>\n      </file>\n      <file leaf-file-name=\"filters.php\" pinned=\"false\" current-in-tab=\"false\">\n        <entry file=\"file://$PROJECT_DIR$/code/app/filters.php\">\n          <provider selected=\"true\" editor-type-id=\"text-editor\">\n            <state vertical-scroll-proportion=\"-13.038462\" vertical-offset=\"937\" max-vertical-offset=\"2605\">\n              <caret line=\"67\" column=\"5\" selection-start-line=\"67\" selection-start-column=\"5\" selection-end-line=\"67\" selection-end-column=\"5\" />\n              <folding>\n                <element signature=\"e#451#641#2#PHP\" expanded=\"true\" />\n                <element signature=\"e#656#904#2#PHP\" expanded=\"true\" />\n                <element signature=\"e#1352#1567#1#PHP\" expanded=\"true\" />\n                <element signature=\"e#1600#1648#1#PHP\" expanded=\"true\" />\n                <element signature=\"e#1680#1722#1#PHP\" expanded=\"true\" />\n                <element signature=\"e#1749#1853#1#PHP\" expanded=\"true\" />\n                <element signature=\"e#2428#2496#1#PHP\" expanded=\"true\" />\n                <element signature=\"e#2947#3120#1#PHP\" expanded=\"true\" />\n              </folding>\n            </state>\n          </provider>\n        </entry>\n      </file>\n      <file leaf-file-name=\"api.php\" pinned=\"false\" current-in-tab=\"false\">\n        <entry file=\"file://$PROJECT_DIR$/code/app/config/api.php\">\n          <provider selected=\"true\" editor-type-id=\"text-editor\">\n            <state vertical-scroll-proportion=\"-11.846154\" vertical-offset=\"132\" max-vertical-offset=\"1197\">\n              <caret line=\"26\" column=\"12\" selection-start-line=\"26\" selection-start-column=\"9\" selection-end-line=\"26\" selection-end-column=\"12\" />\n              <folding />\n            </state>\n          </provider>\n        </entry>\n      </file>\n      <file leaf-file-name=\"ServletController.php\" pinned=\"false\" current-in-tab=\"false\">\n        <entry file=\"file://$PROJECT_DIR$/code/app/controllers/ServletController.php\">\n          <provider selected=\"true\" editor-type-id=\"text-editor\">\n            <state vertical-scroll-proportion=\"-10.0\" vertical-offset=\"2028\" max-vertical-offset=\"3560\">\n              <caret line=\"104\" column=\"83\" selection-start-line=\"104\" selection-start-column=\"83\" selection-end-line=\"104\" selection-end-column=\"83\" />\n              <folding>\n                <element signature=\"e#6#26#0#PHP\" expanded=\"true\" />\n                <element signature=\"n#__construct#0;n#ServletController#0;n#!!top\" expanded=\"true\" />\n                <element signature=\"n#readAmicar#0;n#ServletController#0;n#!!top\" expanded=\"true\" />\n                <element signature=\"n#updateProcess#0;n#ServletController#0;n#!!top\" expanded=\"true\" />\n                <element signature=\"n#clickAmicar2#0;n#ServletController#0;n#!!top\" expanded=\"true\" />\n              </folding>\n            </state>\n          </provider>\n        </entry>\n      </file>\n      <file leaf-file-name=\"ClienteController.php\" pinned=\"false\" current-in-tab=\"true\">\n        <entry file=\"file://$PROJECT_DIR$/code/app/controllers/ClienteController.php\">\n          <provider selected=\"true\" editor-type-id=\"text-editor\">\n            <state vertical-scroll-proportion=\"0.6996337\" vertical-offset=\"1290\" max-vertical-offset=\"3648\">\n              <caret line=\"88\" column=\"18\" selection-start-line=\"88\" selection-start-column=\"18\" selection-end-line=\"88\" selection-end-column=\"18\" />\n              <folding>\n                <element signature=\"e#7#27#0#PHP\" expanded=\"true\" />\n                <element signature=\"n#__construct#0;n#ClienteController#0;n#!!top\" expanded=\"true\" />\n                <element signature=\"n#update#0;n#ClienteController#0;n#!!top\" expanded=\"true\" />\n                <element signature=\"n#destroy#0;n#ClienteController#0;n#!!top\" expanded=\"true\" />\n              </folding>\n            </state>\n          </provider>\n        </entry>\n      </file>\n    </leaf>\n  </component>\n  <component name=\"FrameworkCommandLineHistory\">\n    <commandsHistory>\n      <command text=\"echo hola\" />\n    </commandsHistory>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"PREVIOUS_COMMIT_AUTHORS\">\n      <list>\n        <option value=\"mazebeat\" />\n      </list>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n    <option name=\"PUSH_TAGS\">\n      <GitPushTagMode />\n    </option>\n  </component>\n  <component name=\"HierarchyBrowserManager\">\n    <option name=\"IS_AUTOSCROLL_TO_SOURCE\" value=\"true\" />\n  </component>\n  <component name=\"IdeDocumentHistory\">\n    <option name=\"CHANGED_PATHS\">\n      <list>\n        <option value=\"$USER_HOME$/Google Drive/Intelidata/Gemini's/2015/578/ReporteWeb/sql/BKP_ReportesDespachos_20150220.sql\" />\n        <option value=\"$PROJECT_DIR$/code/app/config/packages/way/generators/config.php\" />\n        <option value=\"db-console:/c0db8c1c/9fd5ccc3-a176-4cb5-81e6-dd3e8732b3dd/\" />\n        <option value=\"$PROJECT_DIR$/code/app/config/debug/database.php\" />\n        <option value=\"$PROJECT_DIR$/code/app/models/Body.php\" />\n        <option value=\"$PROJECT_DIR$/code/app/models/Proceso.php\" />\n        <option value=\"$PROJECT_DIR$/code/app/config/mongolog.php\" />\n        <option value=\"$PROJECT_DIR$/code/app/utils/MongoFormatter.php\" />\n        <option value=\"$PROJECT_DIR$/code/app/config/services.php\" />\n        <option value=\"$PROJECT_DIR$/code/app/config/compile.php\" />\n        <option value=\"$PROJECT_DIR$/code/app/utils/Logger.php\" />\n        <option value=\"$PROJECT_DIR$/code/app/storage/logs/app.log\" />\n        <option value=\"$PROJECT_DIR$/code/app/utils/Message.php\" />\n        <option value=\"$PROJECT_DIR$/code/app/storage/logs/monolog.log\" />\n        <option value=\"$PROJECT_DIR$/code/app/storage/logs/monolog2.log\" />\n        <option value=\"$PROJECT_DIR$/code/app/start/local.php\" />\n        <option value=\"$PROJECT_DIR$/code/app/storage/logs/database.log\" />\n        <option value=\"$PROJECT_DIR$/code/app/storage/logs/request.log\" />\n        <option value=\"$PROJECT_DIR$/code/app/models/Ejecutivo.php\" />\n        <option value=\"$PROJECT_DIR$/code/app/views/landings/e1.blade.php\" />\n        <option value=\"$PROJECT_DIR$/code/app/controllers/EjecutivoController.php\" />\n        <option value=\"$PROJECT_DIR$/readme.md\" />\n        <option value=\"$PROJECT_DIR$/code/app/controllers/BaseController.php\" />\n        <option value=\"$PROJECT_DIR$/code/app/storage/logs/amicarCotizante.log\" />\n        <option value=\"$PROJECT_DIR$/code/app/config/api.php\" />\n        <option value=\"$PROJECT_DIR$/code/app/utils/MessageLog.php\" />\n        <option value=\"$PROJECT_DIR$/code/app/controllers/ApiController.php\" />\n        <option value=\"$PROJECT_DIR$/code/app/storage/logs/AmicarLanding.log\" />\n        <option value=\"$PROJECT_DIR$/code/app/storage/sessions/410489e96eb5f05201a92e20e8f4782ce880152f\" />\n        <option value=\"$PROJECT_DIR$/code/app/views/layouts/landing/ejecutivo/master.blade.php\" />\n        <option value=\"$PROJECT_DIR$/code/app/views/landings/thanks.php\" />\n        <option value=\"$PROJECT_DIR$/code/app/views/landings/form.blade.php\" />\n        <option value=\"$PROJECT_DIR$/code/app/models/Params.php\" />\n        <option value=\"$PROJECT_DIR$/code/app/views/landings/thanks.blade.php\" />\n        <option value=\"$PROJECT_DIR$/code/app/views/layouts/landing/cliente/master.blade.php\" />\n        <option value=\"$PROJECT_DIR$/code/app/views/landings/bye.blade.php\" />\n        <option value=\"$PROJECT_DIR$/code/app/utils/MCrypt.php\" />\n        <option value=\"$PROJECT_DIR$/code/app/models/observers/BaseObserver.php\" />\n        <option value=\"$PROJECT_DIR$/code/app/models/observers/UserObserver.php\" />\n        <option value=\"$PROJECT_DIR$/code/app/config/observers.php\" />\n        <option value=\"$PROJECT_DIR$/code/app/controllers/UserController.php\" />\n        <option value=\"$PROJECT_DIR$/code/app/start/global.php\" />\n        <option value=\"$PROJECT_DIR$/code/app/config/database.php\" />\n        <option value=\"$PROJECT_DIR$/code/app/views/landings/c1.blade.php\" />\n        <option value=\"$PROJECT_DIR$/code/app/models/Cliente.php\" />\n        <option value=\"E:/Amicar/App/descargaArchivoDiario-0.0.2.bat\" />\n        <option value=\"$PROJECT_DIR$/code/app/config/dev/database.php\" />\n        <option value=\"$PROJECT_DIR$/code/app/routes.php\" />\n        <option value=\"$PROJECT_DIR$/code/app/filters.php\" />\n        <option value=\"$PROJECT_DIR$/code/app/controllers/ServletController.php\" />\n        <option value=\"$PROJECT_DIR$/code/app/controllers/ClienteController.php\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"JsGulpfileManager\">\n    <detection-done>true</detection-done>\n  </component>\n  <component name=\"PhpServers\">\n    <servers>\n      <server host=\"localhost\" name=\"laravel\" port=\"8000\" />\n    </servers>\n  </component>\n  <component name=\"PhpWorkspaceProjectConfiguration\" backward_compatibility_performed=\"true\" interpreter_name=\"PHP 5.6\">\n    <include_path>\n      <path value=\"$PROJECT_DIR$/code/vendor/twbs/bootstrap\" />\n      <path value=\"$PROJECT_DIR$/code/vendor/jeremeamia/SuperClosure\" />\n      <path value=\"$PROJECT_DIR$/code/vendor/way/generators\" />\n      <path value=\"$PROJECT_DIR$/code/vendor/d11wtq/boris\" />\n      <path value=\"$PROJECT_DIR$/code/vendor/doctrine/common\" />\n      <path value=\"$PROJECT_DIR$/code/vendor/doctrine/dbal\" />\n      <path value=\"$PROJECT_DIR$/code/vendor/phpoffice/phpexcel\" />\n      <path value=\"$PROJECT_DIR$/code/vendor/doctrine/cache\" />\n      <path value=\"$PROJECT_DIR$/code/vendor/doctrine/lexer\" />\n      <path value=\"$PROJECT_DIR$/code/vendor/doctrine/inflector\" />\n      <path value=\"$PROJECT_DIR$/code/vendor/doctrine/collections\" />\n      <path value=\"$PROJECT_DIR$/code/vendor/barryvdh/laravel-debugbar\" />\n      <path value=\"$PROJECT_DIR$/code/vendor/composer\" />\n      <path value=\"$PROJECT_DIR$/code/vendor/tecnick.com/tcpdf\" />\n      <path value=\"$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer\" />\n      <path value=\"$PROJECT_DIR$/code/vendor/nikic/php-parser\" />\n      <path value=\"$PROJECT_DIR$/code/vendor/fitztrev/laravel-html-minify\" />\n      <path value=\"$PROJECT_DIR$/code/vendor/filp/whoops\" />\n      <path value=\"$PROJECT_DIR$/code/vendor/monolog/monolog\" />\n      <path value=\"$PROJECT_DIR$/code/vendor/symfony/security-core\" />\n      <path value=\"$PROJECT_DIR$/code/vendor/stack/builder\" />\n      <path value=\"$PROJECT_DIR$/code/vendor/symfony/filesystem\" />\n      <path value=\"$PROJECT_DIR$/code/vendor/symfony/process\" />\n      <path value=\"$PROJECT_DIR$/code/vendor/symfony/console\" />\n      <path value=\"$PROJECT_DIR$/code/vendor/symfony/event-dispatcher\" />\n      <path value=\"$PROJECT_DIR$/code/vendor/symfony/http-foundation\" />\n      <path value=\"$PROJECT_DIR$/code/vendor/symfony/css-selector\" />\n      <path value=\"$PROJECT_DIR$/code/vendor/symfony/dom-crawler\" />\n      <path value=\"$PROJECT_DIR$/code/vendor/symfony/http-kernel\" />\n      <path value=\"$PROJECT_DIR$/code/vendor/symfony/debug\" />\n      <path value=\"$PROJECT_DIR$/code/vendor/symfony/translation\" />\n      <path value=\"$PROJECT_DIR$/code/vendor/symfony/browser-kit\" />\n      <path value=\"$PROJECT_DIR$/code/vendor/symfony/var-dumper\" />\n      <path value=\"$PROJECT_DIR$/code/vendor/symfony/finder\" />\n      <path value=\"$PROJECT_DIR$/code/vendor/symfony/routing\" />\n      <path value=\"$PROJECT_DIR$/code/vendor/predis/predis\" />\n      <path value=\"$PROJECT_DIR$/code/vendor/barryvdh/laravel-vendor-cleanup\" />\n      <path value=\"$PROJECT_DIR$/code/vendor/phpseclib/phpseclib\" />\n      <path value=\"$PROJECT_DIR$/code/vendor/classpreloader/classpreloader\" />\n      <path value=\"$PROJECT_DIR$/code/vendor/maximebf/debugbar\" />\n      <path value=\"$PROJECT_DIR$/code/vendor/lucor/laravel-auth-file-driver\" />\n      <path value=\"$PROJECT_DIR$/code/vendor/laravel/framework\" />\n      <path value=\"$PROJECT_DIR$/code/vendor/nesbot/carbon\" />\n      <path value=\"$PROJECT_DIR$/code/vendor/psr/log\" />\n      <path value=\"$PROJECT_DIR$/code/vendor/patchwork/utf8\" />\n      <path value=\"$PROJECT_DIR$/code/vendor/ircmaxell/password-compat\" />\n      <path value=\"$PROJECT_DIR$/code/vendor/doctrine/annotations\" />\n    </include_path>\n  </component>\n  <component name=\"ProjectFrameBounds\">\n    <option name=\"x\" value=\"-8\" />\n    <option name=\"y\" value=\"-8\" />\n    <option name=\"width\" value=\"1382\" />\n    <option name=\"height\" value=\"744\" />\n  </component>\n  <component name=\"ProjectInspectionProfilesVisibleTreeState\">\n    <entry key=\"Project Default\">\n      <profile-state>\n        <expanded-state>\n          <State>\n            <id />\n          </State>\n          <State>\n            <id>General</id>\n          </State>\n          <State>\n            <id>XPath</id>\n          </State>\n        </expanded-state>\n        <selected-state>\n          <State>\n            <id>XmlHighlighting</id>\n          </State>\n        </selected-state>\n      </profile-state>\n    </entry>\n  </component>\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"false\">\n    <OptionsSetting value=\"true\" id=\"Add\" />\n    <OptionsSetting value=\"true\" id=\"Remove\" />\n    <OptionsSetting value=\"true\" id=\"Checkout\" />\n    <OptionsSetting value=\"true\" id=\"Update\" />\n    <OptionsSetting value=\"true\" id=\"Status\" />\n    <OptionsSetting value=\"true\" id=\"Edit\" />\n    <ConfirmationsSetting value=\"0\" id=\"Add\" />\n    <ConfirmationsSetting value=\"0\" id=\"Remove\" />\n  </component>\n  <component name=\"ProjectView\">\n    <navigator currentView=\"ProjectPane\" proportions=\"\" version=\"1\">\n      <flattenPackages />\n      <showMembers />\n      <showModules />\n      <showLibraryContents />\n      <hideEmptyPackages />\n      <abbreviatePackageNames />\n      <autoscrollToSource />\n      <autoscrollFromSource />\n      <sortByType />\n    </navigator>\n    <panes>\n      <pane id=\"ProjectPane\">\n        <subPane>\n          <PATH>\n            <PATH_ELEMENT>\n              <option name=\"myItemId\" value=\"Amicar2\" />\n              <option name=\"myItemType\" value=\"com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode\" />\n            </PATH_ELEMENT>\n          </PATH>\n          <PATH>\n            <PATH_ELEMENT>\n              <option name=\"myItemId\" value=\"Amicar2\" />\n              <option name=\"myItemType\" value=\"com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode\" />\n            </PATH_ELEMENT>\n            <PATH_ELEMENT>\n              <option name=\"myItemId\" value=\"Amicar2\" />\n              <option name=\"myItemType\" value=\"com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode\" />\n            </PATH_ELEMENT>\n          </PATH>\n          <PATH>\n            <PATH_ELEMENT>\n              <option name=\"myItemId\" value=\"Amicar2\" />\n              <option name=\"myItemType\" value=\"com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode\" />\n            </PATH_ELEMENT>\n            <PATH_ELEMENT>\n              <option name=\"myItemId\" value=\"Amicar2\" />\n              <option name=\"myItemType\" value=\"com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode\" />\n            </PATH_ELEMENT>\n            <PATH_ELEMENT>\n              <option name=\"myItemId\" value=\"code\" />\n              <option name=\"myItemType\" value=\"com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode\" />\n            </PATH_ELEMENT>\n          </PATH>\n          <PATH>\n            <PATH_ELEMENT>\n              <option name=\"myItemId\" value=\"Amicar2\" />\n              <option name=\"myItemType\" value=\"com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode\" />\n            </PATH_ELEMENT>\n            <PATH_ELEMENT>\n              <option name=\"myItemId\" value=\"Amicar2\" />\n              <option name=\"myItemType\" value=\"com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode\" />\n            </PATH_ELEMENT>\n            <PATH_ELEMENT>\n              <option name=\"myItemId\" value=\"code\" />\n              <option name=\"myItemType\" value=\"com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode\" />\n            </PATH_ELEMENT>\n            <PATH_ELEMENT>\n              <option name=\"myItemId\" value=\"bootstrap\" />\n              <option name=\"myItemType\" value=\"com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode\" />\n            </PATH_ELEMENT>\n          </PATH>\n          <PATH>\n            <PATH_ELEMENT>\n              <option name=\"myItemId\" value=\"Amicar2\" />\n              <option name=\"myItemType\" value=\"com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode\" />\n            </PATH_ELEMENT>\n            <PATH_ELEMENT>\n              <option name=\"myItemId\" value=\"Amicar2\" />\n              <option name=\"myItemType\" value=\"com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode\" />\n            </PATH_ELEMENT>\n            <PATH_ELEMENT>\n              <option name=\"myItemId\" value=\"code\" />\n              <option name=\"myItemType\" value=\"com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode\" />\n            </PATH_ELEMENT>\n            <PATH_ELEMENT>\n              <option name=\"myItemId\" value=\"app\" />\n              <option name=\"myItemType\" value=\"com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode\" />\n            </PATH_ELEMENT>\n          </PATH>\n          <PATH>\n            <PATH_ELEMENT>\n              <option name=\"myItemId\" value=\"Amicar2\" />\n              <option name=\"myItemType\" value=\"com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode\" />\n            </PATH_ELEMENT>\n            <PATH_ELEMENT>\n              <option name=\"myItemId\" value=\"Amicar2\" />\n              <option name=\"myItemType\" value=\"com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode\" />\n            </PATH_ELEMENT>\n            <PATH_ELEMENT>\n              <option name=\"myItemId\" value=\"code\" />\n              <option name=\"myItemType\" value=\"com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode\" />\n            </PATH_ELEMENT>\n            <PATH_ELEMENT>\n              <option name=\"myItemId\" value=\"app\" />\n              <option name=\"myItemType\" value=\"com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode\" />\n            </PATH_ELEMENT>\n            <PATH_ELEMENT>\n              <option name=\"myItemId\" value=\"controllers\" />\n              <option name=\"myItemType\" value=\"com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode\" />\n            </PATH_ELEMENT>\n          </PATH>\n        </subPane>\n      </pane>\n      <pane id=\"Scope\" />\n    </panes>\n  </component>\n  <component name=\"PropertiesComponent\">\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/code/app/views\" />\n    <property name=\"LayoutCode.rearrangeEntriesPHP\" value=\"true\" />\n    <property name=\"options.lastSelected\" value=\"preferences.pluginManager\" />\n    <property name=\"options.splitter.main.proportions\" value=\"0.3\" />\n    <property name=\"options.splitter.details.proportions\" value=\"0.2\" />\n    <property name=\"FullScreen\" value=\"false\" />\n    <property name=\"LayoutCode.rearrangeEntriesJavaScript 1.5\" value=\"false\" />\n    <property name=\"FileHistory.git4idea.history.GitHistoryProvider_flatWidth0\" value=\"132\" />\n    <property name=\"FileHistory.git4idea.history.GitHistoryProvider_flatOrder0\" value=\"0\" />\n    <property name=\"FileHistory.git4idea.history.GitHistoryProvider_flatWidth1\" value=\"161\" />\n    <property name=\"FileHistory.git4idea.history.GitHistoryProvider_flatOrder1\" value=\"1\" />\n    <property name=\"FileHistory.git4idea.history.GitHistoryProvider_flatWidth2\" value=\"162\" />\n    <property name=\"FileHistory.git4idea.history.GitHistoryProvider_flatOrder2\" value=\"2\" />\n    <property name=\"FileHistory.git4idea.history.GitHistoryProvider_flatWidth3\" value=\"837\" />\n    <property name=\"FileHistory.git4idea.history.GitHistoryProvider_flatOrder3\" value=\"3\" />\n    <property name=\"FileHistory.git4idea.history.GitHistoryProvider_treeWidth0\" value=\"155\" />\n    <property name=\"FileHistory.git4idea.history.GitHistoryProvider_treeOrder0\" value=\"0\" />\n    <property name=\"FileHistory.git4idea.history.GitHistoryProvider_treeWidth1\" value=\"153\" />\n    <property name=\"FileHistory.git4idea.history.GitHistoryProvider_treeOrder1\" value=\"1\" />\n    <property name=\"FileHistory.git4idea.history.GitHistoryProvider_treeWidth2\" value=\"155\" />\n    <property name=\"FileHistory.git4idea.history.GitHistoryProvider_treeOrder2\" value=\"2\" />\n    <property name=\"FileHistory.git4idea.history.GitHistoryProvider_treeWidth3\" value=\"829\" />\n    <property name=\"FileHistory.git4idea.history.GitHistoryProvider_treeOrder3\" value=\"3\" />\n    <property name=\"LayoutCode.rearrangeEntriesBlade\" value=\"false\" />\n    <property name=\"LayoutCode.rearrangeEntriesHTML\" value=\"false\" />\n    <property name=\"dynamic.classpath\" value=\"false\" />\n    <property name=\"recentsLimit\" value=\"5\" />\n    <property name=\"restartRequiresConfirmation\" value=\"true\" />\n    <property name=\"LayoutCode.rearrangeEntries\" value=\"false\" />\n    <property name=\"LayoutCode.rearrangeEntriesPlain text\" value=\"false\" />\n  </component>\n  <component name=\"RecentsManager\">\n    <key name=\"CopyFile.RECENT_KEYS\">\n      <recent name=\"E:\\Projects\\Php\\Amicar2\\code\\app\\controllers\" />\n      <recent name=\"E:\\Projects\\Php\\Amicar2\\code\\app\\views\\landings\" />\n      <recent name=\"E:\\Projects\\Php\\Amicar2\\code\\app\\views\\layouts\\landing\" />\n      <recent name=\"E:\\Projects\\Php\\Amicar2\\code\\public\\images\" />\n      <recent name=\"E:\\Projects\\Php\\Amicar2\\code\\app\\models\" />\n    </key>\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"E:\\Projects\\Php\\Amicar2\\code\\app\\views\\layouts\\email\\ejecutivo\" />\n      <recent name=\"E:\\Projects\\Php\\Amicar2\\code\\app\\views\\layouts\\landing\" />\n      <recent name=\"E:\\Projects\\Php\\Amicar2\\code\\app\\views\\layouts\" />\n    </key>\n  </component>\n  <component name=\"RunManager\" selected=\"PHP Web Application.Amicar2\">\n    <configuration default=\"true\" type=\"PHPUnitRunConfigurationType\" factoryName=\"PHPUnit\">\n      <TestRunner />\n      <method />\n    </configuration>\n    <configuration default=\"true\" type=\"BashConfigurationType\" factoryName=\"Bash\">\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\n      <option name=\"INTERPRETER_PATH\" value=\"\" />\n      <option name=\"WORKING_DIRECTORY\" value=\"\" />\n      <option name=\"PARENT_ENVS\" value=\"true\" />\n      <option name=\"SCRIPT_NAME\" value=\"\" />\n      <option name=\"PARAMETERS\" value=\"\" />\n      <module name=\"\" />\n      <envs />\n      <method />\n    </configuration>\n    <configuration default=\"true\" type=\"PhpWebAppRunConfigurationType\" factoryName=\"PHP Web Application\" server_name=\"test\">\n      <method />\n    </configuration>\n    <configuration default=\"true\" type=\"PhpRemoteDebugRunConfigurationType\" factoryName=\"PHP Remote Debug\">\n      <method />\n    </configuration>\n    <configuration default=\"true\" type=\"PhpLocalRunConfigurationType\" factoryName=\"PHP Console\">\n      <method />\n    </configuration>\n    <configuration default=\"true\" type=\"JavascriptDebugType\" factoryName=\"JavaScript Debug\">\n      <method />\n    </configuration>\n    <configuration default=\"true\" type=\"com.intellij.database.run.ConsoleRunConfigurationType\" factoryName=\"Query Language Console\">\n      <option name=\"VM_PARAMETERS\" value=\"\" />\n      <option name=\"USER_CFG_CLASS\" />\n      <option name=\"CONTEXT_PROVIDER\" />\n      <method />\n    </configuration>\n    <configuration default=\"true\" type=\"PhpBehatConfigurationType\" factoryName=\"Behat\">\n      <BehatRunner />\n      <method />\n    </configuration>\n    <configuration default=\"true\" type=\"NodeJSConfigurationType\" factoryName=\"Node.js\" working-dir=\"\">\n      <method />\n    </configuration>\n    <configuration default=\"true\" type=\"PhpUnitRemoteRunConfigurationType\" factoryName=\"PHPUnit on Server\">\n      <method />\n    </configuration>\n    <configuration default=\"true\" type=\"js.build_tools.gulp\" factoryName=\"Gulp.js\">\n      <node-options />\n      <gulpfile />\n      <tasks />\n      <arguments />\n      <pass-parent-envs>true</pass-parent-envs>\n      <envs />\n      <method />\n    </configuration>\n    <configuration default=\"false\" name=\"Amicar2\" type=\"PhpWebAppRunConfigurationType\" factoryName=\"PHP Web Application\" server_name=\"laravel\" start_url=\"/SolicitudCotizacionAmicar?cliente=c338cccdb1e3e40363a4daa0efd862b1&amp;cotizacion=7b951860af35e3067f703b5e237c25a6&amp;campana=3a22921565c606de3b7b75e5dd90d722\">\n      <RunnerSettings RunnerId=\"PhpRunner\" />\n      <RunnerSettings RunnerId=\"PhpWebAppDebugRunner\" />\n      <ConfigurationWrapper RunnerId=\"PhpRunner\" />\n      <ConfigurationWrapper RunnerId=\"PhpWebAppDebugRunner\" />\n      <method />\n    </configuration>\n    <list size=\"1\">\n      <item index=\"0\" class=\"java.lang.String\" itemvalue=\"PHP Web Application.Amicar2\" />\n    </list>\n  </component>\n  <component name=\"ShelveChangesManager\" show_recycled=\"false\" />\n  <component name=\"SvnConfiguration\">\n    <configuration>C:\\Users\\Maze\\AppData\\Roaming\\Subversion</configuration>\n    <supportedVersion>125</supportedVersion>\n  </component>\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"2e8b902c-d24b-4a2e-873f-db4dadfc22a0\" name=\"Default\" comment=\"\" />\n      <created>1421949402861</created>\n      <option name=\"number\" value=\"Default\" />\n      <updated>1421949402861</updated>\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"1.0.1\">\n      <created>1422498568464</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1422498568464</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"1.0.1\">\n      <created>1422505509981</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1422505509981</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"1.0.1\">\n      <created>1422505545073</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1422505545073</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"0.0.0\">\n      <created>1423012092003</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1423012092003</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"0.0.0\">\n      <created>1423012127226</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1423012127226</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"6\" />\n    <servers />\n  </component>\n  <component name=\"ToolWindowManager\">\n    <frame x=\"-8\" y=\"-8\" width=\"1382\" height=\"744\" extended-state=\"6\" />\n    <editor active=\"true\" />\n    <layout>\n      <window_info id=\"Changes\" active=\"false\" anchor=\"bottom\" auto_hide=\"false\" internal_type=\"DOCKED\" type=\"DOCKED\" visible=\"false\" weight=\"0.3213703\" sideWeight=\"0.5\" order=\"9\" side_tool=\"false\" content_ui=\"tabs\" />\n      <window_info id=\"Terminal\" active=\"false\" anchor=\"bottom\" auto_hide=\"false\" internal_type=\"DOCKED\" type=\"DOCKED\" visible=\"false\" weight=\"0.23817292\" sideWeight=\"0.74886537\" order=\"14\" side_tool=\"false\" content_ui=\"tabs\" />\n      <window_info id=\"TODO\" active=\"false\" anchor=\"bottom\" auto_hide=\"false\" internal_type=\"DOCKED\" type=\"DOCKED\" visible=\"false\" weight=\"0.33\" sideWeight=\"0.5\" order=\"8\" side_tool=\"false\" content_ui=\"tabs\" />\n      <window_info id=\"Database\" active=\"false\" anchor=\"right\" auto_hide=\"false\" internal_type=\"DOCKED\" type=\"DOCKED\" visible=\"false\" weight=\"0.18437026\" sideWeight=\"0.5\" order=\"3\" side_tool=\"true\" content_ui=\"tabs\" />\n      <window_info id=\"Structure\" active=\"false\" anchor=\"left\" auto_hide=\"false\" internal_type=\"DOCKED\" type=\"DOCKED\" visible=\"false\" weight=\"0.24962063\" sideWeight=\"0.5\" order=\"1\" side_tool=\"false\" content_ui=\"tabs\" />\n      <window_info id=\"Application Servers\" active=\"false\" anchor=\"bottom\" auto_hide=\"false\" internal_type=\"DOCKED\" type=\"DOCKED\" visible=\"false\" weight=\"0.33\" sideWeight=\"0.5\" order=\"13\" side_tool=\"false\" content_ui=\"tabs\" />\n      <window_info id=\"Symfony2\" active=\"false\" anchor=\"left\" auto_hide=\"false\" internal_type=\"DOCKED\" type=\"DOCKED\" visible=\"false\" weight=\"0.2003035\" sideWeight=\"0.5\" order=\"2\" side_tool=\"false\" content_ui=\"tabs\" />\n      <window_info id=\"Project\" active=\"false\" anchor=\"left\" auto_hide=\"false\" internal_type=\"DOCKED\" type=\"DOCKED\" visible=\"true\" weight=\"0.20801815\" sideWeight=\"0.49892932\" order=\"0\" side_tool=\"false\" content_ui=\"combo\" />\n      <window_info id=\"Favorites\" active=\"false\" anchor=\"left\" auto_hide=\"false\" internal_type=\"DOCKED\" type=\"DOCKED\" visible=\"false\" weight=\"0.22390318\" sideWeight=\"0.5010707\" order=\"3\" side_tool=\"true\" content_ui=\"tabs\" />\n      <window_info id=\"Event Log\" active=\"false\" anchor=\"bottom\" auto_hide=\"false\" internal_type=\"DOCKED\" type=\"DOCKED\" visible=\"false\" weight=\"0.31699347\" sideWeight=\"0.25113463\" order=\"11\" side_tool=\"true\" content_ui=\"tabs\" />\n      <window_info id=\"SvgViewer\" active=\"false\" anchor=\"right\" auto_hide=\"false\" internal_type=\"DOCKED\" type=\"DOCKED\" visible=\"false\" weight=\"0.32980332\" sideWeight=\"0.5\" order=\"4\" side_tool=\"false\" content_ui=\"tabs\" />\n      <window_info id=\"Version Control\" active=\"false\" anchor=\"bottom\" auto_hide=\"false\" internal_type=\"DOCKED\" type=\"DOCKED\" visible=\"false\" weight=\"0.32843137\" sideWeight=\"0.5\" order=\"12\" side_tool=\"false\" content_ui=\"tabs\" />\n      <window_info id=\"Database Console\" active=\"true\" anchor=\"bottom\" auto_hide=\"false\" internal_type=\"DOCKED\" type=\"DOCKED\" visible=\"true\" weight=\"0.5506536\" sideWeight=\"0.5\" order=\"7\" side_tool=\"false\" content_ui=\"tabs\" />\n      <window_info id=\"Cvs\" active=\"false\" anchor=\"bottom\" auto_hide=\"false\" internal_type=\"DOCKED\" type=\"DOCKED\" visible=\"false\" weight=\"0.25\" sideWeight=\"0.5\" order=\"5\" side_tool=\"false\" content_ui=\"tabs\" />\n      <window_info id=\"Message\" active=\"false\" anchor=\"bottom\" auto_hide=\"false\" internal_type=\"DOCKED\" type=\"DOCKED\" visible=\"false\" weight=\"0.33\" sideWeight=\"0.5\" order=\"1\" side_tool=\"false\" content_ui=\"tabs\" />\n      <window_info id=\"Find\" active=\"false\" anchor=\"bottom\" auto_hide=\"false\" internal_type=\"DOCKED\" type=\"DOCKED\" visible=\"false\" weight=\"0.35678393\" sideWeight=\"0.5\" order=\"2\" side_tool=\"false\" content_ui=\"tabs\" />\n      <window_info id=\"Ant Build\" active=\"false\" anchor=\"right\" auto_hide=\"false\" internal_type=\"DOCKED\" type=\"DOCKED\" visible=\"false\" weight=\"0.25\" sideWeight=\"0.5\" order=\"1\" side_tool=\"false\" content_ui=\"tabs\" />\n      <window_info id=\"Debug\" active=\"false\" anchor=\"bottom\" auto_hide=\"false\" internal_type=\"DOCKED\" type=\"DOCKED\" visible=\"false\" weight=\"0.31810766\" sideWeight=\"0.5\" order=\"4\" side_tool=\"false\" content_ui=\"tabs\" />\n      <window_info id=\"Messages\" active=\"false\" anchor=\"bottom\" auto_hide=\"false\" internal_type=\"DOCKED\" type=\"DOCKED\" visible=\"false\" weight=\"0.33\" sideWeight=\"0.5\" order=\"10\" side_tool=\"false\" content_ui=\"tabs\" />\n      <window_info id=\"Commander\" active=\"false\" anchor=\"right\" auto_hide=\"false\" internal_type=\"SLIDING\" type=\"SLIDING\" visible=\"false\" weight=\"0.4\" sideWeight=\"0.5\" order=\"0\" side_tool=\"false\" content_ui=\"tabs\" />\n      <window_info id=\"Run\" active=\"false\" anchor=\"bottom\" auto_hide=\"false\" internal_type=\"DOCKED\" type=\"DOCKED\" visible=\"false\" weight=\"0.33\" sideWeight=\"0.5\" order=\"3\" side_tool=\"false\" content_ui=\"tabs\" />\n      <window_info id=\"Inspection\" active=\"false\" anchor=\"bottom\" auto_hide=\"false\" internal_type=\"DOCKED\" type=\"DOCKED\" visible=\"false\" weight=\"0.4\" sideWeight=\"0.5\" order=\"6\" side_tool=\"false\" content_ui=\"tabs\" />\n      <window_info id=\"Hierarchy\" active=\"false\" anchor=\"right\" auto_hide=\"false\" internal_type=\"DOCKED\" type=\"DOCKED\" visible=\"false\" weight=\"0.24962178\" sideWeight=\"0.5\" order=\"2\" side_tool=\"false\" content_ui=\"combo\" />\n      <window_info id=\"Command Line Tools Console\" active=\"false\" anchor=\"bottom\" auto_hide=\"false\" internal_type=\"DOCKED\" type=\"DOCKED\" visible=\"false\" weight=\"0.32843137\" sideWeight=\"0.5\" order=\"0\" side_tool=\"false\" content_ui=\"tabs\" />\n    </layout>\n  </component>\n  <component name=\"Vcs.Log.UiProperties\">\n    <option name=\"RECENTLY_FILTERED_USER_GROUPS\">\n      <collection />\n    </option>\n    <option name=\"RECENTLY_FILTERED_BRANCH_GROUPS\">\n      <collection />\n    </option>\n  </component>\n  <component name=\"VcsContentAnnotationSettings\">\n    <option name=\"myLimit\" value=\"2678400000\" />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <option name=\"myTodoPanelSettings\">\n      <TodoPanelSettings />\n    </option>\n    <MESSAGE value=\"1.0.1\" />\n    <MESSAGE value=\"0.0.0\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"0.0.0\" />\n    <option name=\"REFORMAT_BEFORE_PROJECT_COMMIT\" value=\"true\" />\n  </component>\n  <component name=\"XDebuggerManager\">\n    <breakpoint-manager>\n      <option name=\"time\" value=\"50\" />\n    </breakpoint-manager>\n    <watches-manager />\n  </component>\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\n    <PATH>\n      <PATH_ELEMENT>\n        <option name=\"myItemId\" value=\"tracking_correos\" />\n        <option name=\"myItemType\" value=\"com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode\" />\n      </PATH_ELEMENT>\n      <PATH_ELEMENT>\n        <option name=\"myItemId\" value=\"tracking_correos\" />\n        <option name=\"myItemType\" value=\"com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode\" />\n      </PATH_ELEMENT>\n    </PATH>\n  </component>\n  <component name=\"editorHistoryManager\">\n    <entry file=\"file://$PROJECT_DIR$/code/app/routes.php\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"0.0\" vertical-offset=\"352\" max-vertical-offset=\"1254\">\n          <caret line=\"16\" column=\"21\" selection-start-line=\"16\" selection-start-column=\"6\" selection-end-line=\"16\" selection-end-column=\"6\" />\n          <folding>\n            <element signature=\"e#7#44#0#PHP\" expanded=\"true\" />\n            <element signature=\"e#816#1093#1#PHP\" expanded=\"true\" />\n            <element signature=\"e#852#908#1#PHP\" expanded=\"true\" />\n            <element signature=\"e#930#983#1#PHP\" expanded=\"true\" />\n            <element signature=\"e#1140#1267#1#PHP\" expanded=\"true\" />\n          </folding>\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/code/app/utils/xlsxwriter.class.php\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"0.0\" vertical-offset=\"0\" max-vertical-offset=\"3038\">\n          <caret line=\"0\" column=\"0\" selection-start-line=\"0\" selection-start-column=\"0\" selection-end-line=\"0\" selection-end-column=\"5\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/code/app/views/index.blade.php\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"-0.0\" vertical-offset=\"0\" max-vertical-offset=\"521\">\n          <caret line=\"0\" column=\"0\" selection-start-line=\"0\" selection-start-column=\"0\" selection-end-line=\"0\" selection-end-column=\"0\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/code/bootstrap/paths.php\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"-0.0\" vertical-offset=\"0\" max-vertical-offset=\"1709\">\n          <caret line=\"0\" column=\"0\" selection-start-line=\"0\" selection-start-column=\"0\" selection-end-line=\"0\" selection-end-column=\"0\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/code/bootstrap/autoload.php\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"-0.0\" vertical-offset=\"0\" max-vertical-offset=\"2127\">\n          <caret line=\"0\" column=\"0\" selection-start-line=\"0\" selection-start-column=\"0\" selection-end-line=\"0\" selection-end-column=\"0\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/code/app/config/compile.php\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"0.68111455\" vertical-offset=\"0\" max-vertical-offset=\"741\">\n          <caret line=\"10\" column=\"2\" selection-start-line=\"10\" selection-start-column=\"2\" selection-end-line=\"10\" selection-end-column=\"2\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/code/app/config/services.php\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"0.81733745\" vertical-offset=\"264\" max-vertical-offset=\"873\">\n          <caret line=\"24\" column=\"5\" selection-start-line=\"24\" selection-start-column=\"5\" selection-end-line=\"24\" selection-end-column=\"5\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/code/bootstrap/start.php\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"-2.9662921\" vertical-offset=\"1056\" max-vertical-offset=\"1808\">\n          <caret line=\"0\" column=\"0\" selection-start-line=\"0\" selection-start-column=\"0\" selection-end-line=\"0\" selection-end-column=\"0\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/code/app/start/local.php\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"0.528\" vertical-offset=\"0\" max-vertical-offset=\"683\">\n          <caret line=\"9\" column=\"3\" selection-start-line=\"9\" selection-start-column=\"3\" selection-end-line=\"9\" selection-end-column=\"3\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/code/app/start/artisan.php\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"-0.64533335\" vertical-offset=\"286\" max-vertical-offset=\"661\">\n          <caret line=\"2\" column=\"2\" selection-start-line=\"2\" selection-start-column=\"2\" selection-end-line=\"2\" selection-end-column=\"2\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/code/app/storage/logs/.gitignore\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"-0.88\" vertical-offset=\"0\" max-vertical-offset=\"311\">\n          <caret line=\"1\" column=\"10\" selection-start-line=\"1\" selection-start-column=\"10\" selection-end-line=\"1\" selection-end-column=\"11\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/readme.md\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"0.0\" vertical-offset=\"0\" max-vertical-offset=\"555\">\n          <caret line=\"0\" column=\"20\" selection-start-line=\"0\" selection-start-column=\"20\" selection-end-line=\"0\" selection-end-column=\"20\" />\n        </state>\n      </provider>\n      <provider editor-type-id=\"MarkdownPreviewEditor\">\n        <state />\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/code/app/controllers/BaseController.php\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"0.27549195\" vertical-offset=\"44\" max-vertical-offset=\"1065\">\n          <caret line=\"9\" column=\"30\" selection-start-line=\"9\" selection-start-column=\"30\" selection-end-line=\"9\" selection-end-column=\"30\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/code/app/views/landings/e1.blade.php\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"0.22201835\" vertical-offset=\"825\" max-vertical-offset=\"1689\">\n          <caret line=\"43\" column=\"53\" selection-start-line=\"43\" selection-start-column=\"53\" selection-end-line=\"43\" selection-end-column=\"53\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/code/app/models/Body.php\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"0.0\" vertical-offset=\"110\" max-vertical-offset=\"1020\">\n          <caret line=\"5\" column=\"35\" selection-start-line=\"5\" selection-start-column=\"35\" selection-end-line=\"5\" selection-end-column=\"35\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/code/app/views/landings/e2.blade.php\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"-0.0\" vertical-offset=\"0\" max-vertical-offset=\"1175\">\n          <caret line=\"0\" column=\"0\" selection-start-line=\"0\" selection-start-column=\"0\" selection-end-line=\"0\" selection-end-column=\"0\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/code/app/config/testing/cache.php\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"0.0\" vertical-offset=\"0\" max-vertical-offset=\"773\">\n          <caret line=\"0\" column=\"0\" selection-start-line=\"0\" selection-start-column=\"0\" selection-end-line=\"0\" selection-end-column=\"0\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/code/vendor/monolog/monolog/src/Monolog/Logger.php\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"4.5531135\" vertical-offset=\"264\" max-vertical-offset=\"10028\">\n          <caret line=\"135\" column=\"20\" selection-start-line=\"135\" selection-start-column=\"20\" selection-end-line=\"135\" selection-end-column=\"31\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/code/app/utils/SiteHelpers.php\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"-0.35420394\" vertical-offset=\"198\" max-vertical-offset=\"1241\">\n          <caret line=\"0\" column=\"0\" selection-start-line=\"0\" selection-start-column=\"0\" selection-end-line=\"0\" selection-end-column=\"0\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/code/app/utils/MessageLog.php\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"0.039355993\" vertical-offset=\"726\" max-vertical-offset=\"2957\">\n          <caret line=\"34\" column=\"28\" selection-start-line=\"34\" selection-start-column=\"5\" selection-end-line=\"34\" selection-end-column=\"5\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/code/app/models/Ejecutivo.php\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"-20.807692\" vertical-offset=\"53\" max-vertical-offset=\"1307\">\n          <caret line=\"27\" column=\"0\" selection-start-line=\"27\" selection-start-column=\"0\" selection-end-line=\"28\" selection-end-column=\"0\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/code/app/config/mail.php\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"0.0\" vertical-offset=\"0\" max-vertical-offset=\"3115\">\n          <caret line=\"0\" column=\"0\" selection-start-line=\"0\" selection-start-column=\"0\" selection-end-line=\"0\" selection-end-column=\"0\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/code/app/storage/logs/database.log\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"0.03846154\" vertical-offset=\"0\" max-vertical-offset=\"572\">\n          <caret line=\"1\" column=\"139\" selection-start-line=\"1\" selection-start-column=\"0\" selection-end-line=\"1\" selection-end-column=\"0\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/code/app/views/layouts/landing/ejecutivo/master.blade.php\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"0.07326008\" vertical-offset=\"334\" max-vertical-offset=\"1404\">\n          <caret line=\"17\" column=\"47\" selection-start-line=\"0\" selection-start-column=\"0\" selection-end-line=\"40\" selection-end-column=\"0\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/code/public/images/icon_cel.png\">\n      <provider selected=\"true\" editor-type-id=\"images\">\n        <state />\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/code/public/images/icon_mano.png\">\n      <provider selected=\"true\" editor-type-id=\"images\">\n        <state />\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/code/public/images/icon_facebook.png\">\n      <provider selected=\"true\" editor-type-id=\"images\">\n        <state />\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/code/app/views/landings/form.blade.php\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"0.0\" vertical-offset=\"0\" max-vertical-offset=\"1250\">\n          <caret line=\"0\" column=\"0\" selection-start-line=\"0\" selection-start-column=\"0\" selection-end-line=\"0\" selection-end-column=\"0\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/code/public/robots.txt\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"0.0\" vertical-offset=\"0\" max-vertical-offset=\"607\">\n          <caret line=\"0\" column=\"0\" selection-start-line=\"0\" selection-start-column=\"0\" selection-end-line=\"0\" selection-end-column=\"0\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/code/app/views/landings/thanks.blade.php\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"1.7728938\" vertical-offset=\"154\" max-vertical-offset=\"1822\">\n          <caret line=\"51\" column=\"70\" selection-start-line=\"51\" selection-start-column=\"0\" selection-end-line=\"51\" selection-end-column=\"0\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/code/app/models/Params.php\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"1.275492\" vertical-offset=\"321\" max-vertical-offset=\"3331\">\n          <caret line=\"47\" column=\"0\" selection-start-line=\"47\" selection-start-column=\"0\" selection-end-line=\"47\" selection-end-column=\"0\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/code/app/views/layouts/landing/cliente/master.blade.php\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"0.0\" vertical-offset=\"1320\" max-vertical-offset=\"2332\">\n          <caret line=\"60\" column=\"38\" selection-start-line=\"60\" selection-start-column=\"38\" selection-end-line=\"60\" selection-end-column=\"38\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/code/app/views/landings/bye.blade.php\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"0.5277281\" vertical-offset=\"717\" max-vertical-offset=\"1835\">\n          <caret line=\"46\" column=\"23\" selection-start-line=\"46\" selection-start-column=\"19\" selection-end-line=\"46\" selection-end-column=\"19\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/code/app/utils/MCrypt.php\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"-0.39355993\" vertical-offset=\"594\" max-vertical-offset=\"2121\">\n          <caret line=\"17\" column=\"34\" selection-start-line=\"17\" selection-start-column=\"20\" selection-end-line=\"17\" selection-end-column=\"20\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://C:/apps/Amicar/config/cotizanteAmicar.properties\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"0.0\" vertical-offset=\"0\" max-vertical-offset=\"915\">\n          <caret line=\"0\" column=\"0\" selection-start-line=\"0\" selection-start-column=\"0\" selection-end-line=\"0\" selection-end-column=\"0\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/code/app/config/observers.php\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"0.10653753\" vertical-offset=\"0\" max-vertical-offset=\"435\">\n          <caret line=\"2\" column=\"52\" selection-start-line=\"2\" selection-start-column=\"43\" selection-end-line=\"2\" selection-end-column=\"52\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/code/app/start/global.php\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"1.7360774\" vertical-offset=\"801\" max-vertical-offset=\"2019\">\n          <caret line=\"97\" column=\"0\" selection-start-line=\"97\" selection-start-column=\"0\" selection-end-line=\"97\" selection-end-column=\"0\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://E:/Amicar/App/descargaArchivoDiario-0.0.2.bat\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"0.0\" vertical-offset=\"2266\" max-vertical-offset=\"4364\">\n          <caret line=\"103\" column=\"36\" selection-start-line=\"103\" selection-start-column=\"36\" selection-end-line=\"103\" selection-end-column=\"36\" />\n          <folding />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/code/app/config/database.php\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"0.0\" vertical-offset=\"594\" max-vertical-offset=\"2706\">\n          <caret line=\"27\" column=\"29\" selection-start-line=\"27\" selection-start-column=\"0\" selection-end-line=\"27\" selection-end-column=\"29\" />\n          <folding />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/code/app/views/landings/c1.blade.php\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"0.0\" vertical-offset=\"1232\" max-vertical-offset=\"2552\">\n          <caret line=\"56\" column=\"8\" selection-start-line=\"56\" selection-start-column=\"8\" selection-end-line=\"56\" selection-end-column=\"8\" />\n          <folding />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/code/app/controllers/EjecutivoController.php\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"0.0\" vertical-offset=\"1782\" max-vertical-offset=\"2376\">\n          <caret line=\"115\" column=\"47\" selection-start-line=\"115\" selection-start-column=\"37\" selection-end-line=\"115\" selection-end-column=\"47\" />\n          <folding>\n            <element signature=\"n#show#0;n#EjecutivoController#0;n#!!top\" expanded=\"false\" />\n          </folding>\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/code/app/config/dev/database.php\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"0.15742397\" vertical-offset=\"0\" max-vertical-offset=\"1505\">\n          <caret line=\"4\" column=\"28\" selection-start-line=\"4\" selection-start-column=\"28\" selection-end-line=\"4\" selection-end-column=\"28\" />\n          <folding />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/code/app/models/Cliente.php\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"0.0\" vertical-offset=\"682\" max-vertical-offset=\"1232\">\n          <caret line=\"31\" column=\"36\" selection-start-line=\"31\" selection-start-column=\"36\" selection-end-line=\"31\" selection-end-column=\"36\" />\n          <folding>\n            <element signature=\"n#scopeDesiscritos#0;n#Cliente#0;n#!!top\" expanded=\"true\" />\n            <element signature=\"n#scopeInscritos#0;n#Cliente#0;n#!!top\" expanded=\"true\" />\n            <element signature=\"n#isDesinscrito#0;n#Cliente#0;n#!!top\" expanded=\"true\" />\n          </folding>\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/code/app/config/debug/database.php\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"0.15742397\" vertical-offset=\"0\" max-vertical-offset=\"1131\">\n          <caret line=\"4\" column=\"0\" selection-start-line=\"4\" selection-start-column=\"0\" selection-end-line=\"4\" selection-end-column=\"0\" />\n          <folding />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/code/app/controllers/ApiController.php\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"-0.78711987\" vertical-offset=\"594\" max-vertical-offset=\"2869\">\n          <caret line=\"8\" column=\"42\" selection-start-line=\"8\" selection-start-column=\"28\" selection-end-line=\"8\" selection-end-column=\"42\" />\n          <folding>\n            <element signature=\"n#__construct#0;n#ApiController#0;n#!!top\" expanded=\"true\" />\n          </folding>\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/code/app/config/api.php\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"-11.846154\" vertical-offset=\"132\" max-vertical-offset=\"1197\">\n          <caret line=\"26\" column=\"12\" selection-start-line=\"26\" selection-start-column=\"9\" selection-end-line=\"26\" selection-end-column=\"12\" />\n          <folding />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/code/app/config/session.php\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"0.0\" vertical-offset=\"0\" max-vertical-offset=\"3423\">\n          <caret line=\"0\" column=\"0\" selection-start-line=\"0\" selection-start-column=\"0\" selection-end-line=\"0\" selection-end-column=\"0\" />\n          <folding />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/code/app/filters.php\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"-13.038462\" vertical-offset=\"937\" max-vertical-offset=\"2605\">\n          <caret line=\"67\" column=\"5\" selection-start-line=\"67\" selection-start-column=\"5\" selection-end-line=\"67\" selection-end-column=\"5\" />\n          <folding>\n            <element signature=\"e#451#641#2#PHP\" expanded=\"true\" />\n            <element signature=\"e#656#904#2#PHP\" expanded=\"true\" />\n            <element signature=\"e#1352#1567#1#PHP\" expanded=\"true\" />\n            <element signature=\"e#1600#1648#1#PHP\" expanded=\"true\" />\n            <element signature=\"e#1680#1722#1#PHP\" expanded=\"true\" />\n            <element signature=\"e#1749#1853#1#PHP\" expanded=\"true\" />\n            <element signature=\"e#2428#2496#1#PHP\" expanded=\"true\" />\n            <element signature=\"e#2947#3120#1#PHP\" expanded=\"true\" />\n          </folding>\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/code/app/routes.php\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"-13.884615\" vertical-offset=\"695\" max-vertical-offset=\"1681\">\n          <caret line=\"48\" column=\"39\" selection-start-line=\"48\" selection-start-column=\"32\" selection-end-line=\"48\" selection-end-column=\"39\" />\n          <folding>\n            <element signature=\"e#7#44#0#PHP\" expanded=\"true\" />\n            <element signature=\"e#816#1093#1#PHP\" expanded=\"true\" />\n            <element signature=\"e#852#908#1#PHP\" expanded=\"true\" />\n            <element signature=\"e#930#983#1#PHP\" expanded=\"true\" />\n            <element signature=\"e#1140#1267#1#PHP\" expanded=\"true\" />\n          </folding>\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/code/app/controllers/ServletController.php\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"-10.0\" vertical-offset=\"2028\" max-vertical-offset=\"3560\">\n          <caret line=\"104\" column=\"83\" selection-start-line=\"104\" selection-start-column=\"83\" selection-end-line=\"104\" selection-end-column=\"83\" />\n          <folding>\n            <element signature=\"e#6#26#0#PHP\" expanded=\"true\" />\n            <element signature=\"n#__construct#0;n#ServletController#0;n#!!top\" expanded=\"true\" />\n            <element signature=\"n#readAmicar#0;n#ServletController#0;n#!!top\" expanded=\"true\" />\n            <element signature=\"n#updateProcess#0;n#ServletController#0;n#!!top\" expanded=\"true\" />\n            <element signature=\"n#clickAmicar2#0;n#ServletController#0;n#!!top\" expanded=\"true\" />\n          </folding>\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/code/app/controllers/ClienteController.php\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state vertical-scroll-proportion=\"0.6996337\" vertical-offset=\"1290\" max-vertical-offset=\"3648\">\n          <caret line=\"88\" column=\"18\" selection-start-line=\"88\" selection-start-column=\"18\" selection-end-line=\"88\" selection-end-column=\"18\" />\n          <folding>\n            <element signature=\"e#7#27#0#PHP\" expanded=\"true\" />\n            <element signature=\"n#__construct#0;n#ClienteController#0;n#!!top\" expanded=\"true\" />\n            <element signature=\"n#update#0;n#ClienteController#0;n#!!top\" expanded=\"true\" />\n            <element signature=\"n#destroy#0;n#ClienteController#0;n#!!top\" expanded=\"true\" />\n          </folding>\n        </state>\n      </provider>\n    </entry>\n  </component>\n</project>
+===================================================================
+--- .idea/workspace.xml	(date 1428354577000)
++++ .idea/workspace.xml	(revision )
+@@ -2,20 +2,18 @@
+ <project version="4">
+   <component name="ChangeListManager">
+     <list default="true" readonly="true" id="2e8b902c-d24b-4a2e-873f-db4dadfc22a0" name="Default" comment="0.0.0">
+-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/app/config/observers.php" />
+-      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\public\images\logo_header.png" afterPath="" />
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/app/models/Cliente.php" afterPath="$PROJECT_DIR$/code/app/models/Cliente.php" />
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/app/controllers/ClienteController.php" afterPath="$PROJECT_DIR$/code/app/controllers/ClienteController.php" />
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/app/utils/MCrypt.php" afterPath="$PROJECT_DIR$/code/app/utils/MCrypt.php" />
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/app/controllers/ServletController.php" afterPath="$PROJECT_DIR$/code/app/controllers/ServletController.php" />
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/app/views/landings/bye.blade.php" afterPath="$PROJECT_DIR$/code/app/views/landings/bye.blade.php" />
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/app/views/landings/c1.blade.php" afterPath="$PROJECT_DIR$/code/app/views/landings/c1.blade.php" />
++      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/app/config/config.php" />
++      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
++      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/app/utils/Functions.php" afterPath="$PROJECT_DIR$/code/app/utils/Functions.php" />
++      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/app/config/api.php" afterPath="$PROJECT_DIR$/code/app/config/api.php" />
++      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/app/config/app.php" afterPath="$PROJECT_DIR$/code/app/config/app.php" />
++      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
++      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/app/config/database.php" afterPath="$PROJECT_DIR$/code/app/config/database.php" />
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/app/config/dev/database.php" afterPath="$PROJECT_DIR$/code/app/config/dev/database.php" />
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/app/filters.php" afterPath="$PROJECT_DIR$/code/app/filters.php" />
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/app/views/layouts/landing/cliente/master.blade.php" afterPath="$PROJECT_DIR$/code/app/views/layouts/landing/cliente/master.blade.php" />
++      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/app/start/global.php" afterPath="$PROJECT_DIR$/code/app/start/global.php" />
++      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/app/start/local.php" afterPath="$PROJECT_DIR$/code/app/start/local.php" />
+       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/app/routes.php" afterPath="$PROJECT_DIR$/code/app/routes.php" />
++      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/bootstrap/start.php" afterPath="$PROJECT_DIR$/code/bootstrap/start.php" />
+       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+     </list>
+     <ignored path="tracking_correos.iws" />
+@@ -84,92 +82,53 @@
+   </component>
+   <component name="FileEditorManager">
+     <leaf>
+-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+-        <entry file="file://$PROJECT_DIR$/code/app/routes.php">
++      <file leaf-file-name="Functions.php" pinned="false" current-in-tab="true">
++        <entry file="file://$PROJECT_DIR$/code/app/utils/Functions.php">
+           <provider selected="true" editor-type-id="text-editor">
+-            <state vertical-scroll-proportion="-13.884615" vertical-offset="695" max-vertical-offset="1681">
+-              <caret line="48" column="39" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="39" />
++            <state vertical-scroll-proportion="6.120482" vertical-offset="1840" max-vertical-offset="4236">
++              <caret line="242" column="35" selection-start-line="242" selection-start-column="35" selection-end-line="242" selection-end-column="35" />
+               <folding>
+-                <element signature="e#7#44#0#PHP" expanded="true" />
+-                <element signature="e#816#1093#1#PHP" expanded="true" />
+-                <element signature="e#852#908#1#PHP" expanded="true" />
+-                <element signature="e#930#983#1#PHP" expanded="true" />
+-                <element signature="e#1140#1267#1#PHP" expanded="true" />
++                <element signature="e#97#209#0#PHP" expanded="true" />
++                <element signature="e#212#356#0#PHP" expanded="true" />
++                <element signature="e#359#749#0#PHP" expanded="true" />
++                <element signature="e#752#1419#0#PHP" expanded="true" />
++                <element signature="e#1422#1868#0#PHP" expanded="true" />
++                <element signature="e#1871#1984#0#PHP" expanded="true" />
++                <element signature="e#1987#2136#0#PHP" expanded="true" />
++                <element signature="e#2139#2240#0#PHP" expanded="true" />
++                <element signature="e#2243#2515#0#PHP" expanded="true" />
++                <element signature="e#2518#2784#0#PHP" expanded="true" />
++                <element signature="e#2787#3827#0#PHP" expanded="true" />
++                <element signature="e#3830#4754#0#PHP" expanded="true" />
++                <element signature="e#4757#5156#0#PHP" expanded="true" />
++                <element signature="e#5159#5912#0#PHP" expanded="true" />
+               </folding>
+             </state>
+           </provider>
+         </entry>
+       </file>
+-      <file leaf-file-name="session.php" pinned="false" current-in-tab="false">
+-        <entry file="file://$PROJECT_DIR$/code/app/config/session.php">
++      <file leaf-file-name="artisan.php" pinned="false" current-in-tab="false">
++        <entry file="file://$PROJECT_DIR$/code/app/start/artisan.php">
+           <provider selected="true" editor-type-id="text-editor">
+-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="3397">
+-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
++            <state vertical-scroll-proportion="-1.3913044" vertical-offset="0" max-vertical-offset="626">
++              <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
+               <folding />
+             </state>
+           </provider>
+         </entry>
+       </file>
+-      <file leaf-file-name="filters.php" pinned="false" current-in-tab="false">
+-        <entry file="file://$PROJECT_DIR$/code/app/filters.php">
++      <file leaf-file-name="config.php" pinned="false" current-in-tab="false">
++        <entry file="file://$PROJECT_DIR$/code/app/config/config.php">
+           <provider selected="true" editor-type-id="text-editor">
+-            <state vertical-scroll-proportion="-13.038462" vertical-offset="937" max-vertical-offset="2605">
+-              <caret line="67" column="5" selection-start-line="67" selection-start-column="5" selection-end-line="67" selection-end-column="5" />
++            <state vertical-scroll-proportion="-0.6956522" vertical-offset="0" max-vertical-offset="604">
++              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+               <folding>
+-                <element signature="e#451#641#2#PHP" expanded="true" />
+-                <element signature="e#656#904#2#PHP" expanded="true" />
+-                <element signature="e#1352#1567#1#PHP" expanded="true" />
+-                <element signature="e#1600#1648#1#PHP" expanded="true" />
+-                <element signature="e#1680#1722#1#PHP" expanded="true" />
+-                <element signature="e#1749#1853#1#PHP" expanded="true" />
+-                <element signature="e#2428#2496#1#PHP" expanded="true" />
+-                <element signature="e#2947#3120#1#PHP" expanded="true" />
++                <element signature="e#7#209#0#PHP" expanded="true" />
+               </folding>
+             </state>
+           </provider>
+         </entry>
+       </file>
+-      <file leaf-file-name="api.php" pinned="false" current-in-tab="false">
+-        <entry file="file://$PROJECT_DIR$/code/app/config/api.php">
+-          <provider selected="true" editor-type-id="text-editor">
+-            <state vertical-scroll-proportion="-11.846154" vertical-offset="132" max-vertical-offset="1197">
+-              <caret line="26" column="12" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="12" />
+-              <folding />
+-            </state>
+-          </provider>
+-        </entry>
+-      </file>
+-      <file leaf-file-name="ServletController.php" pinned="false" current-in-tab="false">
+-        <entry file="file://$PROJECT_DIR$/code/app/controllers/ServletController.php">
+-          <provider selected="true" editor-type-id="text-editor">
+-            <state vertical-scroll-proportion="-10.0" vertical-offset="2028" max-vertical-offset="3560">
+-              <caret line="104" column="83" selection-start-line="104" selection-start-column="83" selection-end-line="104" selection-end-column="83" />
+-              <folding>
+-                <element signature="e#6#26#0#PHP" expanded="true" />
+-                <element signature="n#__construct#0;n#ServletController#0;n#!!top" expanded="true" />
+-                <element signature="n#readAmicar#0;n#ServletController#0;n#!!top" expanded="true" />
+-                <element signature="n#updateProcess#0;n#ServletController#0;n#!!top" expanded="true" />
+-                <element signature="n#clickAmicar2#0;n#ServletController#0;n#!!top" expanded="true" />
+-              </folding>
+-            </state>
+-          </provider>
+-        </entry>
+-      </file>
+-      <file leaf-file-name="ClienteController.php" pinned="false" current-in-tab="true">
+-        <entry file="file://$PROJECT_DIR$/code/app/controllers/ClienteController.php">
+-          <provider selected="true" editor-type-id="text-editor">
+-            <state vertical-scroll-proportion="0.6996337" vertical-offset="1290" max-vertical-offset="3648">
+-              <caret line="88" column="18" selection-start-line="88" selection-start-column="18" selection-end-line="88" selection-end-column="18" />
+-              <folding>
+-                <element signature="e#7#27#0#PHP" expanded="true" />
+-                <element signature="n#__construct#0;n#ClienteController#0;n#!!top" expanded="true" />
+-                <element signature="n#update#0;n#ClienteController#0;n#!!top" expanded="true" />
+-                <element signature="n#destroy#0;n#ClienteController#0;n#!!top" expanded="true" />
+-              </folding>
+-            </state>
+-          </provider>
+-        </entry>
+-      </file>
+     </leaf>
+   </component>
+   <component name="FrameworkCommandLineHistory">
+@@ -194,10 +153,6 @@
+   <component name="IdeDocumentHistory">
+     <option name="CHANGED_PATHS">
+       <list>
+-        <option value="$USER_HOME$/Google Drive/Intelidata/Gemini's/2015/578/ReporteWeb/sql/BKP_ReportesDespachos_20150220.sql" />
+-        <option value="$PROJECT_DIR$/code/app/config/packages/way/generators/config.php" />
+-        <option value="db-console:/c0db8c1c/9fd5ccc3-a176-4cb5-81e6-dd3e8732b3dd/" />
+-        <option value="$PROJECT_DIR$/code/app/config/debug/database.php" />
+         <option value="$PROJECT_DIR$/code/app/models/Body.php" />
+         <option value="$PROJECT_DIR$/code/app/models/Proceso.php" />
+         <option value="$PROJECT_DIR$/code/app/config/mongolog.php" />
+@@ -209,7 +164,6 @@
+         <option value="$PROJECT_DIR$/code/app/utils/Message.php" />
+         <option value="$PROJECT_DIR$/code/app/storage/logs/monolog.log" />
+         <option value="$PROJECT_DIR$/code/app/storage/logs/monolog2.log" />
+-        <option value="$PROJECT_DIR$/code/app/start/local.php" />
+         <option value="$PROJECT_DIR$/code/app/storage/logs/database.log" />
+         <option value="$PROJECT_DIR$/code/app/storage/logs/request.log" />
+         <option value="$PROJECT_DIR$/code/app/models/Ejecutivo.php" />
+@@ -218,7 +172,6 @@
+         <option value="$PROJECT_DIR$/readme.md" />
+         <option value="$PROJECT_DIR$/code/app/controllers/BaseController.php" />
+         <option value="$PROJECT_DIR$/code/app/storage/logs/amicarCotizante.log" />
+-        <option value="$PROJECT_DIR$/code/app/config/api.php" />
+         <option value="$PROJECT_DIR$/code/app/utils/MessageLog.php" />
+         <option value="$PROJECT_DIR$/code/app/controllers/ApiController.php" />
+         <option value="$PROJECT_DIR$/code/app/storage/logs/AmicarLanding.log" />
+@@ -235,16 +188,22 @@
+         <option value="$PROJECT_DIR$/code/app/models/observers/UserObserver.php" />
+         <option value="$PROJECT_DIR$/code/app/config/observers.php" />
+         <option value="$PROJECT_DIR$/code/app/controllers/UserController.php" />
+-        <option value="$PROJECT_DIR$/code/app/start/global.php" />
+-        <option value="$PROJECT_DIR$/code/app/config/database.php" />
+         <option value="$PROJECT_DIR$/code/app/views/landings/c1.blade.php" />
+         <option value="$PROJECT_DIR$/code/app/models/Cliente.php" />
+         <option value="E:/Amicar/App/descargaArchivoDiario-0.0.2.bat" />
+         <option value="$PROJECT_DIR$/code/app/config/dev/database.php" />
+-        <option value="$PROJECT_DIR$/code/app/routes.php" />
+         <option value="$PROJECT_DIR$/code/app/filters.php" />
+         <option value="$PROJECT_DIR$/code/app/controllers/ServletController.php" />
+         <option value="$PROJECT_DIR$/code/app/controllers/ClienteController.php" />
++        <option value="$PROJECT_DIR$/code/app/routes.php" />
++        <option value="$PROJECT_DIR$/code/bootstrap/start.php" />
++        <option value="$PROJECT_DIR$/code/app/config/app.php" />
++        <option value="$PROJECT_DIR$/code/app/config/database.php" />
++        <option value="$PROJECT_DIR$/code/app/utils/Functions.php" />
++        <option value="$PROJECT_DIR$/code/app/config/api.php" />
++        <option value="$PROJECT_DIR$/code/app/start/local.php" />
++        <option value="$PROJECT_DIR$/code/app/start/global.php" />
++        <option value="$PROJECT_DIR$/code/app/config/config.php" />
+       </list>
+     </option>
+   </component>
+@@ -444,10 +403,54 @@
+               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+             </PATH_ELEMENT>
+             <PATH_ELEMENT>
+-              <option name="myItemId" value="controllers" />
++              <option name="myItemId" value="utils" />
+               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+             </PATH_ELEMENT>
+           </PATH>
++          <PATH>
++            <PATH_ELEMENT>
++              <option name="myItemId" value="Amicar2" />
++              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
++            </PATH_ELEMENT>
++            <PATH_ELEMENT>
++              <option name="myItemId" value="Amicar2" />
++              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
++            </PATH_ELEMENT>
++            <PATH_ELEMENT>
++              <option name="myItemId" value="code" />
++              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
++            </PATH_ELEMENT>
++            <PATH_ELEMENT>
++              <option name="myItemId" value="app" />
++              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
++            </PATH_ELEMENT>
++            <PATH_ELEMENT>
++              <option name="myItemId" value="start" />
++              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
++            </PATH_ELEMENT>
++          </PATH>
++          <PATH>
++            <PATH_ELEMENT>
++              <option name="myItemId" value="Amicar2" />
++              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
++            </PATH_ELEMENT>
++            <PATH_ELEMENT>
++              <option name="myItemId" value="Amicar2" />
++              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
++            </PATH_ELEMENT>
++            <PATH_ELEMENT>
++              <option name="myItemId" value="code" />
++              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
++            </PATH_ELEMENT>
++            <PATH_ELEMENT>
++              <option name="myItemId" value="app" />
++              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
++            </PATH_ELEMENT>
++            <PATH_ELEMENT>
++              <option name="myItemId" value="config" />
++              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
++            </PATH_ELEMENT>
++          </PATH>
+         </subPane>
+       </pane>
+       <pane id="Scope" />
+@@ -488,11 +491,11 @@
+   </component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
++      <recent name="E:\Projects\Php\Amicar2\code\app\config" />
+       <recent name="E:\Projects\Php\Amicar2\code\app\controllers" />
+       <recent name="E:\Projects\Php\Amicar2\code\app\views\landings" />
+       <recent name="E:\Projects\Php\Amicar2\code\app\views\layouts\landing" />
+       <recent name="E:\Projects\Php\Amicar2\code\public\images" />
+-      <recent name="E:\Projects\Php\Amicar2\code\app\models" />
+     </key>
+     <key name="MoveFile.RECENT_KEYS">
+       <recent name="E:\Projects\Php\Amicar2\code\app\views\layouts\email\ejecutivo" />
+@@ -525,15 +528,15 @@
+     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+       <method />
+     </configuration>
+-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+-      <method />
+-    </configuration>
+     <configuration default="true" type="com.intellij.database.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
+       <option name="VM_PARAMETERS" value="" />
+       <option name="USER_CFG_CLASS" />
+       <option name="CONTEXT_PROVIDER" />
+       <method />
+     </configuration>
++    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
++      <method />
++    </configuration>
+     <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+       <BehatRunner />
+       <method />
+@@ -541,9 +544,6 @@
+     <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
+       <method />
+     </configuration>
+-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+-      <method />
+-    </configuration>
+     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+       <node-options />
+       <gulpfile />
+@@ -553,6 +553,9 @@
+       <envs />
+       <method />
+     </configuration>
++    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
++      <method />
++    </configuration>
+     <configuration default="false" name="Amicar2" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" server_name="laravel" start_url="/SolicitudCotizacionAmicar?cliente=c338cccdb1e3e40363a4daa0efd862b1&amp;cotizacion=7b951860af35e3067f703b5e237c25a6&amp;campana=3a22921565c606de3b7b75e5dd90d722">
+       <RunnerSettings RunnerId="PhpRunner" />
+       <RunnerSettings RunnerId="PhpWebAppDebugRunner" />
+@@ -611,24 +614,24 @@
+   </component>
+   <component name="ToolWindowManager">
+     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+-    <editor active="true" />
++    <editor active="false" />
+     <layout>
+-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3213703" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
++      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3752039" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23817292" sideWeight="0.74886537" order="14" side_tool="false" content_ui="tabs" />
+-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
++      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35678393" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18437026" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962063" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+       <window_info id="Symfony2" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2003035" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20801815" sideWeight="0.49892932" order="0" side_tool="false" content_ui="combo" />
+-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22390318" sideWeight="0.5010707" order="3" side_tool="true" content_ui="tabs" />
+       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31699347" sideWeight="0.25113463" order="11" side_tool="true" content_ui="tabs" />
++      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22390318" sideWeight="0.5010707" order="3" side_tool="true" content_ui="tabs" />
+       <window_info id="SvgViewer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
++      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
++      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962063" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
++      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
++      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20801815" sideWeight="0.49892932" order="0" side_tool="false" content_ui="combo" />
+       <window_info id="Database Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5506536" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35678393" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31810766" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+@@ -638,6 +641,32 @@
+       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+     </layout>
++    <layout-to-restore>
++      <window_info id="Database Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5506536" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
++      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
++      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3213703" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
++      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
++      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23817292" sideWeight="0.74886537" order="14" side_tool="false" content_ui="tabs" />
++      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
++      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35678393" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
++      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18437026" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
++      <window_info id="Symfony2" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2003035" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
++      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31810766" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
++      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31699347" sideWeight="0.25113463" order="11" side_tool="true" content_ui="tabs" />
++      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22390318" sideWeight="0.5010707" order="3" side_tool="true" content_ui="tabs" />
++      <window_info id="SvgViewer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
++      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
++      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
++      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
++      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962063" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
++      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
++      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
++      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20801815" sideWeight="0.49892932" order="0" side_tool="false" content_ui="combo" />
++      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
++      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
++      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
++      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
++    </layout-to-restore>
+   </component>
+   <component name="Vcs.Log.UiProperties">
+     <option name="RECENTLY_FILTERED_USER_GROUPS">
+@@ -678,48 +707,6 @@
+     </PATH>
+   </component>
+   <component name="editorHistoryManager">
+-    <entry file="file://$PROJECT_DIR$/code/app/routes.php">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state vertical-scroll-proportion="0.0" vertical-offset="352" max-vertical-offset="1254">
+-          <caret line="16" column="21" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+-          <folding>
+-            <element signature="e#7#44#0#PHP" expanded="true" />
+-            <element signature="e#816#1093#1#PHP" expanded="true" />
+-            <element signature="e#852#908#1#PHP" expanded="true" />
+-            <element signature="e#930#983#1#PHP" expanded="true" />
+-            <element signature="e#1140#1267#1#PHP" expanded="true" />
+-          </folding>
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/code/app/utils/xlsxwriter.class.php">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3038">
+-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="5" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/code/app/views/index.blade.php">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="521">
+-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/code/bootstrap/paths.php">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1709">
+-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/code/bootstrap/autoload.php">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="2127">
+-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+-        </state>
+-      </provider>
+-    </entry>
+     <entry file="file://$PROJECT_DIR$/code/app/config/compile.php">
+       <provider selected="true" editor-type-id="text-editor">
+         <state vertical-scroll-proportion="0.68111455" vertical-offset="0" max-vertical-offset="741">
+@@ -734,27 +721,6 @@
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/code/bootstrap/start.php">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state vertical-scroll-proportion="-2.9662921" vertical-offset="1056" max-vertical-offset="1808">
+-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/code/app/start/local.php">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state vertical-scroll-proportion="0.528" vertical-offset="0" max-vertical-offset="683">
+-          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/code/app/start/artisan.php">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state vertical-scroll-proportion="-0.64533335" vertical-offset="286" max-vertical-offset="661">
+-          <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
+-        </state>
+-      </provider>
+-    </entry>
+     <entry file="file://$PROJECT_DIR$/code/app/storage/logs/.gitignore">
+       <provider selected="true" editor-type-id="text-editor">
+         <state vertical-scroll-proportion="-0.88" vertical-offset="0" max-vertical-offset="311">
+@@ -934,34 +900,17 @@
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/code/app/start/global.php">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state vertical-scroll-proportion="1.7360774" vertical-offset="801" max-vertical-offset="2019">
+-          <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+-        </state>
+-      </provider>
+-    </entry>
+     <entry file="file://E:/Amicar/App/descargaArchivoDiario-0.0.2.bat">
+       <provider selected="true" editor-type-id="text-editor">
+         <state vertical-scroll-proportion="0.0" vertical-offset="2266" max-vertical-offset="4364">
+           <caret line="103" column="36" selection-start-line="103" selection-start-column="36" selection-end-line="103" selection-end-column="36" />
+-          <folding />
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/code/app/config/database.php">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state vertical-scroll-proportion="0.0" vertical-offset="594" max-vertical-offset="2706">
+-          <caret line="27" column="29" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="29" />
+-          <folding />
+-        </state>
+-      </provider>
+-    </entry>
+     <entry file="file://$PROJECT_DIR$/code/app/views/landings/c1.blade.php">
+       <provider selected="true" editor-type-id="text-editor">
+         <state vertical-scroll-proportion="0.0" vertical-offset="1232" max-vertical-offset="2552">
+           <caret line="56" column="8" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="8" />
+-          <folding />
+         </state>
+       </provider>
+     </entry>
+@@ -969,9 +918,6 @@
+       <provider selected="true" editor-type-id="text-editor">
+         <state vertical-scroll-proportion="0.0" vertical-offset="1782" max-vertical-offset="2376">
+           <caret line="115" column="47" selection-start-line="115" selection-start-column="37" selection-end-line="115" selection-end-column="47" />
+-          <folding>
+-            <element signature="n#show#0;n#EjecutivoController#0;n#!!top" expanded="false" />
+-          </folding>
+         </state>
+       </provider>
+     </entry>
+@@ -979,7 +925,6 @@
+       <provider selected="true" editor-type-id="text-editor">
+         <state vertical-scroll-proportion="0.15742397" vertical-offset="0" max-vertical-offset="1505">
+           <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+-          <folding />
+         </state>
+       </provider>
+     </entry>
+@@ -987,11 +932,6 @@
+       <provider selected="true" editor-type-id="text-editor">
+         <state vertical-scroll-proportion="0.0" vertical-offset="682" max-vertical-offset="1232">
+           <caret line="31" column="36" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
+-          <folding>
+-            <element signature="n#scopeDesiscritos#0;n#Cliente#0;n#!!top" expanded="true" />
+-            <element signature="n#scopeInscritos#0;n#Cliente#0;n#!!top" expanded="true" />
+-            <element signature="n#isDesinscrito#0;n#Cliente#0;n#!!top" expanded="true" />
+-          </folding>
+         </state>
+       </provider>
+     </entry>
+@@ -999,7 +939,6 @@
+       <provider selected="true" editor-type-id="text-editor">
+         <state vertical-scroll-proportion="0.15742397" vertical-offset="0" max-vertical-offset="1131">
+           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+-          <folding />
+         </state>
+       </provider>
+     </entry>
+@@ -1007,82 +946,183 @@
+       <provider selected="true" editor-type-id="text-editor">
+         <state vertical-scroll-proportion="-0.78711987" vertical-offset="594" max-vertical-offset="2869">
+           <caret line="8" column="42" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="42" />
+-          <folding>
+-            <element signature="n#__construct#0;n#ApiController#0;n#!!top" expanded="true" />
+-          </folding>
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/code/app/config/api.php">
++    <entry file="file://$PROJECT_DIR$/code/app/config/session.php">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state vertical-scroll-proportion="-11.846154" vertical-offset="132" max-vertical-offset="1197">
+-          <caret line="26" column="12" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="12" />
++        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3423">
++          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+           <folding />
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/code/app/config/session.php">
++    <entry file="file://$PROJECT_DIR$/code/app/controllers/ServletController.php">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3423">
+-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+-          <folding />
++        <state vertical-scroll-proportion="0.0" vertical-offset="1664" max-vertical-offset="2240">
++          <caret line="104" column="83" selection-start-line="104" selection-start-column="83" selection-end-line="104" selection-end-column="83" />
++          <folding>
++            <element signature="e#6#26#0#PHP" expanded="false" />
++            <element signature="n#__construct#0;n#ServletController#0;n#!!top" expanded="false" />
++            <element signature="n#readAmicar#0;n#ServletController#0;n#!!top" expanded="false" />
++            <element signature="n#updateProcess#0;n#ServletController#0;n#!!top" expanded="false" />
++            <element signature="n#clickAmicar2#0;n#ServletController#0;n#!!top" expanded="false" />
++          </folding>
+         </state>
+       </provider>
+     </entry>
++    <entry file="file://$PROJECT_DIR$/code/app/controllers/ClienteController.php">
++      <provider selected="true" editor-type-id="text-editor">
++        <state vertical-scroll-proportion="-50.086956" vertical-offset="64" max-vertical-offset="2818">
++          <caret line="88" column="18" selection-start-line="88" selection-start-column="18" selection-end-line="88" selection-end-column="18" />
++          <folding>
++            <element signature="e#7#27#0#PHP" expanded="false" />
++            <element signature="n#__construct#0;n#ClienteController#0;n#!!top" expanded="false" />
++            <element signature="n#update#0;n#ClienteController#0;n#!!top" expanded="false" />
++            <element signature="n#destroy#0;n#ClienteController#0;n#!!top" expanded="false" />
++          </folding>
++        </state>
++      </provider>
++    </entry>
+     <entry file="file://$PROJECT_DIR$/code/app/filters.php">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state vertical-scroll-proportion="-13.038462" vertical-offset="937" max-vertical-offset="2605">
++        <state vertical-scroll-proportion="0.0" vertical-offset="928" max-vertical-offset="1536">
+           <caret line="67" column="5" selection-start-line="67" selection-start-column="5" selection-end-line="67" selection-end-column="5" />
+           <folding>
+-            <element signature="e#451#641#2#PHP" expanded="true" />
+-            <element signature="e#656#904#2#PHP" expanded="true" />
+-            <element signature="e#1352#1567#1#PHP" expanded="true" />
+-            <element signature="e#1600#1648#1#PHP" expanded="true" />
+-            <element signature="e#1680#1722#1#PHP" expanded="true" />
+-            <element signature="e#1749#1853#1#PHP" expanded="true" />
+-            <element signature="e#2428#2496#1#PHP" expanded="true" />
+-            <element signature="e#2947#3120#1#PHP" expanded="true" />
++            <element signature="e#451#641#2#PHP" expanded="false" />
++            <element signature="e#656#904#2#PHP" expanded="false" />
++            <element signature="e#1352#1567#1#PHP" expanded="false" />
++            <element signature="e#1600#1648#1#PHP" expanded="false" />
++            <element signature="e#1680#1722#1#PHP" expanded="false" />
++            <element signature="e#1749#1853#1#PHP" expanded="false" />
++            <element signature="e#2428#2496#1#PHP" expanded="false" />
++            <element signature="e#2947#3120#1#PHP" expanded="false" />
+           </folding>
+         </state>
+       </provider>
+     </entry>
+     <entry file="file://$PROJECT_DIR$/code/app/routes.php">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state vertical-scroll-proportion="-13.884615" vertical-offset="695" max-vertical-offset="1681">
+-          <caret line="48" column="39" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="39" />
++        <state vertical-scroll-proportion="-7.652174" vertical-offset="192" max-vertical-offset="1488">
++          <caret line="23" column="38" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+           <folding>
+-            <element signature="e#7#44#0#PHP" expanded="true" />
+-            <element signature="e#816#1093#1#PHP" expanded="true" />
+-            <element signature="e#852#908#1#PHP" expanded="true" />
+-            <element signature="e#930#983#1#PHP" expanded="true" />
+-            <element signature="e#1140#1267#1#PHP" expanded="true" />
++            <element signature="e#7#30#0#PHP" expanded="true" />
++            <element signature="e#893#1241#1#PHP" expanded="true" />
++            <element signature="e#1287#1564#1#PHP" expanded="true" />
++            <element signature="e#1323#1379#1#PHP" expanded="true" />
++            <element signature="e#1401#1454#1#PHP" expanded="true" />
++            <element signature="e#1611#1738#1#PHP" expanded="true" />
+           </folding>
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/code/app/controllers/ServletController.php">
++    <entry file="file://$PROJECT_DIR$/code/app/config/database.php">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state vertical-scroll-proportion="-10.0" vertical-offset="2028" max-vertical-offset="3560">
+-          <caret line="104" column="83" selection-start-line="104" selection-start-column="83" selection-end-line="104" selection-end-column="83" />
++        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2608">
++          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
++          <folding />
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/code/app/config/app.php">
++      <provider selected="true" editor-type-id="text-editor">
++        <state vertical-scroll-proportion="-3.9615386" vertical-offset="2416" max-vertical-offset="3472">
++          <caret line="48" column="13" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
++          <folding />
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/code/bootstrap/paths.php">
++      <provider selected="true" editor-type-id="text-editor">
++        <state vertical-scroll-proportion="-0.07692308" vertical-offset="848" max-vertical-offset="1264">
++          <caret line="51" column="52" selection-start-line="51" selection-start-column="45" selection-end-line="51" selection-end-column="45" />
++          <folding />
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/code/bootstrap/start.php">
++      <provider selected="true" editor-type-id="text-editor">
++        <state vertical-scroll-proportion="-1.0769231" vertical-offset="480" max-vertical-offset="1456">
++          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
++          <folding />
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/code/bootstrap/autoload.php">
++      <provider selected="true" editor-type-id="text-editor">
++        <state vertical-scroll-proportion="1.1923077" vertical-offset="0" max-vertical-offset="1568">
++          <caret line="31" column="53" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
++          <folding />
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/code/app/start/global.php">
++      <provider selected="true" editor-type-id="text-editor">
++        <state vertical-scroll-proportion="0.02846975" vertical-offset="352" max-vertical-offset="2338">
++          <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="62" />
+           <folding>
+-            <element signature="e#6#26#0#PHP" expanded="true" />
+-            <element signature="n#__construct#0;n#ServletController#0;n#!!top" expanded="true" />
+-            <element signature="n#readAmicar#0;n#ServletController#0;n#!!top" expanded="true" />
+-            <element signature="n#updateProcess#0;n#ServletController#0;n#!!top" expanded="true" />
+-            <element signature="n#clickAmicar2#0;n#ServletController#0;n#!!top" expanded="true" />
++            <element signature="e#1904#1971#2#PHP" expanded="true" />
++            <element signature="e#2023#2579#2#PHP" expanded="true" />
++            <element signature="e#2996#3056#2#PHP" expanded="true" />
++            <element signature="e#3602#3740#1#PHP" expanded="true" />
++            <element signature="e#3758#3869#2#PHP" expanded="true" />
+           </folding>
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/code/app/controllers/ClienteController.php">
++    <entry file="file://$PROJECT_DIR$/code/app/start/local.php">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state vertical-scroll-proportion="0.6996337" vertical-offset="1290" max-vertical-offset="3648">
+-          <caret line="88" column="18" selection-start-line="88" selection-start-column="18" selection-end-line="88" selection-end-column="18" />
++        <state vertical-scroll-proportion="0.34163702" vertical-offset="16" max-vertical-offset="850">
++          <caret line="13" column="51" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
++          <folding />
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/code/app/config/api.php">
++      <provider selected="true" editor-type-id="text-editor">
++        <state vertical-scroll-proportion="0.0569395" vertical-offset="0" max-vertical-offset="1010">
++          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
++          <folding />
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/code/app/start/artisan.php">
++      <provider selected="true" editor-type-id="text-editor">
++        <state vertical-scroll-proportion="-1.3913044" vertical-offset="0" max-vertical-offset="626">
++          <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
++          <folding />
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/code/app/config/config.php">
++      <provider selected="true" editor-type-id="text-editor">
++        <state vertical-scroll-proportion="-0.6956522" vertical-offset="0" max-vertical-offset="604">
++          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+           <folding>
+-            <element signature="e#7#27#0#PHP" expanded="true" />
+-            <element signature="n#__construct#0;n#ClienteController#0;n#!!top" expanded="true" />
+-            <element signature="n#update#0;n#ClienteController#0;n#!!top" expanded="true" />
+-            <element signature="n#destroy#0;n#ClienteController#0;n#!!top" expanded="true" />
++            <element signature="e#7#209#0#PHP" expanded="true" />
++          </folding>
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/code/app/utils/Functions.php">
++      <provider selected="true" editor-type-id="text-editor">
++        <state vertical-scroll-proportion="6.120482" vertical-offset="1840" max-vertical-offset="4236">
++          <caret line="242" column="35" selection-start-line="242" selection-start-column="35" selection-end-line="242" selection-end-column="35" />
++          <folding>
++            <element signature="e#97#209#0#PHP" expanded="true" />
++            <element signature="e#212#356#0#PHP" expanded="true" />
++            <element signature="e#359#749#0#PHP" expanded="true" />
++            <element signature="e#752#1419#0#PHP" expanded="true" />
++            <element signature="e#1422#1868#0#PHP" expanded="true" />
++            <element signature="e#1871#1984#0#PHP" expanded="true" />
++            <element signature="e#1987#2136#0#PHP" expanded="true" />
++            <element signature="e#2139#2240#0#PHP" expanded="true" />
++            <element signature="e#2243#2515#0#PHP" expanded="true" />
++            <element signature="e#2518#2784#0#PHP" expanded="true" />
++            <element signature="e#2787#3827#0#PHP" expanded="true" />
++            <element signature="e#3830#4754#0#PHP" expanded="true" />
++            <element signature="e#4757#5156#0#PHP" expanded="true" />
++            <element signature="e#5159#5912#0#PHP" expanded="true" />
+           </folding>
+         </state>
+       </provider>
+\ No newline at end of file
+Index: .idea/dataSources.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"DataSourceManagerImpl\" format=\"xml\" hash=\"2799407945\">\n    <data-source source=\"LOCAL\" name=\"MySQL - amicarcotizante@192.168.1.99\" uuid=\"9fd5ccc3-a176-4cb5-81e6-dd3e8732b3dd\">\n      <driver-ref>mysql</driver-ref>\n      <synchronize>true</synchronize>\n      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>\n      <jdbc-url>jdbc:mysql://192.168.1.99:3306/amicarcotizante</jdbc-url>\n      <driver-properties>\n        <property name=\"zeroDateTimeBehavior\" value=\"convertToNull\" />\n        <property name=\"tinyInt1isBit\" value=\"false\" />\n        <property name=\"characterEncoding\" value=\"utf8\" />\n        <property name=\"characterSetResults\" value=\"utf8\" />\n        <property name=\"yearIsDateType\" value=\"false\" />\n      </driver-properties>\n      <libraries />\n    </data-source>\n  </component>\n</project>
+===================================================================
+--- .idea/dataSources.xml	(date 1428354577000)
++++ .idea/dataSources.xml	(revision )
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="DataSourceManagerImpl" format="xml" hash="2799407945">
++  <component name="DataSourceManagerImpl" format="xml" hash="4028888380">
+     <data-source source="LOCAL" name="MySQL - amicarcotizante@192.168.1.99" uuid="9fd5ccc3-a176-4cb5-81e6-dd3e8732b3dd">
+       <driver-ref>mysql</driver-ref>
+       <synchronize>true</synchronize>
+\ No newline at end of file
+Index: code/app/routes.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\n\nuse Illuminate\\Support\\Facades\\Route;\nuse Illuminate\\Support\\Facades\\View;\n\n//Memory\nini_set('memory_limit', '1024M');\nini_set('max_execution_time', '0');\nini_set('set_time_limit', '0');\n\n//Iconv\nif (PHP_VERSION_ID < 50600) {\n\ticonv_set_encoding('input_encoding', 'UTF-8');\n\ticonv_set_encoding('output_encoding', 'UTF-8');\n\ticonv_set_encoding('internal_encoding', 'UTF-8');\n}\nelse {\n\tini_set('default_charset', 'UTF-8');\n}\n\n//XDebug\nini_set('xdebug.collect_vars', 'on');\nini_set('xdebug.collect_params', '4');\nini_set('xdebug.dump_globals', 'on');\nini_set('xdebug.dump.SERVER', 'REQUEST_URI');\n\n//Errors\nerror_reporting(E_ALL);\nini_set('display_errors', true);\nini_set('display_startup_errors', true);\n\nRoute::when('*', 'csrf', array(\n\t'post',\n\t'put',\n\t'delete'\n));\n\nRoute::group(array('after' => 'process'), function () {\n\tRoute::get('thanks', function () {\n\t\treturn View::make('landings.thanks');\n\t});\n\tRoute::get('bye', function () {\n\t\treturn View::make('landings.bye');\n\t});\n\tRoute::resource('clientes', 'ClienteController');\n\tRoute::resource('ejecutivos', 'EjecutivoController');\n});\n\nRoute::group(array('before' => 'process'), function () {\n\tRoute::get('Lectura', 'ServletController@readAmicar');\n\tRoute::get('Amicar', 'ServletController@clickAmicar');\n});\n
+===================================================================
+--- code/app/routes.php	(date 1428354577000)
++++ code/app/routes.php	(revision )
+@@ -1,8 +1,11 @@
+ <?php
+ 
++use App\Util\Functions;
+ use Illuminate\Support\Facades\Route;
+ use Illuminate\Support\Facades\View;
+ 
++Functions::setProperties();
++
+ //Memory
+ ini_set('memory_limit', '1024M');
+ ini_set('max_execution_time', '0');
+@@ -18,22 +21,35 @@
+ 	ini_set('default_charset', 'UTF-8');
+ }
+ 
++if (Config::get('app.debug', false)) {
+-//XDebug
+-ini_set('xdebug.collect_vars', 'on');
+-ini_set('xdebug.collect_params', '4');
+-ini_set('xdebug.dump_globals', 'on');
+-ini_set('xdebug.dump.SERVER', 'REQUEST_URI');
++	//XDebug
++	ini_set('xdebug.collect_vars', 'on');
++	ini_set('xdebug.collect_params', '4');
++	ini_set('xdebug.dump_globals', 'on');
++	ini_set('xdebug.dump.SERVER', 'REQUEST_URI');
+ 
+-//Errors
+-error_reporting(E_ALL);
+-ini_set('display_errors', true);
+-ini_set('display_startup_errors', true);
++	//Errors
++	error_reporting(E_ALL);
++	ini_set('display_errors', true);
++	ini_set('display_startup_errors', true);
++}
+ 
+ Route::when('*', 'csrf', array(
+ 	'post',
+ 	'put',
+ 	'delete'
+ ));
++
++Route::get('/', function () {
++
++	var_dump(Config::get('config.app.debug'));
++	var_dump(Config::get('config.app.url'));
++	var_dump(Config::get('config.database.host'));
++	var_dump(Config::get('config.database.dbname'));
++	var_dump(Config::get('config.database.username'));
++	var_dump(Config::get('config.database.password'));
++	var_dump(Config::get('config.logs.path'));
++});
+ 
+ Route::group(array('after' => 'process'), function () {
+ 	Route::get('thanks', function () {
+Index: code/bootstrap/start.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\n\n/*\n|--------------------------------------------------------------------------\n| Create The Application\n|--------------------------------------------------------------------------\n|\n| The first thing we will do is create a new Laravel application instance\n| which serves as the \"glue\" for all the components of Laravel, and is\n| the IoC container for the system binding all of the various parts.\n|\n*/\n\n$app = new Illuminate\\Foundation\\Application;\n\n/*\n|--------------------------------------------------------------------------\n| Detect The Application Environment\n|--------------------------------------------------------------------------\n|\n| Laravel takes a dead simple approach to your application environments\n| so you can just specify a machine name for the host that matches a\n| given environment, then we will automatically detect it for you.\n|\n*/\n\n$env = $app->detectEnvironment(array('local' => array('MAZEPC'),\n                                     'dev'   => array('DPINTO'),\n                                     'debug' => array('homestead'),\n\n));\n\n/*\n|--------------------------------------------------------------------------\n| Bind Paths\n|--------------------------------------------------------------------------\n|\n| Here we are binding the paths configured in paths.php to the app. You\n| should not be changing these here. If you need to change these you\n| may do so within the paths.php file and they will be bound here.\n|\n*/\n\n$app->bindInstallPaths(require __DIR__ . '/paths.php');\n\n/*\n|--------------------------------------------------------------------------\n| Load The Application\n|--------------------------------------------------------------------------\n|\n| Here we will load this Illuminate application. We will keep this in a\n| separate location so we can isolate the creation of an application\n| from the actual running of the application with a given request.\n|\n*/\n\n$framework = $app['path.base'] . '/vendor/laravel/framework/src';\n\nrequire $framework . '/Illuminate/Foundation/start.php';\n\n/*\n|--------------------------------------------------------------------------\n| Return The Application\n|--------------------------------------------------------------------------\n|\n| This script returns the application instance. The instance is given to\n| the calling script so we can separate the building of the instances\n| from the actual running of the application and sending responses.\n|\n*/\nif (isset($_SERVER[\"REDIRECT_REMOTE_AUTHORIZATION\"]) && $_SERVER[\"REDIRECT_REMOTE_AUTHORIZATION\"] != '') {\n\t$d = base64_decode($_SERVER[\"REDIRECT_REMOTE_AUTHORIZATION\"]);\n\tlist($_SERVER['PHP_AUTH_USER'], $_SERVER['PHP_AUTH_PW']) = explode(':', $d);\n}\n\nreturn $app;\n
+===================================================================
+--- code/bootstrap/start.php	(date 1428354577000)
++++ code/bootstrap/start.php	(revision )
+@@ -73,4 +73,4 @@
+ 	list($_SERVER['PHP_AUTH_USER'], $_SERVER['PHP_AUTH_PW']) = explode(':', $d);
+ }
+ 
+-return $app;
++return $app;
+\ No newline at end of file
+Index: code/app/config/config.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- code/app/config/config.php	(revision )
++++ code/app/config/config.php	(revision )
+@@ -0,0 +1,18 @@
++<?php
++
++/*
++ | ------------------------------------------------------
++ | App Configurator
++ | ------------------------------------------------------
++ | Use this file to declare all api values to call later
++ |
++ */
++
++$configFile = 'C:/apps/Amicar/config/cotizanteAmicar.ini';
++$ini        = parse_ini_file($configFile, true);
++
++if (!File::exists(array_get($ini, 'logs.path'))) {
++	File::makeDirectory($path = array_get($ini, 'logs.path'), (int)$mode = 777, (bool)$recursive = true, (bool)$force = true);
++}
++
++return $ini;
+\ No newline at end of file
+Index: code/app/start/global.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\n\n/*\n|--------------------------------------------------------------------------\n| Register The Laravel Class Loader\n|--------------------------------------------------------------------------\n|\n| In addition to using Composer, you may use the Laravel class loader to\n| load your controllers and models. This is useful for keeping all of\n| your classes in the \"global\" namespace without Composer updating.\n|\n*/\n\nClassLoader::addDirectories(array(\n\t                            app_path() . '/commands',\n\t                            app_path() . '/controllers',\n\t                            app_path() . '/models',\n\t                            app_path() . '/utils',\n\t                            app_path() . '/database/seeds',\n                            ));\n\n/*\n|--------------------------------------------------------------------------\n| Application Error Logger\n|--------------------------------------------------------------------------\n|\n| Here we will configure the error logger setup for the application which\n| is built on top of the wonderful Monolog library. By default we will\n| build a basic log file setup which creates a single file for logs.\n|\n*/\n\nLog::useFiles(storage_path() . '/logs/app.log');\n\n/*\n|--------------------------------------------------------------------------\n| Application Error Handler\n|--------------------------------------------------------------------------\n|\n| Here you may handle any errors that occur in your application, including\n| logging them or displaying custom views for specific errors. You may\n| even register several error handlers to handle different types of\n| exceptions. If nothing is returned, the default error view is\n| shown, which includes a detailed stack trace during debug.\n|\n*/\n\nApp::error(function (Exception $exception, $code) {\n\tLog::error($exception);\n});\n\nif (Config::get('api.curlError')) {\n\tApp::error(function (Exception $exception) {\n\n\t\t// if a request is being made using cURL,\n\t\t// we want the standard errors swapped\n\t\t// by something easier to handle.\n\n\t\t$isCurl      = str_contains(Request::server(\"HTTP_USER_AGENT\"), \"curl\");\n\t\t$shouldDebug = (bool)Config::get(\"app.debug\");\n\n\t\tif ($isCurl and $shouldDebug) {\n\t\t\treturn $exception;\n\t\t}\n\t\tLog::useFiles(storage_path() . '/logs/curl.log');\n\t\tLog::error($exception);\n\n\t});\n}\n\n/*\n|--------------------------------------------------------------------------\n| Maintenance Mode Handler\n|--------------------------------------------------------------------------\n|\n| The \"down\" Artisan command gives you the ability to put an application\n| into maintenance mode. Here, you will define what is displayed back\n| to the user if maintenance mode is in effect for the application.\n|\n*/\n\nApp::down(function () {\n\treturn Response::make(\"Ya volvemos!\", 503);\n});\n\n/*\n|--------------------------------------------------------------------------\n| Require The Filters File\n|--------------------------------------------------------------------------\n|\n| Next we will load the filters file for the application. This gives us\n| a nice separate location to store our route and application filter\n| definitions instead of putting them all in the main routes file.\n|\n*/\n\nrequire app_path() . '/filters.php';\nrequire app_path() . '/utils/Macros.php';\nrequire app_path() . '/utils/Events.php';\n\nAuth::extend('dummy', function ($app) {\n\t$provider = new \\App\\Util\\DummyAuthProvider();\n\n\treturn new \\Illuminate\\Auth\\Guard($provider, $app['session.store']);\n});\n\nApp::shutdown(function () {\n\t// Flush buffered logs\n\tif (App::bound('log.buffer')) {\n\t\tApp::make('log.buffer')->close();\n\t}\n});
+===================================================================
+--- code/app/start/global.php	(date 1428354577000)
++++ code/app/start/global.php	(revision )
+@@ -30,7 +30,12 @@
+ |
+ */
+ 
++if (Config::get('config.logs.path', storage_path() . '/logs/') != '') {
++	Log::useFiles(Config::get('config.logs.path') . 'app.log');
++}
++else {
+-Log::useFiles(storage_path() . '/logs/app.log');
++	Log::useFiles(storage_path() . '/logs/app.log');
++}
+ 
+ /*
+ |--------------------------------------------------------------------------
+@@ -62,7 +67,12 @@
+ 		if ($isCurl and $shouldDebug) {
+ 			return $exception;
+ 		}
++		if (Config::get('config.logs.path', '') != '') {
++			Log::useFiles(Config::get('config.logs.path') . 'curl.log');
++		}
++		else {
+-		Log::useFiles(storage_path() . '/logs/curl.log');
++			Log::useFiles(storage_path() . '/logs/curl.log');
++		}
+ 		Log::error($exception);
+ 
+ 	});
+\ No newline at end of file
+Index: code/app/config/database.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\n\nreturn array(\n\n\t/*\n\t|--------------------------------------------------------------------------\n\t| PDO Fetch Style\n\t|--------------------------------------------------------------------------\n\t|\n\t| By default, database results will be returned as instances of the PHP\n\t| stdClass object; however, you may desire to retrieve records in an\n\t| array format for simplicity. Here you can tweak the fetch style.\n\t|\n\t*/\n\n\t'fetch'       => PDO::FETCH_CLASS,\n\t/*\n\t|--------------------------------------------------------------------------\n\t| Default Database Connection Name\n\t|--------------------------------------------------------------------------\n\t|\n\t| Here you may specify which of the database connections below you wish\n\t| to use as your default connection for all database work. Of course\n\t| you may use many connections at once using the Database library.\n\t|\n\t*/\n\n\t'default'     => 'mysql',\n\n\t/*\n\t|--------------------------------------------------------------------------\n\t| Database Connections\n\t|--------------------------------------------------------------------------\n\t|\n\t| Here are each of the database connections setup for your application.\n\t| Of course, examples of configuring each database platform that is\n\t| supported by Laravel is shown below to make development simple.\n\t|\n\t|\n\t| All database work in Laravel is done through the PHP PDO facilities\n\t| so make sure you have the driver for your particular database of\n\t| choice installed on your machine before you begin development.\n\t|\n\t*/\n\n\t'connections' => array(\n\t\t'sqlite' => array(\n\t\t\t'driver'   => 'sqlite',\n\t\t\t'database' => __DIR__ . '/../database/production.sqlite',\n\t\t\t'prefix'   => 'gd_',\n\t\t),\n\t\t'mysql'  => array(\n\t\t\t'read'      => array(\n\t\t\t\t'host' => '192.168.1.99'\n\t\t\t),\n\t\t\t'write'     => array(\n\t\t\t\t'host' => '192.168.1.99'\n\t\t\t),\n\t\t\t'driver'    => 'mysql',\n\t\t\t'database'  => 'amicar',\n\t\t\t'username'  => 'root',\n\t\t\t'password'  => 'inteladmin',\n\t\t\t'charset'   => 'utf8',\n\t\t\t'collation' => 'utf8_unicode_ci',\n\t\t\t'prefix'    => '',\n\t\t),\n\t\t'pgsql'  => array(\n\t\t\t'driver'   => 'pgsql',\n\t\t\t'host'     => 'localhost',\n\t\t\t'database' => 'forge',\n\t\t\t'username' => 'forge',\n\t\t\t'password' => '',\n\t\t\t'charset'  => 'utf8',\n\t\t\t'prefix'   => '',\n\t\t\t'schema'   => 'public',\n\t\t),\n\t\t'sqlsrv' => array(\n\t\t\t'driver'   => 'sqlsrv',\n\t\t\t'host'     => 'localhost',\n\t\t\t'database' => 'database',\n\t\t\t'username' => 'root',\n\t\t\t'password' => '',\n\t\t\t'prefix'   => '',\n\t\t),\n\n\t),\n\t/*\n\t|--------------------------------------------------------------------------\n\t| Migration Repository Table\n\t|--------------------------------------------------------------------------\n\t|\n\t| This table keeps track of all the migrations that have already run for\n\t| your application. Using this information, we can determine which of\n\t| the migrations on disk haven't actually been run in the database.\n\t|\n\t*/\n\n\t'migrations'  => 'migrations',\n\t/*\n\t|--------------------------------------------------------------------------\n\t| Redis Databases\n\t|--------------------------------------------------------------------------\n\t|\n\t| Redis is an open source, fast, and advanced key-value store that also\n\t| provides a richer set of commands than a typical key-value systems\n\t| such as APC or Memcached. Laravel makes it easy to dig right in.\n\t|\n\t*/\n\n\t'redis'       => array(\n\n\t\t'cluster' => false,\n\t\t'default' => array(\n\t\t\t'host'     => '127.0.0.1',\n\t\t\t'port'     => 6379,\n\t\t\t'database' => 0,\n\t\t),\n\n\t),\n\n);\n
+===================================================================
+--- code/app/config/database.php	(date 1428354577000)
++++ code/app/config/database.php	(revision )
+@@ -1,5 +1,7 @@
+ <?php
+ 
++use Illuminate\Support\Facades\Config;
++
+ return array(
+ 
+ 	/*
+@@ -49,17 +51,32 @@
+ 			'database' => __DIR__ . '/../database/production.sqlite',
+ 			'prefix'   => 'gd_',
+ 		),
++		//		'mysql'  => array(
++		//			'read'      => array(
++		//				'host' => '192.168.1.99'
++		//			),
++		//			'write'     => array(
++		//				'host' => '192.168.1.99'
++		//			),
++		//			'driver'    => 'mysql',
++		//			'database'  => 'amicar',
++		//			'username'  => 'root',
++		//			'password'  => 'inteladmin',
++		//			'charset'   => 'utf8',
++		//			'collation' => 'utf8_unicode_ci',
++		//			'prefix'    => '',
++		//		),
+ 		'mysql'  => array(
+ 			'read'      => array(
+-				'host' => '192.168.1.99'
++				'host' => Config::get('config.database.host', 'localhost')
+ 			),
+ 			'write'     => array(
+-				'host' => '192.168.1.99'
++				'host' => Config::get('config.database.host', 'localhost')
+ 			),
+ 			'driver'    => 'mysql',
+-			'database'  => 'amicar',
+-			'username'  => 'root',
+-			'password'  => 'inteladmin',
++			'database'  => Config::get('config.database.dbname', ''),
++			'username'  => Config::get('config.database.username', ''),
++			'password'  => Config::get('config.database.password', ''),
+ 			'charset'   => 'utf8',
+ 			'collation' => 'utf8_unicode_ci',
+ 			'prefix'    => '',
+Index: code/app/utils/Functions.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php namespace App\\Util;\n\n/**\n * Class Functions\n *\n * @package App\\Util\n */\nClass Functions\n{\n\tpublic static function printr($data)\n\t{\n\t\treturn \"<pre>\" . htmlspecialchars(print_r($data, true)) . \"</pre>\";\n\t}\n\n\tpublic static function getMethods($class)\n\t{\n\t\t$class   = new ReflectionClass($class);\n\t\t$methods = $class->getMethods();\n\n\t\treturn $methods;\n\t}\n\n\tpublic static function array_orderby()\n\t{\n\t\t$args = func_get_args();\n\t\t$data = array_shift($args);\n\t\tforeach ($args as $n => $field) {\n\t\t\tif (is_string($field)) {\n\t\t\t\t$tmp = array();\n\t\t\t\tforeach ($data as $key => $row) {\n\t\t\t\t\t$tmp[$key] = $row[$field];\n\t\t\t\t}\n\t\t\t\t$args[$n] = $tmp;\n\t\t\t}\n\t\t}\n\t\t$args[] = &$data;\n\t\tcall_user_func_array('array_multisort', $args);\n\n\t\treturn array_pop($args);\n\t}\n\n\tpublic static function arrayToXML($array_in)\n\t{\n\t\t$return     = \"\";\n\t\t$attributes = array();\n\t\tforeach ($array_in as $k => $v) {\n\t\t\tif ($k[0] == \"@\") {\n\t\t\t\t$attributes[str_replace(\"@\", \"\", $k)] = $v;\n\t\t\t}\n\t\t\telse {\n\t\t\t\tif (is_array($v)) {\n\t\t\t\t\t$return .= \\App\\Util\\Functions::generateXML($k, \\arrayToXML($v), $attributes);\n\t\t\t\t\t$attributes = array();\n\t\t\t\t}\n\t\t\t\telse if (is_bool($v)) {\n\t\t\t\t\t$return .= \\App\\Util\\Functions::generateXML($k, (($v == true) ? \"true\" : \"false\"), $attributes);\n\t\t\t\t\t$attributes = array();\n\t\t\t\t}\n\t\t\t\telse {\n\t\t\t\t\t$return .= \\App\\Util\\Functions::generateXML($k, $v, $attributes);\n\t\t\t\t\t$attributes = array();\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\treturn $return;\n\t}\n\n\tpublic static function generateXML($tag_in, $value_in = \"\", $attribute_in = \"\")\n\t{\n\t\t$return         = \"\";\n\t\t$attributes_out = \"\";\n\t\tif (is_array($attribute_in)) {\n\t\t\tif (count($attribute_in) != 0) {\n\t\t\t\tforeach ($attribute_in as $k => $v):\n\t\t\t\t\t$attributes_out .= \" \" . $k . \"=\\\"\" . $v . \"\\\"\";\n\t\t\t\tendforeach;\n\t\t\t}\n\t\t}\n\n\t\treturn \"<\" . $tag_in . \"\" . $attributes_out . ((trim($value_in) == \"\") ? \"/>\" : \">\" . $value_in . \"</\" . $tag_in . \">\");\n\t}\n\n\tpublic static function base64urlEncode($data)\n\t{\n\t\treturn rtrim(strtr(base64_encode($data), '+/', '-_'), '=');\n\t}\n\n\tpublic static function base64urlDecode($data)\n\t{\n\t\treturn base64_decode(str_pad(strtr($data, '-_', '+/'), strlen($data) % 4, '=', STR_PAD_RIGHT));\n\t}\n\n\tpublic static function objectToArray($object)\n\t{\n\t\treturn json_decode(json_encode($object), true);\n\t}\n\n\tpublic static function toObject($array)\n\t{\n\t\t$obj = new \\stdClass();\n\t\tforeach ($array as $key => $val) {\n\t\t\t$key       = strtolower(trim($key));\n\t\t\t$obj->$key = is_array($val) ? \\App\\Util\\Functions::toObject($val) : $val;\n\t\t\t//\t\t\t$obj->$key = $val;\n\t\t}\n\n\t\treturn $obj;\n\t}\n\n\tpublic static function count_recursive($array, $limit)\n\t{\n\t\t$count = 0;\n\t\tforeach ($array as $id => $_array) {\n\t\t\tif (is_array($_array) && $limit > 0) {\n\t\t\t\t$count += count_recursive($_array, $limit - 1);\n\t\t\t}\n\t\t\telse {\n\t\t\t\t$count += 1;\n\t\t\t}\n\t\t}\n\n\t\treturn $count;\n\t}\n\n\tpublic static function getRealIP()\n\t{\n\t\tif ($_SERVER['HTTP_X_FORWARDED_FOR'] != '') {\n\t\t\t$client_ip = (!empty($_SERVER['REMOTE_ADDR'])) ? $_SERVER['REMOTE_ADDR'] : ((!empty($_ENV['REMOTE_ADDR'])) ? $_ENV['REMOTE_ADDR'] : \"unknown\");\n\n\t\t\t$entries = split('[, ]', $_SERVER['HTTP_X_FORWARDED_FOR']);\n\n\t\t\treset($entries);\n\t\t\twhile (list(, $entry) = each($entries)) {\n\t\t\t\t$entry = trim($entry);\n\t\t\t\tif (preg_match(\"/^([0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+)/\", $entry, $ip_list)) {\n\t\t\t\t\t// http://www.faqs.org/rfcs/rfc1918.html\n\t\t\t\t\t$private_ip = array('/^0\\./', '/^127\\.0\\.0\\.1/', '/^192\\.168\\..*/', '/^172\\.((1[6-9])|(2[0-9])|(3[0-1]))\\..*/', '/^10\\..*/');\n\n\t\t\t\t\t$found_ip = preg_replace($private_ip, $client_ip, $ip_list[1]);\n\n\t\t\t\t\tif ($client_ip != $found_ip) {\n\t\t\t\t\t\t$client_ip = $found_ip;\n\t\t\t\t\t\tbreak;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\telse {\n\t\t\t$client_ip = (!empty($_SERVER['REMOTE_ADDR'])) ? $_SERVER['REMOTE_ADDR'] : ((!empty($_ENV['REMOTE_ADDR'])) ? $_ENV['REMOTE_ADDR'] : \"unknown\");\n\t\t}\n\n\t\treturn $client_ip;\n\n\t}\n\n\tpublic static function serverData()\n\t{\n\t\t$data['IP'] = $_SERVER['REMOTE_ADDR'];\n\t\tif (preg_match('/' . \"Netscape\" . '/', $_SERVER[\"HTTP_USER_AGENT\"])) {\n\t\t\t$data['BROWSER'] = \"Netscape\";\n\t\t}\n\t\telseif (preg_match('/' . \"Firefox\" . '/', $_SERVER[\"HTTP_USER_AGENT\"])) {\n\t\t\t$data['BROWSER'] = \"FireFox\";\n\t\t}\n\t\telseif (preg_match('/' . \"MSIE\" . '/', $_SERVER[\"HTTP_USER_AGENT\"])) {\n\t\t\t$data['BROWSER'] = \"MSIE\";\n\t\t}\n\t\telseif (preg_match('/' . \"Opera\" . '/', $_SERVER[\"HTTP_USER_AGENT\"])) {\n\t\t\t$data['BROWSER'] = \"Opera\";\n\t\t}\n\t\telseif (preg_match('/' . \"Konqueror\" . '/', $_SERVER[\"HTTP_USER_AGENT\"])) {\n\t\t\t$data['BROWSER'] = \"Konqueror\";\n\t\t}\n\t\telseif (preg_match('/' . \"Chrome\" . '/', $_SERVER[\"HTTP_USER_AGENT\"])) {\n\t\t\t$data['BROWSER'] = \"Chrome\";\n\t\t}\n\t\telseif (preg_match('/' . \"Safari\" . '/', $_SERVER[\"HTTP_USER_AGENT\"])) {\n\t\t\t$data['BROWSER'] = \"Safari\";\n\t\t}\n\t\telse {\n\t\t\t$data['BROWSER'] = \"UNKNOWN\";\n\t\t}\n\n\t\treturn $data;\n\t}\n\n\tpublic static function convNumberToMonth($number)\n\t{\n\t\t$month = array(1 => 'enero', 2 => 'febrero', 3 => 'marzo', 4 => 'abril', 5 => 'mayo', 6 => 'junio', 7 => 'julio', 8 => 'agosto', 9 => 'septiembre', 10 => 'octubre', 11 => 'noviembre', 12 => 'diciembre');\n\t\t$month = array_get($month, $number);\n\t\t$month = studly_case($month);\n\n\t\treturn $month;\n\t}\n\n\tpublic static function curlRequest($url = null, $postFields = null, $requestType = 'GET')\n\t{\n\t\tif (!isset($url)) {\n\t\t\treturn json_encode(array('error' => 'URL param is required'));\n\t\t}\n\t\t$client = curl_init();\n\t\tcurl_setopt($client, CURLOPT_URL, $url);\n\t\tif ($requestType == 'POST') {\n\t\t\tcurl_setopt($client, CURLOPT_POST, true);\n\t\t\tcurl_setopt($client, CURLOPT_CUSTOMREQUEST, 'POST');\n\t\t\tcurl_setopt($client, CURLOPT_POSTFIELDS, http_build_query($postFields)); //\n\t\t}\n\t\telse {\n\t\t\tcurl_setopt($client, CURLOPT_POST, false);\n\t\t}\n\t\tcurl_setopt($client, CURLOPT_RETURNTRANSFER, true);\n\t\tcurl_setopt($client, CURLOPT_SSL_VERIFYPEER, false);\n\t\t$response = curl_exec($client);\n\t\t$result   = json_decode($response);\n\t\tcurl_close($client);\n\n\t\treturn $result;\n\t}\n}\n
+===================================================================
+--- code/app/utils/Functions.php	(date 1428354577000)
++++ code/app/utils/Functions.php	(revision )
+@@ -135,7 +135,13 @@
+ 				$entry = trim($entry);
+ 				if (preg_match("/^([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+)/", $entry, $ip_list)) {
+ 					// http://www.faqs.org/rfcs/rfc1918.html
+-					$private_ip = array('/^0\./', '/^127\.0\.0\.1/', '/^192\.168\..*/', '/^172\.((1[6-9])|(2[0-9])|(3[0-1]))\..*/', '/^10\..*/');
++					$private_ip = array(
++						'/^0\./',
++						'/^127\.0\.0\.1/',
++						'/^192\.168\..*/',
++						'/^172\.((1[6-9])|(2[0-9])|(3[0-1]))\..*/',
++						'/^10\..*/'
++					);
+ 
+ 					$found_ip = preg_replace($private_ip, $client_ip, $ip_list[1]);
+ 
+@@ -187,7 +193,20 @@
+ 
+ 	public static function convNumberToMonth($number)
+ 	{
+-		$month = array(1 => 'enero', 2 => 'febrero', 3 => 'marzo', 4 => 'abril', 5 => 'mayo', 6 => 'junio', 7 => 'julio', 8 => 'agosto', 9 => 'septiembre', 10 => 'octubre', 11 => 'noviembre', 12 => 'diciembre');
++		$month = array(
++			1  => 'enero',
++			2  => 'febrero',
++			3  => 'marzo',
++			4  => 'abril',
++			5  => 'mayo',
++			6  => 'junio',
++			7  => 'julio',
++			8  => 'agosto',
++			9  => 'septiembre',
++			10 => 'octubre',
++			11 => 'noviembre',
++			12 => 'diciembre'
++		);
+ 		$month = array_get($month, $number);
+ 		$month = studly_case($month);
+ 
+@@ -216,5 +235,11 @@
+ 		curl_close($client);
+ 
+ 		return $result;
++	}
++
++	public static function setProperties()
++	{
++		\Config::set('app.debug', \Config::get('config.app.debug') == 1 ? true : false);
++		\Config::set('app.url', \Config::get('config.app.url'));
+ 	}
+ }
