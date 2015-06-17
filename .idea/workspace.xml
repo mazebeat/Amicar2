@@ -1,14 +1,592 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" readonly="true" id="2e8b902c-d24b-4a2e-873f-db4dadfc22a0" name="Default" comment="0.0.1">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/app/utils/Functions.php" afterPath="$PROJECT_DIR$/code/app/utils/Functions.php" />
+    <list default="true" id="2e8b902c-d24b-4a2e-873f-db4dadfc22a0" name="Default" comment="-">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/app/models/Texto.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/app/config/texts.php" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\app\config\debug\app.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\app\config\debug\database.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\app\config\dev\app.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\app\config\dev\database.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\event-dispatcher\Symfony\Component\EventDispatcher\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\event-dispatcher\Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\event-dispatcher\Symfony\Component\EventDispatcher\Debug\TraceableEventDispatcher.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\event-dispatcher\Symfony\Component\EventDispatcher\Debug\TraceableEventDispatcherInterface.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\event-dispatcher\Symfony\Component\EventDispatcher\Debug\WrappedListener.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\event-dispatcher\Symfony\Component\EventDispatcher\DependencyInjection\RegisterListenersPass.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\event-dispatcher\Symfony\Component\EventDispatcher\Event.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\event-dispatcher\Symfony\Component\EventDispatcher\EventDispatcher.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\event-dispatcher\Symfony\Component\EventDispatcher\EventDispatcherInterface.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\event-dispatcher\Symfony\Component\EventDispatcher\EventSubscriberInterface.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\event-dispatcher\Symfony\Component\EventDispatcher\GenericEvent.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\event-dispatcher\Symfony\Component\EventDispatcher\ImmutableEventDispatcher.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\event-dispatcher\Symfony\Component\EventDispatcher\LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\event-dispatcher\Symfony\Component\EventDispatcher\composer.json" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\filesystem\Symfony\Component\Filesystem\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\filesystem\Symfony\Component\Filesystem\Exception\ExceptionInterface.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\filesystem\Symfony\Component\Filesystem\Exception\FileNotFoundException.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\filesystem\Symfony\Component\Filesystem\Exception\IOException.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\filesystem\Symfony\Component\Filesystem\Exception\IOExceptionInterface.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\filesystem\Symfony\Component\Filesystem\Filesystem.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\filesystem\Symfony\Component\Filesystem\LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\filesystem\Symfony\Component\Filesystem\LockHandler.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\filesystem\Symfony\Component\Filesystem\composer.json" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\var-dumper\Symfony\Component\VarDumper\Caster\ConstStub.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\var-dumper\Symfony\Component\VarDumper\Caster\CutStub.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\var-dumper\Symfony\Component\VarDumper\Caster\DOMCaster.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\var-dumper\Symfony\Component\VarDumper\Caster\DoctrineCaster.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\var-dumper\Symfony\Component\VarDumper\Caster\ExceptionCaster.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\var-dumper\Symfony\Component\VarDumper\Caster\PdoCaster.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\var-dumper\Symfony\Component\VarDumper\Caster\ReflectionCaster.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\var-dumper\Symfony\Component\VarDumper\Caster\ResourceCaster.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\var-dumper\Symfony\Component\VarDumper\Caster\SplCaster.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\var-dumper\Symfony\Component\VarDumper\Caster\StubCaster.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\var-dumper\Symfony\Component\VarDumper\Cloner\AbstractCloner.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\var-dumper\Symfony\Component\VarDumper\Cloner\ClonerInterface.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\var-dumper\Symfony\Component\VarDumper\Cloner\Cursor.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\var-dumper\Symfony\Component\VarDumper\Cloner\Data.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\var-dumper\Symfony\Component\VarDumper\Cloner\DumperInterface.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\var-dumper\Symfony\Component\VarDumper\Cloner\Stub.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\var-dumper\Symfony\Component\VarDumper\Cloner\VarCloner.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\var-dumper\Symfony\Component\VarDumper\Dumper\AbstractDumper.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\var-dumper\Symfony\Component\VarDumper\Dumper\CliDumper.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\var-dumper\Symfony\Component\VarDumper\Dumper\DataDumperInterface.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\var-dumper\Symfony\Component\VarDumper\Dumper\HtmlDumper.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\var-dumper\Symfony\Component\VarDumper\Exception\ThrowingCasterException.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\var-dumper\Symfony\Component\VarDumper\LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\var-dumper\Symfony\Component\VarDumper\README.md" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\var-dumper\Symfony\Component\VarDumper\Resources\functions\dump.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\var-dumper\Symfony\Component\VarDumper\Tests\Caster\PdoCasterTest.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\var-dumper\Symfony\Component\VarDumper\Tests\CliDumperTest.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\var-dumper\Symfony\Component\VarDumper\Tests\Fixtures\dumb-var.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\var-dumper\Symfony\Component\VarDumper\Tests\HtmlDumperTest.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\var-dumper\Symfony\Component\VarDumper\VarDumper.php" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\var-dumper\Symfony\Component\VarDumper\composer.json" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\symfony\var-dumper\Symfony\Component\VarDumper\phpunit.xml.dist" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\twbs\bootstrap\docs\assets\css\src\anchor.css" afterPath="" />
+      <change type="DELETED" beforePath="E:\Projects\Php\Amicar2\code\vendor\twbs\bootstrap\docs\assets\js\vendor\holder.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/public/favicon.ico" afterPath="$PROJECT_DIR$/code/public/favicon.ico" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/public/favicon.png" afterPath="$PROJECT_DIR$/code/public/favicon.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/public/images/logo.png" afterPath="$PROJECT_DIR$/code/public/images/logo.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/.gitattributes" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/.gitattributes" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/.gitignore" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/.jscsrc" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/.jscsrc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/cache/.travis.yml" afterPath="$PROJECT_DIR$/code/vendor/doctrine/cache/.travis.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/collections/.travis.yml" afterPath="$PROJECT_DIR$/code/vendor/doctrine/collections/.travis.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/.travis.yml" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/.travis.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/patchwork/utf8/.travis.yml" afterPath="$PROJECT_DIR$/code/vendor/patchwork/utf8/.travis.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/AbstractClassMetadataFactory.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/AbstractClassMetadataFactory.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/ByteStream/AbstractFilterableInputStream.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/ByteStream/AbstractFilterableInputStream.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/Headers/AbstractHeader.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/Headers/AbstractHeader.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/collections/lib/Doctrine/Common/Collections/AbstractLazyCollection.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/collections/lib/Doctrine/Common/Collections/AbstractLazyCollection.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/AbstractManagerRegistry.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/AbstractManagerRegistry.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Proxy/AbstractProxyFactory.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Proxy/AbstractProxyFactory.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/AbstractSmtpTransport.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/AbstractSmtpTransport.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/Driver/AnnotationDriver.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/Driver/AnnotationDriver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/AnnotationReader.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/AnnotationReader.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/AntiFloodPlugin.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/AntiFloodPlugin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/app/controllers/ApiController.php" afterPath="$PROJECT_DIR$/code/app/controllers/ApiController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/ByteStream/ArrayByteStream.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/ByteStream/ArrayByteStream.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/CharacterStream/ArrayCharacterStream.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/CharacterStream/ArrayCharacterStream.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/collections/lib/Doctrine/Common/Collections/ArrayCollection.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/collections/lib/Doctrine/Common/Collections/ArrayCollection.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/KeyCache/ArrayKeyCache.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/KeyCache/ArrayKeyCache.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/Loggers/ArrayLogger.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/Loggers/ArrayLogger.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mailer/ArrayRecipientIterator.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mailer/ArrayRecipientIterator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Attachment.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Attachment.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/Attachment.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/Attachment.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/Esmtp/AuthHandler.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/Esmtp/AuthHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/Esmtp/Authenticator.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/Esmtp/Authenticator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Proxy/Autoloader.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Proxy/Autoloader.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/BandwidthMonitorPlugin.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/BandwidthMonitorPlugin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/ContentEncoder/Base64ContentEncoder.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/ContentEncoder/Base64ContentEncoder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Encoder/Base64Encoder.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Encoder/Base64Encoder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/HeaderEncoder/Base64HeaderEncoder.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/HeaderEncoder/Base64HeaderEncoder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/assets/js/vendor/Blob.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/assets/js/vendor/Blob.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Signers/BodySigner.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Signers/BodySigner.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/patchwork/utf8/class/Patchwork/Utf8/Bootup.php" afterPath="$PROJECT_DIR$/code/vendor/patchwork/utf8/class/Patchwork/Utf8/Bootup.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/monolog/monolog/src/Monolog/Handler/BrowserConsoleHandler.php" afterPath="$PROJECT_DIR$/code/vendor/monolog/monolog/src/Monolog/Handler/BrowserConsoleHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/StreamFilters/ByteArrayReplacementFilter.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/StreamFilters/ByteArrayReplacementFilter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/CHANGES" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/CHANGES" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/CONTRIBUTING.md" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/CONTRIBUTING.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/cache/lib/Doctrine/Common/Cache/CacheProvider.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/cache/lib/Doctrine/Common/Cache/CacheProvider.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Handler/CallbackHandler.php" afterPath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Handler/CallbackHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/nesbot/carbon/src/Carbon/Carbon.php" afterPath="$PROJECT_DIR$/code/vendor/nesbot/carbon/src/Carbon/Carbon.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/cache/lib/Doctrine/Common/Cache/ChainCache.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/cache/lib/Doctrine/Common/Cache/ChainCache.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/CharacterReader.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/CharacterReader.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/CharacterReaderFactory.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/CharacterReaderFactory.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/CharacterStream.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/CharacterStream.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/CharsetObserver.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/CharsetObserver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Reflection/ClassFinderInterface.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Reflection/ClassFinderInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/ClassLoader.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/ClassLoader.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/ClassMetadata.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/ClassMetadata.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/ClassMetadataFactory.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/ClassMetadataFactory.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Util/ClassUtils.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Util/ClassUtils.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/app/models/Cliente.php" afterPath="$PROJECT_DIR$/code/app/models/Cliente.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/app/controllers/ClienteController.php" afterPath="$PROJECT_DIR$/code/app/controllers/ClienteController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/collections/lib/Doctrine/Common/Collections/Expr/ClosureExpressionVisitor.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/collections/lib/Doctrine/Common/Collections/Expr/ClosureExpressionVisitor.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/collections/lib/Doctrine/Common/Collections/Collection.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/collections/lib/Doctrine/Common/Collections/Collection.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/CommandEvent.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/CommandEvent.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/CommandListener.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/CommandListener.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Comparable.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Comparable.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/collections/lib/Doctrine/Common/Collections/Expr/Comparison.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/collections/lib/Doctrine/Common/Collections/Expr/Comparison.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/collections/lib/Doctrine/Common/Collections/Expr/CompositeExpression.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/collections/lib/Doctrine/Common/Collections/Expr/CompositeExpression.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/ConfigurableSpool.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/ConfigurableSpool.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/ConnectionRegistry.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/ConnectionRegistry.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/ContentEncoder.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/ContentEncoder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/adamkearsley/convert-migrations/src/Adamkearsley/ConvertMigrations/ConvertMigrationsServiceProvider.php" afterPath="$PROJECT_DIR$/code/vendor/adamkearsley/convert-migrations/src/Adamkearsley/ConvertMigrations/ConvertMigrationsServiceProvider.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/Esmtp/Auth/CramMd5Authenticator.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/Esmtp/Auth/CramMd5Authenticator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/collections/lib/Doctrine/Common/Collections/Criteria.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/collections/lib/Doctrine/Common/Collections/Criteria.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/app/utils/CustomAuthenticate.php" afterPath="$PROJECT_DIR$/code/app/utils/CustomAuthenticate.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Signers/DKIMSigner.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Signers/DKIMSigner.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/Headers/DateHeader.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/Headers/DateHeader.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Util/Debug.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Util/Debug.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/DecoratorPlugin.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/DecoratorPlugin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/Driver/DefaultFileLocator.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/Driver/DefaultFileLocator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/DependencyContainer.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/DependencyContainer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/DependencyException.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/DependencyException.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/KeyCache/DiskKeyCache.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/KeyCache/DiskKeyCache.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Signers/DomainKeySigner.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Signers/DomainKeySigner.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/Loggers/EchoLogger.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/Loggers/EchoLogger.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/app/models/Ejecutivo.php" afterPath="$PROJECT_DIR$/code/app/models/Ejecutivo.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/EmbeddedFile.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/EmbeddedFile.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/EmbeddedFile.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/EmbeddedFile.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Encoder.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Encoder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Encoding.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Encoding.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/EncodingObserver.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/EncodingObserver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Exception/ErrorException.php" afterPath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Exception/ErrorException.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/symfony/http-kernel/Symfony/Component/HttpKernel/HttpCache/Esi.php" afterPath="$PROJECT_DIR$/code/vendor/symfony/http-kernel/Symfony/Component/HttpKernel/HttpCache/Esi.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/EsmtpHandler.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/EsmtpHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/EsmtpTransport.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/EsmtpTransport.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/Event.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/Event.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/EventArgs.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/EventArgs.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/EventDispatcher.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/EventDispatcher.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/EventListener.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/EventListener.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/EventManager.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/EventManager.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/EventObject.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/EventObject.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/EventSubscriber.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/EventSubscriber.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/app/utils/Events.php" afterPath="$PROJECT_DIR$/code/app/utils/Events.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/filp/whoops/src/deprecated/Zend/ExceptionStrategy.php" afterPath="$PROJECT_DIR$/code/vendor/filp/whoops/src/deprecated/Zend/ExceptionStrategy.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/collections/lib/Doctrine/Common/Collections/Expr/Expression.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/collections/lib/Doctrine/Common/Collections/Expr/Expression.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/collections/lib/Doctrine/Common/Collections/ExpressionBuilder.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/collections/lib/Doctrine/Common/Collections/ExpressionBuilder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/collections/lib/Doctrine/Common/Collections/Expr/ExpressionVisitor.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/collections/lib/Doctrine/Common/Collections/Expr/ExpressionVisitor.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/FailoverTransport.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/FailoverTransport.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/FailoverTransport.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/FailoverTransport.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/ByteStream/FileByteStream.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/ByteStream/FileByteStream.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/FileCacheReader.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/FileCacheReader.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/Driver/FileDriver.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/Driver/FileDriver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/Driver/FileLocator.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/Driver/FileLocator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/assets/js/vendor/FileSaver.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/assets/js/vendor/FileSaver.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/FileSpool.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/FileSpool.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/FileStream.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/FileStream.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Filterable.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Filterable.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Exception/Formatter.php" afterPath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Exception/Formatter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/symfony/http-kernel/Symfony/Component/HttpKernel/EventListener/FragmentListener.php" afterPath="$PROJECT_DIR$/code/vendor/symfony/http-kernel/Symfony/Component/HttpKernel/EventListener/FragmentListener.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Exception/Frame.php" afterPath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Exception/Frame.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Exception/FrameCollection.php" afterPath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Exception/FrameCollection.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/monolog/monolog/src/Monolog/Formatter/GelfMessageFormatter.php" afterPath="$PROJECT_DIR$/code/vendor/monolog/monolog/src/Monolog/Formatter/GelfMessageFormatter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/CharacterReader/GenericFixedWidthReader.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/CharacterReader/GenericFixedWidthReader.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/Grammar.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/Grammar.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/Gruntfile.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/Gruntfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Handler/Handler.php" afterPath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Handler/Handler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Handler/HandlerInterface.php" afterPath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Handler/HandlerInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/Header.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/Header.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/HeaderEncoder.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/HeaderEncoder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/HeaderFactory.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/HeaderFactory.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/HeaderSet.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/HeaderSet.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Signers/HeaderSigner.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Signers/HeaderSigner.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/monolog/monolog/src/Monolog/Handler/HipChatHandler.php" afterPath="$PROJECT_DIR$/code/vendor/monolog/monolog/src/Monolog/Handler/HipChatHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/Reporters/HitReporter.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/Reporters/HitReporter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/Reporters/HtmlReporter.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/Reporters/HtmlReporter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/Headers/IdentificationHeader.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/Headers/IdentificationHeader.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Image.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Image.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/ImpersonatePlugin.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/ImpersonatePlugin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/InputByteStream.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/InputByteStream.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Exception/Inspector.php" afterPath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Exception/Inspector.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Proxy/Exception/InvalidArgumentException.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Proxy/Exception/InvalidArgumentException.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/IoBuffer.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/IoBuffer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/IoException.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/IoException.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/monolog/monolog/src/Monolog/Formatter/JsonFormatter.php" afterPath="$PROJECT_DIR$/code/vendor/monolog/monolog/src/Monolog/Formatter/JsonFormatter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Handler/JsonResponseHandler.php" afterPath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Handler/JsonResponseHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/symfony/http-kernel/Symfony/Component/HttpKernel/Kernel.php" afterPath="$PROJECT_DIR$/code/vendor/symfony/http-kernel/Symfony/Component/HttpKernel/Kernel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/KeyCache.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/KeyCache.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/KeyCache/KeyCacheInputStream.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/KeyCache/KeyCacheInputStream.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Event/LifecycleEventArgs.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Event/LifecycleEventArgs.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/LoadBalancedTransport.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/LoadBalancedTransport.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/LoadBalancedTransport.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/LoadBalancedTransport.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Event/LoadClassMetadataEventArgs.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Event/LoadClassMetadataEventArgs.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/monolog/monolog/src/Monolog/Handler/LogEntriesHandler.php" afterPath="$PROJECT_DIR$/code/vendor/monolog/monolog/src/Monolog/Handler/LogEntriesHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/Logger.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/Logger.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/LoggerPlugin.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/LoggerPlugin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/Esmtp/Auth/LoginAuthenticator.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/Esmtp/Auth/LoginAuthenticator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/monolog/monolog/src/Monolog/Handler/MailHandler.php" afterPath="$PROJECT_DIR$/code/vendor/monolog/monolog/src/Monolog/Handler/MailHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/MailTransport.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/MailTransport.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/MailTransport.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/MailTransport.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/Headers/MailboxHeader.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/Headers/MailboxHeader.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mailer.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mailer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Event/ManagerEventArgs.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Event/ManagerEventArgs.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/ManagerRegistry.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/ManagerRegistry.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/Driver/MappingDriver.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/Driver/MappingDriver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/Driver/MappingDriverChain.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/Driver/MappingDriverChain.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/MappingException.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/MappingException.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/cache/lib/Doctrine/Common/Cache/MemcacheCache.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/cache/lib/Doctrine/Common/Cache/MemcacheCache.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/MemorySpool.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/MemorySpool.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Message.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Message.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/Message.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/Message.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/app/utils/MessageLog.php" afterPath="$PROJECT_DIR$/code/app/utils/MessageLog.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/MessageLogger.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/MessageLogger.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/MimeEntity.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/MimeEntity.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/MimePart.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/MimePart.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/MimePart.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/MimePart.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Util/Misc.php" afterPath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Util/Misc.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/filp/whoops/src/deprecated/Zend/Module.php" afterPath="$PROJECT_DIR$/code/vendor/filp/whoops/src/deprecated/Zend/Module.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/Esmtp/Auth/NTLMAuthenticator.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/Esmtp/Auth/NTLMAuthenticator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/monolog/monolog/src/Monolog/Handler/NativeMailerHandler.php" afterPath="$PROJECT_DIR$/code/vendor/monolog/monolog/src/Monolog/Handler/NativeMailerHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/ContentEncoder/NativeQpContentEncoder.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/ContentEncoder/NativeQpContentEncoder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/monolog/monolog/src/Monolog/Handler/NewRelicHandler.php" afterPath="$PROJECT_DIR$/code/vendor/monolog/monolog/src/Monolog/Handler/NewRelicHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/CharacterStream/NgCharacterStream.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/CharacterStream/NgCharacterStream.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/monolog/monolog/src/Monolog/Formatter/NormalizerFormatter.php" afterPath="$PROJECT_DIR$/code/vendor/monolog/monolog/src/Monolog/Formatter/NormalizerFormatter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/NotifyPropertyChanged.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/NotifyPropertyChanged.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/KeyCache/NullKeyCache.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/KeyCache/NullKeyCache.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/NullTransport.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/NullTransport.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/NullTransport.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/NullTransport.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/ObjectManager.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/ObjectManager.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/ObjectManagerAware.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/ObjectManagerAware.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/ObjectManagerDecorator.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/ObjectManagerDecorator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/ObjectRepository.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/ObjectRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Event/OnClearEventArgs.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Event/OnClearEventArgs.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/Headers/OpenDKIMHeader.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/Headers/OpenDKIMHeader.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Signers/OpenDKIMSigner.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Signers/OpenDKIMSigner.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Proxy/Exception/OutOfBoundsException.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Proxy/Exception/OutOfBoundsException.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/OutputByteStream.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/OutputByteStream.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/Driver/PHPDriver.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/Driver/PHPDriver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/ParameterizedHeader.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/ParameterizedHeader.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/Headers/ParameterizedHeader.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/Headers/ParameterizedHeader.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/app/models/Params.php" afterPath="$PROJECT_DIR$/code/app/models/Params.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/Headers/PathHeader.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/Headers/PathHeader.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/PersistentObject.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/PersistentObject.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/cache/lib/Doctrine/Common/Cache/PhpFileCache.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/cache/lib/Doctrine/Common/Cache/PhpFileCache.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/Esmtp/Auth/PlainAuthenticator.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/Esmtp/Auth/PlainAuthenticator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/ContentEncoder/PlainContentEncoder.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/ContentEncoder/PlainContentEncoder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Handler/PlainTextHandler.php" afterPath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Handler/PlainTextHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/Pop/Pop3Connection.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/Pop/Pop3Connection.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/Pop/Pop3Exception.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/Pop/Pop3Exception.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/PopBeforeSmtpPlugin.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/PopBeforeSmtpPlugin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Event/PreUpdateEventArgs.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Event/PreUpdateEventArgs.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/cache/lib/Doctrine/Common/Cache/PredisCache.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/cache/lib/Doctrine/Common/Cache/PredisCache.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Preferences.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Preferences.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Handler/PrettyPageHandler.php" afterPath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Handler/PrettyPageHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/app/models/Proceso.php" afterPath="$PROJECT_DIR$/code/app/models/Proceso.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/PropertyChangedListener.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/PropertyChangedListener.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Proxy.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Proxy.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Proxy/Proxy.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Proxy/Proxy.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Proxy/ProxyDefinition.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Proxy/ProxyDefinition.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Proxy/ProxyGenerator.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Proxy/ProxyGenerator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Reflection/Psr0FindFile.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Reflection/Psr0FindFile.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/ContentEncoder/QpContentEncoder.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/ContentEncoder/QpContentEncoder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/ContentEncoder/QpContentEncoderProxy.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/ContentEncoder/QpContentEncoderProxy.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Encoder/QpEncoder.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Encoder/QpEncoder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/HeaderEncoder/QpHeaderEncoder.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/HeaderEncoder/QpHeaderEncoder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/README.md" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/test-infra/README.md" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/test-infra/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/monolog/monolog/src/Monolog/Handler/RavenHandler.php" afterPath="$PROJECT_DIR$/code/vendor/monolog/monolog/src/Monolog/Handler/RavenHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/ContentEncoder/RawContentEncoder.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/ContentEncoder/RawContentEncoder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mailer/RecipientIterator.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mailer/RecipientIterator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/RedirectingPlugin.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/RedirectingPlugin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/cache/lib/Doctrine/Common/Cache/RedisCache.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/cache/lib/Doctrine/Common/Cache/RedisCache.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Reflection/ReflectionProviderInterface.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Reflection/ReflectionProviderInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/ReflectionService.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/ReflectionService.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/monolog/monolog/src/Monolog/Registry.php" afterPath="$PROJECT_DIR$/code/vendor/monolog/monolog/src/Monolog/Registry.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/ReplacementFilterFactory.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/ReplacementFilterFactory.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/Decorator/Replacements.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/Decorator/Replacements.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/Reporter.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/Reporter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/ReporterPlugin.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/ReporterPlugin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/Request.php" afterPath="$PROJECT_DIR$/code/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/Request.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/ResponseEvent.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/ResponseEvent.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/ResponseListener.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/ResponseListener.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Encoder/Rfc2231Encoder.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Encoder/Rfc2231Encoder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/RfcComplianceException.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/RfcComplianceException.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/filp/whoops/src/deprecated/Zend/RouteNotFoundStrategy.php" afterPath="$PROJECT_DIR$/code/vendor/filp/whoops/src/deprecated/Zend/RouteNotFoundStrategy.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Run.php" afterPath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Run.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Reflection/RuntimePublicReflectionProperty.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Reflection/RuntimePublicReflectionProperty.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/RuntimeReflectionService.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/RuntimeReflectionService.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Signers/SMimeSigner.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Signers/SMimeSigner.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/cache/lib/Doctrine/Common/Cache/SQLite3Cache.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/cache/lib/Doctrine/Common/Cache/SQLite3Cache.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/monolog/monolog/src/Monolog/Handler/SamplingHandler.php" afterPath="$PROJECT_DIR$/code/vendor/monolog/monolog/src/Monolog/Handler/SamplingHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/collections/lib/Doctrine/Common/Collections/Selectable.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/collections/lib/Doctrine/Common/Collections/Selectable.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/SendEvent.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/SendEvent.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/SendListener.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/SendListener.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/SendmailTransport.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/SendmailTransport.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/SendmailTransport.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/SendmailTransport.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/app/controllers/ServletController.php" afterPath="$PROJECT_DIR$/code/app/controllers/ServletController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/SignedMessage.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/SignedMessage.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Signer.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Signer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/CharacterReaderFactory/SimpleCharacterReaderFactory.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/CharacterReaderFactory/SimpleCharacterReaderFactory.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/SimpleEventDispatcher.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/SimpleEventDispatcher.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/SimpleHeaderFactory.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/SimpleHeaderFactory.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/SimpleHeaderSet.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/SimpleHeaderSet.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/KeyCache/SimpleKeyCacheInputStream.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/KeyCache/SimpleKeyCacheInputStream.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/SimpleMailInvoker.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/SimpleMailInvoker.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/SimpleMessage.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/SimpleMessage.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/SimpleMimeEntity.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/SimpleMimeEntity.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/monolog/monolog/src/Monolog/Handler/SlackHandler.php" afterPath="$PROJECT_DIR$/code/vendor/monolog/monolog/src/Monolog/Handler/SlackHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/Sleeper.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/Sleeper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/SmtpAgent.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/SmtpAgent.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/SmtpTransport.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/SmtpTransport.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Handler/SoapResponseHandler.php" afterPath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Handler/SoapResponseHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Spool.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Spool.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/SpoolTransport.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/SpoolTransport.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/SpoolTransport.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/SpoolTransport.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/adamkearsley/convert-migrations/src/Adamkearsley/ConvertMigrations/SqlMigrations.php" afterPath="$PROJECT_DIR$/code/vendor/adamkearsley/convert-migrations/src/Adamkearsley/ConvertMigrations/SqlMigrations.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/Driver/StaticPHPDriver.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/Driver/StaticPHPDriver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Reflection/StaticReflectionClass.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Reflection/StaticReflectionClass.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Reflection/StaticReflectionMethod.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Reflection/StaticReflectionMethod.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Reflection/StaticReflectionParser.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Reflection/StaticReflectionParser.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Reflection/StaticReflectionProperty.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Reflection/StaticReflectionProperty.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/StaticReflectionService.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/StaticReflectionService.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/StreamBuffer.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/StreamBuffer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/StreamFilter.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/StreamFilter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/StreamFilters/StringReplacementFilter.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/StreamFilters/StringReplacementFilter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/StreamFilters/StringReplacementFilterFactory.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/StreamFilters/StringReplacementFilterFactory.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/SwiftException.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/SwiftException.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/monolog/monolog/src/Monolog/Handler/SwiftMailerHandler.php" afterPath="$PROJECT_DIR$/code/vendor/monolog/monolog/src/Monolog/Handler/SwiftMailerHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/Driver/SymfonyFileLocator.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/Driver/SymfonyFileLocator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Util/TemplateHelper.php" afterPath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Util/TemplateHelper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/ByteStream/TemporaryFileByteStream.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/ByteStream/TemporaryFileByteStream.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/ThrottlerPlugin.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/ThrottlerPlugin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/Timer.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/Timer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/TransportChangeEvent.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/TransportChangeEvent.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/TransportChangeListener.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/TransportChangeListener.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/TransportException.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/TransportException.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/TransportExceptionEvent.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/TransportExceptionEvent.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/TransportExceptionListener.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/TransportExceptionListener.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Proxy/Exception/UnexpectedValueException.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Proxy/Exception/UnexpectedValueException.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/Headers/UnstructuredHeader.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/Headers/UnstructuredHeader.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/CharacterReader/UsAsciiReader.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/CharacterReader/UsAsciiReader.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/patchwork/utf8/class/Patchwork/Utf8.php" afterPath="$PROJECT_DIR$/code/vendor/patchwork/utf8/class/Patchwork/Utf8.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/CharacterReader/Utf8Reader.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/CharacterReader/Utf8Reader.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/VERSION" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/VERSION" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Validate.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Validate.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/collections/lib/Doctrine/Common/Collections/Expr/Value.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/collections/lib/Doctrine/Common/Collections/Expr/Value.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Version.php" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/lib/Doctrine/Common/Version.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Provider/Phalcon/WhoopsServiceProvider.php" afterPath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Provider/Phalcon/WhoopsServiceProvider.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Provider/Silex/WhoopsServiceProvider.php" afterPath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Provider/Silex/WhoopsServiceProvider.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/Esmtp/Auth/XOAuth2Authenticator.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/Esmtp/Auth/XOAuth2Authenticator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Handler/XmlResponseHandler.php" afterPath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Handler/XmlResponseHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/_config.yml" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/_config.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/about.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/about.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/js/affix.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/js/affix.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/affix.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/affix.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/alert.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/alert.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/tests/unit/alert.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/tests/unit/alert.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/assets/js/vendor/anchor.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/assets/js/vendor/anchor.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/app/config/app.php" afterPath="$PROJECT_DIR$/code/app/config/app.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/assets/js/src/application.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/assets/js/src/application.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/autoload.php" afterPath="$PROJECT_DIR$/code/vendor/autoload.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/composer/autoload_classmap.php" afterPath="$PROJECT_DIR$/code/vendor/composer/autoload_classmap.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/composer/autoload_files.php" afterPath="$PROJECT_DIR$/code/vendor/composer/autoload_files.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/composer/autoload_namespaces.php" afterPath="$PROJECT_DIR$/code/vendor/composer/autoload_namespaces.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/composer/autoload_psr4.php" afterPath="$PROJECT_DIR$/code/vendor/composer/autoload_psr4.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/composer/autoload_real.php" afterPath="$PROJECT_DIR$/code/vendor/composer/autoload_real.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/assets/js/vendor/autoprefixer.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/assets/js/vendor/autoprefixer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/mixins/background-variant.less" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/mixins/background-variant.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/badges.less" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/badges.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/dist/css/bootstrap-theme.css.map" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/dist/css/bootstrap-theme.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/dist/css/bootstrap-theme.css.map" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/dist/css/bootstrap-theme.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/dist/css/bootstrap-theme.css" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/dist/css/bootstrap-theme.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/dist/css/bootstrap-theme.css" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/dist/css/bootstrap-theme.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/dist/css/bootstrap-theme.min.css" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/dist/css/bootstrap-theme.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/dist/css/bootstrap-theme.min.css" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/dist/css/bootstrap-theme.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/dist/css/bootstrap.css.map" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/dist/css/bootstrap.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/dist/css/bootstrap.css.map" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/dist/css/bootstrap.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/dist/css/bootstrap.css" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/dist/css/bootstrap.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/dist/css/bootstrap.css" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/dist/css/bootstrap.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/dist/js/bootstrap.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/dist/js/bootstrap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/dist/js/bootstrap.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/dist/js/bootstrap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/bootstrap.less" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/bootstrap.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/dist/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/dist/css/bootstrap.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/dist/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/dist/css/bootstrap.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/dist/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/dist/js/bootstrap.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/dist/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/dist/js/bootstrap.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/bower.json" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/browser-bugs.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/browser-bugs.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_data/browser-bugs.yml" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_data/browser-bugs.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/getting-started/browser-device-support.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/getting-started/browser-device-support.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/grunt/bs-commonjs-generator.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/grunt/bs-commonjs-generator.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/grunt/bs-glyphicons-data-generator.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/grunt/bs-glyphicons-data-generator.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/grunt/bs-lessdoc-parser.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/grunt/bs-lessdoc-parser.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/grunt/bs-raw-files-generator.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/grunt/bs-raw-files-generator.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/build.xml" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/build.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/components/button-dropdowns.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/components/button-dropdowns.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/components/button-groups.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/components/button-groups.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/button-groups.less" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/button-groups.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/button.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/button.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/tests/unit/button.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/tests/unit/button.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/js/buttons.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/js/buttons.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/buttons.less" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/buttons.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/mixins/buttons.less" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/mixins/buttons.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/app/views/landings/bye.blade.php" afterPath="$PROJECT_DIR$/code/app/views/landings/bye.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/app/views/landings/c1.blade.php" afterPath="$PROJECT_DIR$/code/app/views/landings/c1.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/app/config/cache.php" afterPath="$PROJECT_DIR$/code/app/config/cache.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/dependency_maps/cache_deps.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/dependency_maps/cache_deps.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/js/carousel.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/js/carousel.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/carousel.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/carousel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/tests/unit/carousel.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/tests/unit/carousel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/carousel.less" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/carousel.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/js/collapse.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/js/collapse.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/tests/visual/collapse.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/tests/visual/collapse.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/collapse.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/collapse.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/tests/unit/collapse.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/tests/unit/collapse.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/getting-started/community.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/getting-started/community.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/component-animations.less" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/component-animations.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/nav/components.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/nav/components.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/composer.json" afterPath="$PROJECT_DIR$/code/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/cache/composer.json" afterPath="$PROJECT_DIR$/code/vendor/doctrine/cache/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/collections/composer.json" afterPath="$PROJECT_DIR$/code/vendor/doctrine/collections/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/doctrine/common/composer.json" afterPath="$PROJECT_DIR$/code/vendor/doctrine/common/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/filp/whoops/composer.json" afterPath="$PROJECT_DIR$/code/vendor/filp/whoops/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/monolog/monolog/composer.json" afterPath="$PROJECT_DIR$/code/vendor/monolog/monolog/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/composer.json" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/composer.lock" afterPath="$PROJECT_DIR$/code/composer.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/composerJson.xml" afterPath="$PROJECT_DIR$/.idea/composerJson.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/app/config/config.php" afterPath="$PROJECT_DIR$/code/app/config/config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/app/config/packages/barryvdh/laravel-debugbar/config.php" afterPath="$PROJECT_DIR$/code/app/config/packages/barryvdh/laravel-debugbar/config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/grunt/configBridge.json" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/grunt/configBridge.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/customize.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/customize.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/assets/js/customize.min.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/assets/js/customize.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/customizer-variables.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/customizer-variables.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/assets/js/src/customizer.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/assets/js/src/customizer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/app/config/database.php" afterPath="$PROJECT_DIR$/code/app/config/database.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/app/config/local/database.php" afterPath="$PROJECT_DIR$/code/app/config/local/database.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/assets/css/src/docs.css" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/assets/css/src/docs.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/assets/css/docs.min.css" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/assets/css/docs.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/assets/js/docs.min.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/assets/js/docs.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/getting-started/download.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/getting-started/download.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/tests/visual/dropdown.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/tests/visual/dropdown.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/dropdown.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/dropdown.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/tests/unit/dropdown.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/tests/unit/dropdown.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/components/dropdowns.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/components/dropdowns.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/js/dropdowns.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/js/dropdowns.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/dropdowns.less" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/dropdowns.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Resources/views/env_details.html.php" afterPath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Resources/views/env_details.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/app/filters.php" afterPath="$PROJECT_DIR$/code/app/filters.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/footer.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/footer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/app/views/landings/form.blade.php" afterPath="$PROJECT_DIR$/code/app/views/landings/form.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/css/forms.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/css/forms.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/forms.less" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/forms.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Resources/views/frame_code.html.php" afterPath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Resources/views/frame_code.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Resources/views/frame_list.html.php" afterPath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Resources/views/frame_list.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/app/start/global.php" afterPath="$PROJECT_DIR$/code/app/start/global.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/mixins/grid-framework.less" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/mixins/grid-framework.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/mixins/grid.less" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/mixins/grid.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/getting-started/grunt.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/getting-started/grunt.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Resources/views/header.html.php" afterPath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Resources/views/header.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/header.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/css/helpers.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/css/helpers.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/mixins/hide-text.less" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/mixins/hide-text.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/assets/js/ie-emulation-modes-warning.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/assets/js/ie-emulation-modes-warning.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/assets/js/ie10-viewport-bug-workaround.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/assets/js/ie10-viewport-bug-workaround.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/assets/js/ie8-responsive-file-warning.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/assets/js/ie8-responsive-file-warning.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/examples/blog/index.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/examples/blog/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/examples/carousel/index.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/examples/carousel/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/examples/cover/index.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/examples/cover/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/examples/dashboard/index.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/examples/dashboard/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/examples/jumbotron/index.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/examples/jumbotron/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/examples/navbar/index.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/examples/navbar/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/examples/navbar-fixed-top/index.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/examples/navbar-fixed-top/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/examples/navbar-static-top/index.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/examples/navbar-static-top/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/examples/non-responsive/index.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/examples/non-responsive/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/examples/offcanvas/index.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/examples/offcanvas/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/examples/starter-template/index.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/examples/starter-template/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/examples/sticky-footer-navbar/index.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/examples/sticky-footer-navbar/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/examples/theme/index.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/examples/theme/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/examples/tooltip-viewport/index.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/examples/tooltip-viewport/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/tests/index.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/tests/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/components/input-groups.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/components/input-groups.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/input-groups.less" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/input-groups.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/composer/installed.json" afterPath="$PROJECT_DIR$/code/vendor/composer/installed.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/nav/javascript.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/nav/javascript.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/tests/vendor/jquery.min.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/tests/vendor/jquery.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/assets/js/vendor/jszip.min.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/assets/js/vendor/jszip.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/jumbotron.less" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/jumbotron.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/examples/justified-nav/justified-nav.css" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/examples/justified-nav/justified-nav.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Resources/views/layout.html.php" afterPath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Resources/views/layout.html.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/components/list-group.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/components/list-group.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/list-group.less" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/list-group.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/mixins/list-group.less" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/mixins/list-group.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/app/start/local.php" afterPath="$PROJECT_DIR$/code/app/start/local.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/nav/main.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/nav/main.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/app/views/layouts/landing/cliente/master.blade.php" afterPath="$PROJECT_DIR$/code/app/views/layouts/landing/cliente/master.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/patchwork/utf8/class/Patchwork/Utf8/Bootup/mbstring.php" afterPath="$PROJECT_DIR$/code/vendor/patchwork/utf8/class/Patchwork/Utf8/Bootup/mbstring.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/media.less" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/media.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/migration.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/migration.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/dependency_maps/mime_deps.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/dependency_maps/mime_deps.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/mixins.less" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/mixins.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/js/modal.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/js/modal.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/tests/visual/modal.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/tests/visual/modal.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/modal.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/modal.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/tests/unit/modal.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/tests/unit/modal.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/filp/whoops/src/deprecated/Zend/module.config.example.php" afterPath="$PROJECT_DIR$/code/vendor/filp/whoops/src/deprecated/Zend/module.config.example.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/components/navbar.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/components/navbar.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/navbar.less" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/navbar.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/components/navs.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/components/navs.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/navs.less" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/navs.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/examples/non-responsive/non-responsive.css" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/examples/non-responsive/non-responsive.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/normalize.less" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/normalize.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/test-infra/npm-shrinkwrap.json" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/test-infra/npm-shrinkwrap.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/package.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/package.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/package.json" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/pagination.less" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/pagination.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/mixins/pagination.less" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/mixins/pagination.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/panels.less" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/panels.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/tests/unit/phantom.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/tests/unit/phantom.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/popover.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/popover.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/tests/unit/popover.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/tests/unit/popover.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/js/popovers.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/js/popovers.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/popovers.less" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/popovers.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/print.less" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/print.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/components/progress-bars.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/components/progress-bars.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/assets/js/raw-files.min.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/assets/js/raw-files.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/mixins/responsive-visibility.less" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/mixins/responsive-visibility.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/app/routes.php" afterPath="$PROJECT_DIR$/code/app/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/grunt/sauce_browsers.yml" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/grunt/sauce_browsers.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/scaffolding.less" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/scaffolding.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/js/scrollspy.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/js/scrollspy.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/tests/visual/scrollspy.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/tests/visual/scrollspy.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/scrollspy.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/scrollspy.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/tests/unit/scrollspy.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/tests/unit/scrollspy.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/app/config/session.php" afterPath="$PROJECT_DIR$/code/app/config/session.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/social-buttons.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/social-buttons.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/bootstrap/start.php" afterPath="$PROJECT_DIR$/code/bootstrap/start.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/swift_init.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/swift_init.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/swift_required.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/swift_required.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/swift_required_pear.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/swift_required_pear.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/swiftmailer_generate_mimes_config.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/swiftmailer_generate_mimes_config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/tests/visual/tab.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/tests/visual/tab.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/tab.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/tab.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/tests/unit/tab.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/tests/unit/tab.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/css/tables.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/css/tables.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/js/tabs.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/js/tabs.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/getting-started/template.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/getting-started/template.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/mixins/text-emphasis.less" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/mixins/text-emphasis.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/theme.less" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/theme.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/getting-started/third-party-support.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/getting-started/third-party-support.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/tooltip.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/tooltip.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/tests/unit/tooltip.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/tests/unit/tooltip.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/tooltip.less" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/tooltip.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/js/tooltips.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/js/tooltips.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/transition.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/js/transition.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/js/transitions.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/js/transitions.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_data/translations.yml" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_data/translations.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/dependency_maps/transport_deps.php" afterPath="$PROJECT_DIR$/code/vendor/swiftmailer/swiftmailer/lib/dependency_maps/transport_deps.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/assets/js/vendor/uglify.min.js" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/assets/js/vendor/uglify.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/utilities.less" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/utilities.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/variables.less" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/less/variables.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/getting-started/whats-included.html" afterPath="$PROJECT_DIR$/code/vendor/twbs/bootstrap/docs/_includes/getting-started/whats-included.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Resources/css/whoops.base.css" afterPath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Resources/css/whoops.base.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Resources/js/whoops.base.js" afterPath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Resources/js/whoops.base.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Resources/js/zepto.min.js" afterPath="$PROJECT_DIR$/code/vendor/filp/whoops/src/Whoops/Resources/js/zepto.min.js" />
     </list>
     <ignored path="tracking_correos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -102,57 +680,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/code/app/utils/MongoFormatter.php" />
-        <option value="$PROJECT_DIR$/code/app/config/services.php" />
-        <option value="$PROJECT_DIR$/code/app/config/compile.php" />
-        <option value="$PROJECT_DIR$/code/app/utils/Logger.php" />
-        <option value="$PROJECT_DIR$/code/app/storage/logs/app.log" />
-        <option value="$PROJECT_DIR$/code/app/utils/Message.php" />
-        <option value="$PROJECT_DIR$/code/app/storage/logs/monolog.log" />
-        <option value="$PROJECT_DIR$/code/app/storage/logs/monolog2.log" />
-        <option value="$PROJECT_DIR$/code/app/storage/logs/database.log" />
         <option value="$PROJECT_DIR$/code/app/storage/logs/request.log" />
-        <option value="$PROJECT_DIR$/code/app/models/Ejecutivo.php" />
         <option value="$PROJECT_DIR$/code/app/views/landings/e1.blade.php" />
         <option value="$PROJECT_DIR$/code/app/controllers/EjecutivoController.php" />
         <option value="$PROJECT_DIR$/readme.md" />
         <option value="$PROJECT_DIR$/code/app/controllers/BaseController.php" />
         <option value="$PROJECT_DIR$/code/app/storage/logs/amicarCotizante.log" />
-        <option value="$PROJECT_DIR$/code/app/controllers/ApiController.php" />
         <option value="$PROJECT_DIR$/code/app/storage/logs/AmicarLanding.log" />
         <option value="$PROJECT_DIR$/code/app/storage/sessions/410489e96eb5f05201a92e20e8f4782ce880152f" />
         <option value="$PROJECT_DIR$/code/app/views/layouts/landing/ejecutivo/master.blade.php" />
         <option value="$PROJECT_DIR$/code/app/views/landings/thanks.php" />
-        <option value="$PROJECT_DIR$/code/app/views/landings/form.blade.php" />
-        <option value="$PROJECT_DIR$/code/app/models/Params.php" />
         <option value="$PROJECT_DIR$/code/app/views/landings/thanks.blade.php" />
-        <option value="$PROJECT_DIR$/code/app/views/layouts/landing/cliente/master.blade.php" />
         <option value="$PROJECT_DIR$/code/app/views/landings/bye.blade.php" />
         <option value="$PROJECT_DIR$/code/app/utils/MCrypt.php" />
         <option value="$PROJECT_DIR$/code/app/models/observers/BaseObserver.php" />
         <option value="$PROJECT_DIR$/code/app/models/observers/UserObserver.php" />
         <option value="$PROJECT_DIR$/code/app/config/observers.php" />
         <option value="$PROJECT_DIR$/code/app/controllers/UserController.php" />
-        <option value="$PROJECT_DIR$/code/app/views/landings/c1.blade.php" />
-        <option value="$PROJECT_DIR$/code/app/models/Cliente.php" />
         <option value="E:/Amicar/App/descargaArchivoDiario-0.0.2.bat" />
-        <option value="$PROJECT_DIR$/code/app/config/dev/database.php" />
-        <option value="$PROJECT_DIR$/code/app/filters.php" />
-        <option value="$PROJECT_DIR$/code/app/controllers/ServletController.php" />
-        <option value="$PROJECT_DIR$/code/app/controllers/ClienteController.php" />
-        <option value="$PROJECT_DIR$/code/bootstrap/start.php" />
-        <option value="$PROJECT_DIR$/code/app/config/database.php" />
         <option value="$PROJECT_DIR$/code/app/config/api.php" />
-        <option value="$PROJECT_DIR$/code/app/start/local.php" />
-        <option value="$PROJECT_DIR$/code/app/start/global.php" />
-        <option value="$PROJECT_DIR$/code/app/utils/MessageLog.php" />
-        <option value="$PROJECT_DIR$/code/app/config/app.php" />
         <option value="$PROJECT_DIR$/code/app/config/local/app.php" />
         <option value="$PROJECT_DIR$/code/app/config/dev/app.php" />
         <option value="$PROJECT_DIR$/code/app/config/packages/barryvdh/laravel-debugbar/config.php" />
-        <option value="$PROJECT_DIR$/code/app/config/config.php" />
         <option value="$PROJECT_DIR$/code/app/utils/Functions.php" />
+        <option value="$PROJECT_DIR$/code/app/filters.php" />
+        <option value="$PROJECT_DIR$/code/app/utils/MessageLog.php" />
+        <option value="$PROJECT_DIR$/code/app/config/dev/database.php" />
+        <option value="$PROJECT_DIR$/code/app/views/layouts/landing/cliente/master.blade.php" />
+        <option value="$PROJECT_DIR$/code/composer.json" />
+        <option value="$PROJECT_DIR$/code/app/models/Texto.php" />
+        <option value="$PROJECT_DIR$/code/app/config/config.php" />
+        <option value="$PROJECT_DIR$/code/app/utils/CustomAuthenticate.php" />
+        <option value="$PROJECT_DIR$/code/bootstrap/start.php" />
+        <option value="$PROJECT_DIR$/code/app/config/local/database.php" />
+        <option value="$PROJECT_DIR$/code/app/models/Ejecutivo.php" />
+        <option value="$PROJECT_DIR$/code/app/config/session.php" />
+        <option value="$PROJECT_DIR$/code/app/start/global.php" />
+        <option value="$PROJECT_DIR$/code/app/start/local.php" />
+        <option value="$PROJECT_DIR$/code/app/utils/Events.php" />
+        <option value="$PROJECT_DIR$/code/app/models/Cliente.php" />
+        <option value="$PROJECT_DIR$/code/app/models/Proceso.php" />
+        <option value="$PROJECT_DIR$/code/app/views/landings/form.blade.php" />
+        <option value="$PROJECT_DIR$/code/app/models/Params.php" />
         <option value="$PROJECT_DIR$/code/app/routes.php" />
+        <option value="$PROJECT_DIR$/code/app/config/texts.php" />
+        <option value="$PROJECT_DIR$/code/app/views/landings/c1.blade.php" />
+        <option value="$PROJECT_DIR$/code/app/controllers/ApiController.php" />
+        <option value="$PROJECT_DIR$/code/app/config/app.php" />
+        <option value="C:/apps/Amicar/config/cotizanteAmicar.ini" />
+        <option value="$PROJECT_DIR$/code/app/config/database.php" />
+        <option value="$PROJECT_DIR$/code/app/controllers/ServletController.php" />
+        <option value="$PROJECT_DIR$/code/app/controllers/ClienteController.php" />
       </list>
     </option>
   </component>
@@ -266,6 +844,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -286,11 +865,10 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/code/app/views" />
     <property name="LayoutCode.rearrangeEntriesPHP" value="true" />
     <property name="options.lastSelected" value="preferences.pluginManager" />
@@ -321,14 +899,20 @@
     <property name="restartRequiresConfirmation" value="true" />
     <property name="LayoutCode.rearrangeEntries" value="false" />
     <property name="LayoutCode.rearrangeEntriesPlain text" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="LayoutCode.rearrangeEntriesJSON" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Projects\Php\Amicar2\code\app\config" />
+      <recent name="E:\Projects\Php\Amicar2\code\app\config\local" />
       <recent name="E:\Projects\Php\Amicar2\code\app\controllers" />
       <recent name="E:\Projects\Php\Amicar2\code\app\views\landings" />
       <recent name="E:\Projects\Php\Amicar2\code\app\views\layouts\landing" />
-      <recent name="E:\Projects\Php\Amicar2\code\public\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Projects\Php\Amicar2\code\app\views\layouts\email\ejecutivo" />
@@ -361,13 +945,13 @@
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
       <method />
     </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
     <configuration default="true" type="com.intellij.database.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
       <option name="VM_PARAMETERS" value="" />
       <option name="USER_CFG_CLASS" />
       <option name="CONTEXT_PROVIDER" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
     <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
@@ -377,6 +961,9 @@
     <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
       <method />
     </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server" server_id="67fd7953-8793-424c-bfa0-1c300c729eb9" server_name="Ameis">
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
@@ -384,9 +971,6 @@
       <arguments />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <configuration default="false" name="Amicar2" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" server_name="laravel" start_url="/SolicitudCotizacionAmicar?cliente=c338cccdb1e3e40363a4daa0efd862b1&amp;cotizacion=7b951860af35e3067f703b5e237c25a6&amp;campana=3a22921565c606de3b7b75e5dd90d722">
@@ -460,33 +1044,40 @@
       <option name="project" value="LOCAL" />
       <updated>1429475584053</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="0.0.1">
+      <created>1429477599526</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1429477599526</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20915033" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2369281" sideWeight="0.74886537" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35678393" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4274062" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.57585645" sideWeight="0.74886537" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18437026" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962063" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Symfony2" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2003035" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31699347" sideWeight="0.25113463" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19969743" sideWeight="0.49892932" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22390318" sideWeight="0.5010707" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31699347" sideWeight="0.25113463" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="SvgViewer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962063" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20801815" sideWeight="0.49892932" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5506536" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35678393" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31810766" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26590538" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -513,9 +1104,9 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20801815" sideWeight="0.49892932" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
@@ -546,7 +1137,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="50" />
+      <option name="time" value="52" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -563,334 +1154,10 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/code/app/storage/logs/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.88" vertical-offset="0" max-vertical-offset="311">
-          <caret line="1" column="10" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/readme.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
-          <caret line="0" column="20" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
-        </state>
-      </provider>
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/app/controllers/BaseController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27549195" vertical-offset="44" max-vertical-offset="1065">
-          <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/app/views/landings/e1.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22201835" vertical-offset="825" max-vertical-offset="1689">
-          <caret line="43" column="53" selection-start-line="43" selection-start-column="53" selection-end-line="43" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/app/models/Body.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="110" max-vertical-offset="1020">
-          <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/app/views/landings/e2.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1175">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/app/config/testing/cache.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="773">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/vendor/monolog/monolog/src/Monolog/Logger.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.5531135" vertical-offset="264" max-vertical-offset="10028">
-          <caret line="135" column="20" selection-start-line="135" selection-start-column="20" selection-end-line="135" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/app/utils/SiteHelpers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.35420394" vertical-offset="198" max-vertical-offset="1241">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/app/models/Ejecutivo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.807692" vertical-offset="53" max-vertical-offset="1307">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/app/config/mail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3115">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/app/storage/logs/database.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.03846154" vertical-offset="0" max-vertical-offset="572">
-          <caret line="1" column="139" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/app/views/layouts/landing/ejecutivo/master.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07326008" vertical-offset="334" max-vertical-offset="1404">
-          <caret line="17" column="47" selection-start-line="0" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/public/images/icon_cel.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/public/images/icon_mano.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/public/images/icon_facebook.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/app/views/landings/form.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1250">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/public/robots.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="607">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/app/views/landings/thanks.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.7728938" vertical-offset="154" max-vertical-offset="1822">
-          <caret line="51" column="70" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/app/models/Params.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.275492" vertical-offset="321" max-vertical-offset="3331">
-          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/app/views/layouts/landing/cliente/master.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1320" max-vertical-offset="2332">
-          <caret line="60" column="38" selection-start-line="60" selection-start-column="38" selection-end-line="60" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/app/views/landings/bye.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5277281" vertical-offset="717" max-vertical-offset="1835">
-          <caret line="46" column="23" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/app/utils/MCrypt.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.39355993" vertical-offset="594" max-vertical-offset="2121">
-          <caret line="17" column="34" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/apps/Amicar/config/cotizanteAmicar.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="915">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/app/config/observers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10653753" vertical-offset="0" max-vertical-offset="435">
-          <caret line="2" column="52" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://E:/Amicar/App/descargaArchivoDiario-0.0.2.bat">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2266" max-vertical-offset="4364">
-          <caret line="103" column="36" selection-start-line="103" selection-start-column="36" selection-end-line="103" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/app/views/landings/c1.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1232" max-vertical-offset="2552">
-          <caret line="56" column="8" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/app/controllers/EjecutivoController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1782" max-vertical-offset="2376">
-          <caret line="115" column="47" selection-start-line="115" selection-start-column="37" selection-end-line="115" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/app/models/Cliente.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="682" max-vertical-offset="1232">
-          <caret line="31" column="36" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/app/config/debug/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15742397" vertical-offset="0" max-vertical-offset="1131">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/app/config/session.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3423">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/app/controllers/ClienteController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-50.086956" vertical-offset="64" max-vertical-offset="2818">
-          <caret line="88" column="18" selection-start-line="88" selection-start-column="18" selection-end-line="88" selection-end-column="18" />
-          <folding>
-            <element signature="e#7#27#0#PHP" expanded="false" />
-            <element signature="n#__construct#0;n#ClienteController#0;n#!!top" expanded="false" />
-            <element signature="n#update#0;n#ClienteController#0;n#!!top" expanded="false" />
-            <element signature="n#destroy#0;n#ClienteController#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/app/filters.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="928" max-vertical-offset="1536">
-          <caret line="67" column="5" selection-start-line="67" selection-start-column="5" selection-end-line="67" selection-end-column="5" />
-          <folding>
-            <element signature="e#451#641#2#PHP" expanded="false" />
-            <element signature="e#656#904#2#PHP" expanded="false" />
-            <element signature="e#1352#1567#1#PHP" expanded="false" />
-            <element signature="e#1600#1648#1#PHP" expanded="false" />
-            <element signature="e#1680#1722#1#PHP" expanded="false" />
-            <element signature="e#1749#1853#1#PHP" expanded="false" />
-            <element signature="e#2428#2496#1#PHP" expanded="false" />
-            <element signature="e#2947#3120#1#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/app/config/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2608">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/bootstrap/paths.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.07692308" vertical-offset="848" max-vertical-offset="1264">
-          <caret line="51" column="52" selection-start-line="51" selection-start-column="45" selection-end-line="51" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/bootstrap/start.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.0769231" vertical-offset="480" max-vertical-offset="1456">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/bootstrap/autoload.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1923077" vertical-offset="0" max-vertical-offset="1568">
-          <caret line="31" column="53" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/app/start/global.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.02846975" vertical-offset="352" max-vertical-offset="2338">
-          <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="62" />
-          <folding>
-            <element signature="e#1904#1971#2#PHP" expanded="false" />
-            <element signature="e#2023#2579#2#PHP" expanded="false" />
-            <element signature="e#2996#3056#2#PHP" expanded="false" />
-            <element signature="e#3602#3740#1#PHP" expanded="false" />
-            <element signature="e#3758#3869#2#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/app/start/local.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34163702" vertical-offset="16" max-vertical-offset="850">
-          <caret line="13" column="51" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/code/app/config/api.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0569395" vertical-offset="0" max-vertical-offset="1010">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/app/controllers/ServletController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-28.52174" vertical-offset="0" max-vertical-offset="1188">
-          <caret line="104" column="83" selection-start-line="104" selection-start-column="83" selection-end-line="104" selection-end-column="83" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/app/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.03846154" vertical-offset="0" max-vertical-offset="688">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <element signature="e#7#44#0#PHP" expanded="true" />
-            <element signature="e#186#412#0#PHP" expanded="false" />
-            <element signature="e#366#412#0#PHP" expanded="false" />
-            <element signature="e#414#714#0#PHP" expanded="false" />
-            <element signature="e#741#776#0#PHP" expanded="false" />
-            <element signature="e#931#987#1#PHP" expanded="true" />
-            <element signature="e#1009#1062#1#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -898,55 +1165,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6442308" vertical-offset="3524" max-vertical-offset="4224">
           <caret line="237" column="0" selection-start-line="237" selection-start-column="0" selection-end-line="237" selection-end-column="0" />
-          <folding>
-            <element signature="e#97#209#0#PHP" expanded="true" />
-            <element signature="e#212#356#0#PHP" expanded="true" />
-            <element signature="e#359#749#0#PHP" expanded="true" />
-            <element signature="e#752#1419#0#PHP" expanded="true" />
-            <element signature="e#1422#1868#0#PHP" expanded="true" />
-            <element signature="e#1871#1984#0#PHP" expanded="true" />
-            <element signature="e#1987#2136#0#PHP" expanded="true" />
-            <element signature="e#2139#2240#0#PHP" expanded="true" />
-            <element signature="e#2243#2515#0#PHP" expanded="true" />
-            <element signature="e#2518#2784#0#PHP" expanded="true" />
-            <element signature="e#2787#3827#0#PHP" expanded="true" />
-            <element signature="e#3830#4754#0#PHP" expanded="true" />
-            <element signature="e#4757#5156#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/app/start/artisan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07692308" vertical-offset="0" max-vertical-offset="480">
-          <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/app/config/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7307692" vertical-offset="48" max-vertical-offset="848">
-          <caret line="22" column="40" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
-          <folding>
-            <element signature="e#7#209#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/app/config/local/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="616">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/app/config/dev/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8076923" vertical-offset="0" max-vertical-offset="1104">
-          <caret line="21" column="61" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -954,42 +1172,336 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5769231" vertical-offset="0" max-vertical-offset="2544">
           <caret line="15" column="48" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/app/config/app.php">
+    <entry file="file://$PROJECT_DIR$/code/app/utils/Macros.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5769231" vertical-offset="0" max-vertical-offset="3472">
-          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="662">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/app/controllers/ApiController.php">
+    <entry file="file://$PROJECT_DIR$/code/app/controllers/EjecutivoController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46153846" vertical-offset="336" max-vertical-offset="2448">
-          <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
-          <folding>
-            <element signature="n#getLog#0;n#ApiController#0;n#!!top" expanded="true" />
-            <element signature="n#setLog#0;n#ApiController#0;n#!!top" expanded="true" />
-            <element signature="n#getCredentials#0;n#ApiController#0;n#!!top" expanded="true" />
-            <element signature="n#setToken#0;n#ApiController#0;n#!!top" expanded="true" />
-            <element signature="n#setCredentials#0;n#ApiController#0;n#!!top" expanded="true" />
-            <element signature="n#response#0;n#ApiController#0;n#!!top" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-21.565218" vertical-offset="752" max-vertical-offset="2015">
+          <caret line="115" column="47" selection-start-line="115" selection-start-column="37" selection-end-line="115" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/app/config/observers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3913044" vertical-offset="0" max-vertical-offset="399">
+          <caret line="2" column="52" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/app/models/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="6.2608695" vertical-offset="144" max-vertical-offset="751">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/app/controllers/BaseController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="416">
+          <caret line="17" column="36" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/app/views/landings/e2.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="877">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/app/views/landings/e1.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1248">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/app/views/landings/bye.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="736" max-vertical-offset="976">
+          <caret line="46" column="19" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/app/views/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="429">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/app/views/layouts/landing/cliente/master.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="912" max-vertical-offset="1696">
+          <caret line="57" column="23" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7616488" vertical-offset="0" max-vertical-offset="1510">
+          <caret line="25" column="6" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/code/app/utils/MessageLog.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5" vertical-offset="32" max-vertical-offset="1328">
-          <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
-          <folding>
-            <element signature="e#27#63#0#PHP" expanded="true" />
-            <element signature="e#762#903#0#PHP" expanded="true" />
-            <element signature="e#906#1204#0#PHP" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.33452594" vertical-offset="0" max-vertical-offset="1052">
+          <caret line="30" column="61" selection-start-line="30" selection-start-column="61" selection-end-line="30" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/public/images/blank.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/bootstrap/autoload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.3649374" vertical-offset="731" max-vertical-offset="1783">
+          <caret line="31" column="1" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/bootstrap/paths.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8175313" vertical-offset="410" max-vertical-offset="1460">
+          <caret line="51" column="45" selection-start-line="51" selection-start-column="45" selection-end-line="51" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/app/models/Texto.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.692307" vertical-offset="153" max-vertical-offset="1358">
+          <caret line="33" column="7" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/app/utils/CustomAuthenticate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.9615384" vertical-offset="255" max-vertical-offset="1596">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/bootstrap/start.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.576923" vertical-offset="170" max-vertical-offset="1422">
+          <caret line="26" column="63" selection-start-line="26" selection-start-column="63" selection-end-line="26" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/app/config/local/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="700">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/app/models/Vendedor.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2962963" vertical-offset="153" max-vertical-offset="884">
+          <caret line="17" column="39" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/app/config/services.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="815">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/app/config/session.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.115385" vertical-offset="204" max-vertical-offset="2589">
+          <caret line="29" column="53" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/app/models/Ejecutivo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="629" max-vertical-offset="714">
+          <caret line="51" column="66" selection-start-line="51" selection-start-column="66" selection-end-line="51" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/app/start/artisan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="627">
+          <caret line="14" column="41" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/app/commands/Initialize.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.3076923" vertical-offset="969" max-vertical-offset="2004">
+          <caret line="56" column="36" selection-start-line="56" selection-start-column="29" selection-end-line="56" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/app/utils/Events.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.2734585" vertical-offset="970" max-vertical-offset="1869">
+          <caret line="108" column="66" selection-start-line="108" selection-start-column="66" selection-end-line="108" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/app/utils/SiteHelpers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2642487" vertical-offset="765" max-vertical-offset="1355">
+          <caret line="52" column="41" selection-start-line="52" selection-start-column="41" selection-end-line="52" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/app/start/local.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36461127" vertical-offset="0" max-vertical-offset="679">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/app/start/global.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="1649" max-vertical-offset="2273">
+          <caret line="106" column="30" selection-start-line="106" selection-start-column="23" selection-end-line="106" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/app/models/Cliente.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="731">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/app/filters.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="595" max-vertical-offset="1156">
+          <caret line="58" column="6" selection-start-line="57" selection-start-column="35" selection-end-line="58" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/app/views/landings/thanks.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2622108" vertical-offset="765" max-vertical-offset="1375">
+          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/app/models/Proceso.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2712766" vertical-offset="0" max-vertical-offset="1107">
+          <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/app/config/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="6.5384617" vertical-offset="204" max-vertical-offset="1107">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/app/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17889088" vertical-offset="444" max-vertical-offset="1273">
+          <caret line="32" column="57" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/app/views/landings/form.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44871795" vertical-offset="214" max-vertical-offset="1090">
+          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/app/views/landings/c1.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.27370304" vertical-offset="1020" max-vertical-offset="2429">
+          <caret line="51" column="4" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/app/config/texts.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37362638" vertical-offset="0" max-vertical-offset="767">
+          <caret line="12" column="50" selection-start-line="12" selection-start-column="50" selection-end-line="12" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/app/controllers/ApiController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1904762" vertical-offset="1035" max-vertical-offset="5238">
+          <caret line="67" column="15" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/public/favicon.ico">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/public/favicon.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/app/models/Params.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1156" max-vertical-offset="2633">
+          <caret line="68" column="5" selection-start-line="68" selection-start-column="5" selection-end-line="68" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/app/config/local/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24460432" vertical-offset="0" max-vertical-offset="1009">
+          <caret line="4" column="28" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/app/controllers/ClienteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0339622" vertical-offset="1834" max-vertical-offset="2356">
+          <caret line="128" column="74" selection-start-line="128" selection-start-column="1" selection-end-line="128" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/app/controllers/ServletController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.6037736" vertical-offset="714" max-vertical-offset="1166">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/app/config/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.06115108" vertical-offset="918" max-vertical-offset="2352">
+          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/apps/Amicar/config/cotizanteAmicar.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="891">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/app/config/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="3298">
+          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
         </state>
       </provider>
     </entry>
