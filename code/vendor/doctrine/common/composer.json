@@ -2,13 +2,7 @@
     "name": "doctrine/common",
     "type": "library",
     "description": "Common Library for Doctrine projects",
-    "keywords": [
-        "collections",
-        "spl",
-        "eventmanager",
-        "annotations",
-        "persistence"
-    ],
+    "keywords": ["collections", "spl", "eventmanager", "annotations", "persistence"],
     "homepage": "http://www.doctrine-project.org",
     "license": "MIT",
     "authors": [
@@ -31,22 +25,14 @@
         "phpunit/phpunit": "~3.7"
     },
     "autoload": {
-        "psr-0": {"Doctrine\\Common\\": "lib/"}
+        "psr-0": { "Doctrine\\Common\\": "lib/" }
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "2.4.x-dev"
+            "dev-master": "2.6.x-dev"
         }
     },
     "archive": {
-        "exclude": [
-            "!vendor",
-            "tests",
-            "*phpunit.xml",
-            ".travis.yml",
-            "build.xml",
-            "build.properties",
-            "composer.phar"
-        ]
+        "exclude": ["!vendor", "tests", "*phpunit.xml", ".travis.yml", "build.xml", "build.properties", "composer.phar"]
     }
 }

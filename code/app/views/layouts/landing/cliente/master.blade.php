@@ -55,7 +55,7 @@
 <body>
 
 <div class="container">
-	<header class="row">
+	<header class="row" style="margin-top: 20px; margin-bottom: 20px;">
 		<div class="col-md-12">
 			<div class="logo">
 				{{ HTML::image('images/logo.png', '', array('class' => 'img-responsive center-block')) }}
@@ -63,7 +63,7 @@
 		</div>
 	</header>
 
-	<div class="row">
+	<div class="row" style="margin-top: 20px; margin-bottom: 20px;">
 		<div class="col-md-12">
 			@yield('content')
 		</div>

@@ -49,17 +49,13 @@
 @endsection
 
 @section('content')
-	{{--@if(isset($messages))--}}
-	{{--{{ HTML::ul($messages) }}--}}
-	{{--@endif--}}
-
 	@if((isset($campana) && $campana == 1) || !isset($campana))
 		<div class="row text-center">
 			<div class="center-block col-md-6">
 				<h1 class="lead-big"><strong>EN AMICAR</strong><br/>
-					<small>tenemos la couta perfecta para ti.</small>
+					<small>{{ Config::get('texts.clientes.campana1.slogan') }}</small>
 				</h1>
-				<h3 class="">Para agilizar nuestro contacto necesitamos que actualices tus datos.</h3>
+				<h3 class="">Para agilizar nuestro contacto necesitamos que confirmes o actualices tus datos.</h3>
 			</div>
 		</div>
 
@@ -73,8 +69,8 @@
 			<div class="col-md-8">
 				<div class="row">
 					<div class="col-md-11">
-						<h1 class="lead-big"><strong>EN AMICAR</strong><br/>
-							<small>tenemos la couta perfecta para ti.</small>
+						<h1 class="lead-big"><strong>{{ Config::get('texts.title') }}</strong><br/>
+							<small>{{ Config::get('texts.slogan') }}</small>
 						</h1>
 					</div>
 					<div class="col-md-12 hidden-xs">
@@ -92,21 +88,22 @@
 						@endif
 					</div>
 					<div class="col-md-8">
-						<h3 class="">Para agilizar nuestro contacto necesitamos que actualices tus datos.</h3>
+						<h3 class="">Para agilizar nuestro contacto necesitamos que confirmes o actualices tus datos.</h3>
 					</div>
 					<div class="col-md-8">
 						@if($campana == 2)
-							<h3 class="">No olvides que al adquirir tu vehículo recibirás de <strong>REGALO</strong> un increíble <strong>parlante X mini</strong></h3>
+							<h3 class="">{{ Config::get('texts.clientes.campana2') }}</h3>
 						@else
-							<h3 class="">No olvide que al adquirir tu vehículo, estarás participando en el sorteo de una espectacular cámara <strong>Go Pro Hero 3 White Edition</strong></h3>
+							<h3 class="">{{ Config::get('texts.clientes.campana3') }}</h3>
 						@endif
 					</div>
 				</div>
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-4" style="margin-bottom: 20px;">
 				@include('landings.form')
 			</div>
 		</div>
+		<div class="clearfix"></div>
 	@endif
 @endsection
 

@@ -31,10 +31,10 @@ ClassLoader::addDirectories(array(
 */
 
 if (Config::get('config.logs.path', storage_path() . '/logs/') != '') {
-	Log::useFiles(Config::get('config.logs.path') . 'app.log');
+	Log::useFiles(Config::get('config.logs.path') . 'AmicarLanding_App.log');
 }
 else {
-	Log::useFiles(storage_path() . '/logs/app.log');
+	Log::useFiles(storage_path() . '/logs/AmicarLanding_App.log');
 }
 
 /*
@@ -68,10 +68,10 @@ if (Config::get('api.curlError')) {
 			return $exception;
 		}
 		if (Config::get('config.logs.path', '') != '') {
-			Log::useFiles(Config::get('config.logs.path') . 'curl.log');
+			Log::useFiles(Config::get('config.logs.path') . 'AmicarLanding_Curl.log');
 		}
 		else {
-			Log::useFiles(storage_path() . '/logs/curl.log');
+			Log::useFiles(storage_path() . '/logs/AmicarLanding_Curl.log');
 		}
 		Log::error($exception);
 

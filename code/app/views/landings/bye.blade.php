@@ -50,7 +50,7 @@
 			<div class="content">
 				<h2 class="lead-big">Su solicitud está siendo procesada.</h2>
 
-				<h3 class=""><strong>¡MUCHAS GRACIAS POR TODO!</strong></h3>
+				{{-- <h3 class=""><strong>¡MUCHAS GRACIAS POR TODO!</strong></h3> --}}
 			</div>
 		</div>
 	</div>

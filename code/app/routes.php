@@ -27,13 +27,10 @@ if (Config::get('app.debug')) {
 	ini_set('display_startup_errors', true);
 }
 
-Route::when('*', 'csrf', array(
-	'post',
-	'put',
-	'delete'
-));
+Route::when('*', 'csrf', array('post', 'put', 'delete'));
 Route::get('/', function () {
-	echo '<h3>Amicar Cotizante 2015</h3>';
+	//	dd(Proceso::find(1)->ejecutivo->local->nombreLocal);
+	echo '<h3>Amicar Cotizante 2015 ' . Config::get('config.app.url') . '</h3>';
 });
 Route::group(array('after' => 'process'), function () {
 	Route::get('thanks', function () {

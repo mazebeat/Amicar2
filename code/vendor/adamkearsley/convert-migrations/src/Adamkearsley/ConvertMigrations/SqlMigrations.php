@@ -1,7 +1,7 @@
 <?php namespace Adamkearsley\ConvertMigrations;
 
 use DB;
-use Str;
+use Illuminate\Support\Str;
 
 class SqlMigrations
 {
@@ -17,7 +17,7 @@ class SqlMigrations
  
     private static function getTables()
     {
-        return DB::select('SELECT table_name FROM information_schema.tables WHERE table_schema="' . self::$database . '"');
+        return DB::select('SELECT table_name FROM information_schema.tables WHERE Table_Type="'."BASE TABLE".'" and table_schema="' . self::$database . '"');
     }
  
     private static function getTableDescribes($table)
@@ -125,7 +125,7 @@ public function down()
     {
         $schema = self::compileSchema();
         $filename = date('Y_m_d_His') . "_create_" . self::$database . "_database.php";
-        $path = app_path('database/migrations/');
+        $path = app()->databasePath().'/migrations/';
         file_put_contents($path.$filename, $schema);
     }
  
@@ -169,6 +169,9 @@ public function down()
                         break;
                     case 'bigint' :
                         $method = 'bigInteger';
+                        break;
+                    case 'samllint' :
+                        $method = 'smallInteger';
                         break;
                     case 'char' :
                     case 'varchar' :

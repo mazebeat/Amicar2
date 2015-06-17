@@ -4,29 +4,18 @@ class Cliente extends Eloquent
 {
 	public    $timestamps = false;
 	protected $table      = 'clientes';
-	protected $fillable
-	                      = array(
-			'rutCliente',
-			'emailCliente',
-			'nombreCliente',
-			'sexoCliente',
-			'fonoCliente',
-			'automovilCliente',
-			'idGrupo',
-			'idBody',
-			'fecha'
-		);
 	protected $hidden     = array();
 	protected $guarded
-	                      = array(
-			'idCliente'
-		);
+	                      = array('idCliente');
 	protected $primaryKey = 'idCliente';
 	protected $rules
-	                      = array(
-			'emailCliente'  => 'required|email',
-			'nombreCliente' => 'required',
-		);
+	                      = array('emailCliente'   => 'required|email',
+	                              'nombreCliente'  => 'required',
+	                              'fonoCelular'    => 'numeric',
+	                              'fonoComercial'  => 'numeric',
+	                              'fonoParticular' => 'numeric'
+
+			);
 	private   $errors;
 
 	public function scopeDesiscritos($query)

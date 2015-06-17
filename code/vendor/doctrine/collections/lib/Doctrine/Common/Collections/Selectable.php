@@ -36,13 +36,13 @@ namespace Doctrine\Common\Collections;
  */
 interface Selectable
 {
-	/**
-	 * Selects all elements from a selectable that match the expression and
-	 * returns a new collection containing these elements.
-	 *
-	 * @param Criteria $criteria
-	 *
-	 * @return Collection
-	 */
-	function matching(Criteria $criteria);
+    /**
+     * Selects all elements from a selectable that match the expression and
+     * returns a new collection containing these elements.
+     *
+     * @param Criteria $criteria
+     *
+     * @return Collection
+     */
+    public function matching(Criteria $criteria);
 }

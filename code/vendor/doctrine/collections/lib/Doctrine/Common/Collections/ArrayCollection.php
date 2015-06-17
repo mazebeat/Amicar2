@@ -33,359 +33,355 @@ use Doctrine\Common\Collections\Expr\ClosureExpressionVisitor;
  */
 class ArrayCollection implements Collection, Selectable
 {
-	/**
-	 * An array containing the entries of this collection.
-	 *
-	 * @var array
-	 */
-	private $_elements;
+    /**
+     * An array containing the entries of this collection.
+     *
+     * @var array
+     */
+    private $elements;
 
-	/**
-	 * Initializes a new ArrayCollection.
-	 *
-	 * @param array $elements
-	 */
-	public function __construct(array $elements = array())
-	{
-		$this->_elements = $elements;
-	}
+    /**
+     * Initializes a new ArrayCollection.
+     *
+     * @param array $elements
+     */
+    public function __construct(array $elements = array())
+    {
+        $this->elements = $elements;
+    }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public function toArray()
-	{
-		return $this->_elements;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    public function toArray()
+    {
+        return $this->elements;
+    }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public function first()
-	{
-		return reset($this->_elements);
-	}
+    /**
+     * {@inheritDoc}
+     */
+    public function first()
+    {
+        return reset($this->elements);
+    }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public function last()
-	{
-		return end($this->_elements);
-	}
+    /**
+     * {@inheritDoc}
+     */
+    public function last()
+    {
+        return end($this->elements);
+    }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public function key()
-	{
-		return key($this->_elements);
-	}
+    /**
+     * {@inheritDoc}
+     */
+    public function key()
+    {
+        return key($this->elements);
+    }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public function next()
-	{
-		return next($this->_elements);
-	}
+    /**
+     * {@inheritDoc}
+     */
+    public function next()
+    {
+        return next($this->elements);
+    }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public function current()
-	{
-		return current($this->_elements);
-	}
+    /**
+     * {@inheritDoc}
+     */
+    public function current()
+    {
+        return current($this->elements);
+    }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public function removeElement($element)
-	{
-		$key = array_search($element, $this->_elements, true);
+    /**
+     * {@inheritDoc}
+     */
+    public function remove($key)
+    {
+        if ( ! isset($this->elements[$key]) && ! array_key_exists($key, $this->elements)) {
+            return null;
+        }
 
-		if ($key !== false) {
-			unset($this->_elements[$key]);
+        $removed = $this->elements[$key];
+        unset($this->elements[$key]);
 
-			return true;
-		}
+        return $removed;
+    }
 
-		return false;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    public function removeElement($element)
+    {
+        $key = array_search($element, $this->elements, true);
 
-	/**
-	 * Required by interface ArrayAccess.
-	 *
-	 * {@inheritDoc}
-	 */
-	public function offsetExists($offset)
-	{
-		return $this->containsKey($offset);
-	}
+        if ($key === false) {
+            return false;
+        }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public function containsKey($key)
-	{
-		return isset($this->_elements[$key]) || array_key_exists($key, $this->_elements);
-	}
+        unset($this->elements[$key]);
 
-	/**
-	 * Required by interface ArrayAccess.
-	 *
-	 * {@inheritDoc}
-	 */
-	public function offsetGet($offset)
-	{
-		return $this->get($offset);
-	}
+        return true;
+    }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public function get($key)
-	{
-		if (isset($this->_elements[$key])) {
-			return $this->_elements[$key];
-		}
+    /**
+     * Required by interface ArrayAccess.
+     *
+     * {@inheritDoc}
+     */
+    public function offsetExists($offset)
+    {
+        return $this->containsKey($offset);
+    }
 
-		return null;
-	}
+    /**
+     * Required by interface ArrayAccess.
+     *
+     * {@inheritDoc}
+     */
+    public function offsetGet($offset)
+    {
+        return $this->get($offset);
+    }
 
-	/**
-	 * Required by interface ArrayAccess.
-	 *
-	 * {@inheritDoc}
-	 */
-	public function offsetSet($offset, $value)
-	{
-		if (!isset($offset)) {
-			return $this->add($value);
-		}
+    /**
+     * Required by interface ArrayAccess.
+     *
+     * {@inheritDoc}
+     */
+    public function offsetSet($offset, $value)
+    {
+        if ( ! isset($offset)) {
+            return $this->add($value);
+        }
 
-		return $this->set($offset, $value);
-	}
+        $this->set($offset, $value);
+    }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public function add($value)
-	{
-		$this->_elements[] = $value;
+    /**
+     * Required by interface ArrayAccess.
+     *
+     * {@inheritDoc}
+     */
+    public function offsetUnset($offset)
+    {
+        return $this->remove($offset);
+    }
 
-		return true;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    public function containsKey($key)
+    {
+        return isset($this->elements[$key]) || array_key_exists($key, $this->elements);
+    }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public function set($key, $value)
-	{
-		$this->_elements[$key] = $value;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    public function contains($element)
+    {
+        return in_array($element, $this->elements, true);
+    }
 
-	/**
-	 * Required by interface ArrayAccess.
-	 *
-	 * {@inheritDoc}
-	 */
-	public function offsetUnset($offset)
-	{
-		return $this->remove($offset);
-	}
+    /**
+     * {@inheritDoc}
+     */
+    public function exists(Closure $p)
+    {
+        foreach ($this->elements as $key => $element) {
+            if ($p($key, $element)) {
+                return true;
+            }
+        }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public function remove($key)
-	{
-		if (isset($this->_elements[$key]) || array_key_exists($key, $this->_elements)) {
-			$removed = $this->_elements[$key];
-			unset($this->_elements[$key]);
+        return false;
+    }
 
-			return $removed;
-		}
+    /**
+     * {@inheritDoc}
+     */
+    public function indexOf($element)
+    {
+        return array_search($element, $this->elements, true);
+    }
 
-		return null;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    public function get($key)
+    {
+        return isset($this->elements[$key]) ? $this->elements[$key] : null;
+    }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public function contains($element)
-	{
-		return in_array($element, $this->_elements, true);
-	}
+    /**
+     * {@inheritDoc}
+     */
+    public function getKeys()
+    {
+        return array_keys($this->elements);
+    }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public function exists(Closure $p)
-	{
-		foreach ($this->_elements as $key => $element) {
-			if ($p($key, $element)) {
-				return true;
-			}
-		}
+    /**
+     * {@inheritDoc}
+     */
+    public function getValues()
+    {
+        return array_values($this->elements);
+    }
 
-		return false;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    public function count()
+    {
+        return count($this->elements);
+    }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public function indexOf($element)
-	{
-		return array_search($element, $this->_elements, true);
-	}
+    /**
+     * {@inheritDoc}
+     */
+    public function set($key, $value)
+    {
+        $this->elements[$key] = $value;
+    }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public function getKeys()
-	{
-		return array_keys($this->_elements);
-	}
+    /**
+     * {@inheritDoc}
+     */
+    public function add($value)
+    {
+        $this->elements[] = $value;
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public function getValues()
-	{
-		return array_values($this->_elements);
-	}
+        return true;
+    }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public function count()
-	{
-		return count($this->_elements);
-	}
+    /**
+     * {@inheritDoc}
+     */
+    public function isEmpty()
+    {
+        return empty($this->elements);
+    }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public function isEmpty()
-	{
-		return !$this->_elements;
-	}
+    /**
+     * Required by interface IteratorAggregate.
+     *
+     * {@inheritDoc}
+     */
+    public function getIterator()
+    {
+        return new ArrayIterator($this->elements);
+    }
 
-	/**
-	 * Required by interface IteratorAggregate.
-	 *
-	 * {@inheritDoc}
-	 */
-	public function getIterator()
-	{
-		return new ArrayIterator($this->_elements);
-	}
+    /**
+     * {@inheritDoc}
+     */
+    public function map(Closure $func)
+    {
+        return new static(array_map($func, $this->elements));
+    }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public function map(Closure $func)
-	{
-		return new static(array_map($func, $this->_elements));
-	}
+    /**
+     * {@inheritDoc}
+     */
+    public function filter(Closure $p)
+    {
+        return new static(array_filter($this->elements, $p));
+    }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public function filter(Closure $p)
-	{
-		return new static(array_filter($this->_elements, $p));
-	}
+    /**
+     * {@inheritDoc}
+     */
+    public function forAll(Closure $p)
+    {
+        foreach ($this->elements as $key => $element) {
+            if ( ! $p($key, $element)) {
+                return false;
+            }
+        }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public function forAll(Closure $p)
-	{
-		foreach ($this->_elements as $key => $element) {
-			if (!$p($key, $element)) {
-				return false;
-			}
-		}
+        return true;
+    }
 
-		return true;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    public function partition(Closure $p)
+    {
+        $matches = $noMatches = array();
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public function partition(Closure $p)
-	{
-		$coll1 = $coll2 = array();
-		foreach ($this->_elements as $key => $element) {
-			if ($p($key, $element)) {
-				$coll1[$key] = $element;
-			} else {
-				$coll2[$key] = $element;
-			}
-		}
+        foreach ($this->elements as $key => $element) {
+            if ($p($key, $element)) {
+                $matches[$key] = $element;
+            } else {
+                $noMatches[$key] = $element;
+            }
+        }
 
-		return array(new static($coll1), new static($coll2));
-	}
+        return array(new static($matches), new static($noMatches));
+    }
 
-	/**
-	 * Returns a string representation of this object.
-	 *
-	 * @return string
-	 */
-	public function __toString()
-	{
-		return __CLASS__ . '@' . spl_object_hash($this);
-	}
+    /**
+     * Returns a string representation of this object.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return __CLASS__ . '@' . spl_object_hash($this);
+    }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public function clear()
-	{
-		$this->_elements = array();
-	}
+    /**
+     * {@inheritDoc}
+     */
+    public function clear()
+    {
+        $this->elements = array();
+    }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public function slice($offset, $length = null)
-	{
-		return array_slice($this->_elements, $offset, $length, true);
-	}
+    /**
+     * {@inheritDoc}
+     */
+    public function slice($offset, $length = null)
+    {
+        return array_slice($this->elements, $offset, $length, true);
+    }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public function matching(Criteria $criteria)
-	{
-		$expr     = $criteria->getWhereExpression();
-		$filtered = $this->_elements;
+    /**
+     * {@inheritDoc}
+     */
+    public function matching(Criteria $criteria)
+    {
+        $expr     = $criteria->getWhereExpression();
+        $filtered = $this->elements;
 
-		if ($expr) {
-			$visitor  = new ClosureExpressionVisitor();
-			$filter   = $visitor->dispatch($expr);
-			$filtered = array_filter($filtered, $filter);
-		}
+        if ($expr) {
+            $visitor  = new ClosureExpressionVisitor();
+            $filter   = $visitor->dispatch($expr);
+            $filtered = array_filter($filtered, $filter);
+        }
 
-		if ($orderings = $criteria->getOrderings()) {
-			$next = null;
-			foreach (array_reverse($orderings) as $field => $ordering) {
-				$next = ClosureExpressionVisitor::sortByField($field, $ordering == 'DESC' ? -1 : 1, $next);
-			}
+        if ($orderings = $criteria->getOrderings()) {
+            foreach (array_reverse($orderings) as $field => $ordering) {
+                $next = ClosureExpressionVisitor::sortByField($field, $ordering == Criteria::DESC ? -1 : 1);
+            }
 
-			usort($filtered, $next);
-		}
+            uasort($filtered, $next);
+        }
 
-		$offset = $criteria->getFirstResult();
-		$length = $criteria->getMaxResults();
+        $offset = $criteria->getFirstResult();
+        $length = $criteria->getMaxResults();
 
-		if ($offset || $length) {
-			$filtered = array_slice($filtered, (int)$offset, $length);
-		}
+        if ($offset || $length) {
+            $filtered = array_slice($filtered, (int)$offset, $length);
+        }
 
-		return new static($filtered);
-	}
+        return new static($filtered);
+    }
 }

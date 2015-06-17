@@ -1,7 +1,6 @@
 <?php
 /**
  * Whoops - php errors for cool kids
- *
  * @author Filipe Dobreira <http://github.com/filp>
  */
 
@@ -16,73 +15,76 @@ use Whoops\Exception\Formatter;
  */
 class JsonResponseHandler extends Handler
 {
-	/**
-	 * @var bool
-	 */
-	private $returnFrames = false;
+    /**
+     * @var bool
+     */
+    private $returnFrames = false;
 
-	/**
-	 * @var bool
-	 */
-	private $onlyForAjaxRequests = false;
+    /**
+     * @var bool
+     */
+    private $onlyForAjaxRequests = false;
 
-	/**
-	 * @return int
-	 */
-	public function handle()
-	{
-		if ($this->onlyForAjaxRequests() && !$this->isAjaxRequest()) {
-			return Handler::DONE;
-		}
+    /**
+     * @param  bool|null  $returnFrames
+     * @return bool|$this
+     */
+    public function addTraceToOutput($returnFrames = null)
+    {
+        if (func_num_args() == 0) {
+            return $this->returnFrames;
+        }
 
-		$response = array('error' => Formatter::formatExceptionAsDataArray($this->getInspector(), $this->addTraceToOutput()),);
+        $this->returnFrames = (bool) $returnFrames;
+        return $this;
+    }
 
-		if (\Whoops\Util\Misc::canSendHeaders()) {
-			header('Content-Type: application/json');
-		}
+    /**
+     * @param  bool|null $onlyForAjaxRequests
+     * @return null|bool
+     */
+    public function onlyForAjaxRequests($onlyForAjaxRequests = null)
+    {
+        if (func_num_args() == 0) {
+            return $this->onlyForAjaxRequests;
+        }
 
-		echo json_encode($response);
+        $this->onlyForAjaxRequests = (bool) $onlyForAjaxRequests;
+    }
 
-		return Handler::QUIT;
-	}
+    /**
+     * Check, if possible, that this execution was triggered by an AJAX request.
+     *
+     * @return bool
+     */
+    private function isAjaxRequest()
+    {
+        return (
+            !empty($_SERVER['HTTP_X_REQUESTED_WITH'])
+            && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest');
+    }
 
-	/**
-	 * @param  bool|null $onlyForAjaxRequests
-	 *
-	 * @return null|bool
-	 */
-	public function onlyForAjaxRequests($onlyForAjaxRequests = null)
-	{
-		if (func_num_args() == 0) {
-			return $this->onlyForAjaxRequests;
-		}
+    /**
+     * @return int
+     */
+    public function handle()
+    {
+        if ($this->onlyForAjaxRequests() && !$this->isAjaxRequest()) {
+            return Handler::DONE;
+        }
 
-		$this->onlyForAjaxRequests = (bool)$onlyForAjaxRequests;
-	}
+        $response = array(
+            'error' => Formatter::formatExceptionAsDataArray(
+                $this->getInspector(),
+                $this->addTraceToOutput()
+            ),
+        );
 
-	/**
-	 * Check, if possible, that this execution was triggered by an AJAX request.
-	 *
-	 * @return bool
-	 */
-	private function isAjaxRequest()
-	{
-		return (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest');
-	}
+        if (\Whoops\Util\Misc::canSendHeaders()) {
+            header('Content-Type: application/json');
+        }
 
-	/**
-	 * @param  bool|null $returnFrames
-	 *
-	 * @return bool|$this
-	 */
-	public function addTraceToOutput($returnFrames = null)
-	{
-		if (func_num_args() == 0) {
-			return $this->returnFrames;
-		}
-
-		$this->returnFrames = (bool)$returnFrames;
-
-		return $this;
-	}
+        echo json_encode($response);
+        return Handler::QUIT;
+    }
 }

@@ -20,10 +20,10 @@
 	"adamkearsley/convert-migrations": "dev-master",
     "bramus/monolog-colored-line-formatter": "~1.0"
   },
-  "require-dev": {
-	"way/generators": "~2.0",
-	"doctrine/dbal": "2.5.*@dev"
-  },
+	"require-dev": {
+		"way/generators": "~2.0",
+		"doctrine/dbal": "2.5.*@dev"
+	},
   "autoload": {
 	"classmap": [
 	  "app/commands",

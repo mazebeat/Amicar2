@@ -47,8 +47,13 @@ class CustomEvents
 	 */
 	public function login($user)
 	{
-		$this->logFile = storage_path() . '/logs/users.log';
-		$this->logMsg  = 'LOGIN OK | USER-ID ' . $user->id . ' | IP-ADDRESS ' . array_get($this->info_server, 'IP') . ' | BROWSER ' . array_get($this->info_server, 'BROWSER') . PHP_EOL;
+		if (\Config::get('config.logs.path') != '') {
+			$this->logFile = \Config::get('config.logs.path') . 'users.log';
+		}
+		else {
+			$this->logFile = storage_path() . '/logs/users.log';
+		}
+		$this->logMsg = 'LOGIN OK | USER-ID ' . $user->id . ' | IP-ADDRESS ' . array_get($this->info_server, 'IP') . ' | BROWSER ' . array_get($this->info_server, 'BROWSER') . PHP_EOL;
 		$this->monolog->pushHandler(new StreamHandler($this->logFile), Logger::INFO);
 		$this->monolog->info($this->logMsg, compact('bindings', 'time'));
 	}
@@ -58,8 +63,13 @@ class CustomEvents
 	 */
 	public function loginFailed($user)
 	{
-		$this->logFile = storage_path() . '/logs/users.log';
-		$this->logMsg  = 'LOGIN FAILED | USER-ID ' . $user->id . ' | IP-ADDRESS ' . array_get($this->info_server, 'IP') . ' | BROWSER ' . array_get($this->info_server, 'BROWSER') . PHP_EOL;
+		if (\Config::get('config.logs.path') != '') {
+			$this->logFile = \Config::get('config.logs.path') . 'users.log';
+		}
+		else {
+			$this->logFile = storage_path() . '/logs/users.log';
+		}
+		$this->logMsg = 'LOGIN FAILED | USER-ID ' . $user->id . ' | IP-ADDRESS ' . array_get($this->info_server, 'IP') . ' | BROWSER ' . array_get($this->info_server, 'BROWSER') . PHP_EOL;
 		$this->monolog->pushHandler(new StreamHandler($this->logFile), Logger::WARNING);
 		$this->monolog->info($this->logMsg, compact('bindings', 'time'));
 	}
@@ -69,6 +79,12 @@ class CustomEvents
 	 */
 	public function logout($user)
 	{
+		if (\Config::get('config.logs.path') != '') {
+			$this->logFile = \Config::get('config.logs.path') . 'users.log';
+		}
+		else {
+			$this->logFile = storage_path() . '/logs/users.log';
+		}
 		$this->logFile = storage_path() . '/logs/users.log';
 		$this->logMsg  = 'LOGOUT | USER-ID ' . $user->id . ' | IP-ADDRESS ' . array_get($this->info_server, 'IP') . ' | BROWSER ' . array_get($this->info_server, 'BROWSER') . PHP_EOL;
 		$this->monolog->pushHandler(new StreamHandler($this->logFile), Logger::INFO);
@@ -82,18 +98,16 @@ class CustomEvents
 	 */
 	public function database($sql, $bindings, $time)
 	{
-		$this->logFile = storage_path() . '/logs/database.log';
-		$sql           = str_replace(array('%', '?'), array('%%', '%s'), $sql);
-		$sql           = vsprintf($sql, $bindings);
-		$this->logMsg  = 'DATE ' . Carbon::now() . ' | QUERY ' . $sql . ' | TIME ' . $time . 'ms' . PHP_EOL;
+		if (\Config::get('config.logs.path') != '') {
+			$this->logFile = \Config::get('config.logs.path') . 'AmicarLanding_Database.log';
+		}
+		else {
+			$this->logFile = storage_path() . '/logs/AmicarLanding_Database.log';
+		}
+		$sql          = str_replace(array('%', '?'), array('%%', '%s'), $sql);
+		$sql          = vsprintf($sql, $bindings);
+		$this->logMsg = 'DATE ' . Carbon::now() . ' | QUERY ' . $sql . ' | TIME ' . $time . 'ms' . PHP_EOL;
 		$this->monolog->pushHandler(new StreamHandler($this->logFile), Logger::INFO);
 		$this->monolog->info($this->logMsg, compact('bindings', 'time'));
 	}
-}
-
-\Event::listen('auth.login', '\App\Util\CustomEvents@login');
-\Event::listen('user.login.failed', '\App\Util\CustomEvents@loginFailed');
-\Event::listen('auth.logout', '\App\Util\CustomEvents@logout');
-if (\Config::get('database.debug', false)) {
-	\Event::listen('illuminate.query', '\App\Util\CustomEvents@database');
 }

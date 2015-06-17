@@ -8,8 +8,14 @@
  |
  */
 
-$configFile = 'C:/apps/Amicar/config/cotizanteAmicar.ini';
-$ini        = parse_ini_file($configFile, true);
+if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+	$configFile = 'C:/apps/Amicar/config/cotizanteAmicar.ini';
+}
+else {
+	$configFile = '/apps/Amicar/config/cotizanteAmicar.ini';
+}
+
+$ini = parse_ini_file($configFile, true);
 
 if (array_get($ini, 'app.debug') === '1') {
 	array_set($ini, 'app.debug', (bool)true);

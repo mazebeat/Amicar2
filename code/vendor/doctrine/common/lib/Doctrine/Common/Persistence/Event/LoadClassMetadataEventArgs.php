@@ -31,45 +31,45 @@ use Doctrine\Common\Persistence\ObjectManager;
  */
 class LoadClassMetadataEventArgs extends EventArgs
 {
-	/**
-	 * @var ClassMetadata
-	 */
-	private $classMetadata;
+    /**
+     * @var ClassMetadata
+     */
+    private $classMetadata;
 
-	/**
-	 * @var ObjectManager
-	 */
-	private $objectManager;
+    /**
+     * @var ObjectManager
+     */
+    private $objectManager;
 
-	/**
-	 * Constructor.
-	 *
-	 * @param ClassMetadata $classMetadata
-	 * @param ObjectManager $objectManager
-	 */
-	public function __construct(ClassMetadata $classMetadata, ObjectManager $objectManager)
-	{
-		$this->classMetadata = $classMetadata;
-		$this->objectManager = $objectManager;
-	}
+    /**
+     * Constructor.
+     *
+     * @param ClassMetadata $classMetadata
+     * @param ObjectManager $objectManager
+     */
+    public function __construct(ClassMetadata $classMetadata, ObjectManager $objectManager)
+    {
+        $this->classMetadata = $classMetadata;
+        $this->objectManager = $objectManager;
+    }
 
-	/**
-	 * Retrieves the associated ClassMetadata.
-	 *
-	 * @return ClassMetadata
-	 */
-	public function getClassMetadata()
-	{
-		return $this->classMetadata;
-	}
+    /**
+     * Retrieves the associated ClassMetadata.
+     *
+     * @return ClassMetadata
+     */
+    public function getClassMetadata()
+    {
+        return $this->classMetadata;
+    }
 
-	/**
-	 * Retrieves the associated ObjectManager.
-	 *
-	 * @return ObjectManager
-	 */
-	public function getObjectManager()
-	{
-		return $this->objectManager;
-	}
+    /**
+     * Retrieves the associated ObjectManager.
+     *
+     * @return ObjectManager
+     */
+    public function getObjectManager()
+    {
+        return $this->objectManager;
+    }
 }

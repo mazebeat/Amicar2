@@ -27,33 +27,33 @@ namespace Doctrine\Common\Persistence;
  */
 interface Proxy
 {
-	/**
-	 * Marker for Proxy class names.
-	 *
-	 * @var string
-	 */
-	const MARKER = '__CG__';
+    /**
+     * Marker for Proxy class names.
+     *
+     * @var string
+     */
+    const MARKER = '__CG__';
 
-	/**
-	 * Length of the proxy marker.
-	 *
-	 * @var integer
-	 */
-	const MARKER_LENGTH = 6;
+    /**
+     * Length of the proxy marker.
+     *
+     * @var integer
+     */
+    const MARKER_LENGTH = 6;
 
-	/**
-	 * Initializes this proxy if its not yet initialized.
-	 *
-	 * Acts as a no-op if already initialized.
-	 *
-	 * @return void
-	 */
-	public function __load();
+    /**
+     * Initializes this proxy if its not yet initialized.
+     *
+     * Acts as a no-op if already initialized.
+     *
+     * @return void
+     */
+    public function __load();
 
-	/**
-	 * Returns whether this proxy is initialized or not.
-	 *
-	 * @return bool
-	 */
-	public function __isInitialized();
+    /**
+     * Returns whether this proxy is initialized or not.
+     *
+     * @return bool
+     */
+    public function __isInitialized();
 }

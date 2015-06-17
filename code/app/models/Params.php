@@ -29,22 +29,25 @@ class Params
 		$this->setIdCotizacion(array_get($inputs, 'cotizacion', null));
 
 		$c = array_get($inputs, 'campana', null);
+
 		if (isset($c)) {
 			$c = $mcrypt->decrypt($c);
 		}
 		else {
 			$c = 1;
 		}
+
 		$this->setCampana($c);
 		$a = array_get($inputs, 'action', null);
+
 		if (isset($a)) {
 			$a = $mcrypt->decrypt($a);
 		}
 		else {
 			$a = '';
 		}
-		$this->setAction($a);
 
+		$this->setAction($a);
 
 		return $this;
 	}
@@ -81,6 +84,9 @@ class Params
 		$this->action = $action;
 	}
 
+	/**
+	 * @return bool
+	 */
 	public function validate()
 	{
 		$a = $this->getIdCliente();

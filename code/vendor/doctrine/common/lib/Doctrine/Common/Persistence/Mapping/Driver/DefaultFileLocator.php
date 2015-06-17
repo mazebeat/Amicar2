@@ -32,139 +32,142 @@ use Doctrine\Common\Persistence\Mapping\MappingException;
  */
 class DefaultFileLocator implements FileLocator
 {
-	/**
-	 * The paths where to look for mapping files.
-	 *
-	 * @var array
-	 */
-	protected $paths = array();
+    /**
+     * The paths where to look for mapping files.
+     *
+     * @var array
+     */
+    protected $paths = array();
 
-	/**
-	 * The file extension of mapping documents.
-	 *
-	 * @var string|null
-	 */
-	protected $fileExtension;
+    /**
+     * The file extension of mapping documents.
+     *
+     * @var string|null
+     */
+    protected $fileExtension;
 
-	/**
-	 * Initializes a new FileDriver that looks in the given path(s) for mapping
-	 * documents and operates in the specified operating mode.
-	 *
-	 * @param string|array $paths         One or multiple paths where mapping documents can be found.
-	 * @param string|null  $fileExtension The file extension of mapping documents.
-	 */
-	public function __construct($paths, $fileExtension = null)
-	{
-		$this->addPaths((array)$paths);
-		$this->fileExtension = $fileExtension;
-	}
+    /**
+     * Initializes a new FileDriver that looks in the given path(s) for mapping
+     * documents and operates in the specified operating mode.
+     *
+     * @param string|array $paths         One or multiple paths where mapping documents can be found.
+     * @param string|null  $fileExtension The file extension of mapping documents.
+     */
+    public function __construct($paths, $fileExtension = null)
+    {
+        $this->addPaths((array) $paths);
+        $this->fileExtension = $fileExtension;
+    }
 
-	/**
-	 * Appends lookup paths to metadata driver.
-	 *
-	 * @param array $paths
-	 *
-	 * @return void
-	 */
-	public function addPaths(array $paths)
-	{
-		$this->paths = array_unique(array_merge($this->paths, $paths));
-	}
+    /**
+     * Appends lookup paths to metadata driver.
+     *
+     * @param array $paths
+     *
+     * @return void
+     */
+    public function addPaths(array $paths)
+    {
+        $this->paths = array_unique(array_merge($this->paths, $paths));
+    }
 
-	/**
-	 * Retrieves the defined metadata lookup paths.
-	 *
-	 * @return array
-	 */
-	public function getPaths()
-	{
-		return $this->paths;
-	}
+    /**
+     * Retrieves the defined metadata lookup paths.
+     *
+     * @return array
+     */
+    public function getPaths()
+    {
+        return $this->paths;
+    }
 
-	/**
-	 * Gets the file extension used to look for mapping files under.
-	 *
-	 * @return string|null
-	 */
-	public function getFileExtension()
-	{
-		return $this->fileExtension;
-	}
+    /**
+     * Gets the file extension used to look for mapping files under.
+     *
+     * @return string|null
+     */
+    public function getFileExtension()
+    {
+        return $this->fileExtension;
+    }
 
-	/**
-	 * Sets the file extension used to look for mapping files under.
-	 *
-	 * @param string|null $fileExtension The file extension to set.
-	 *
-	 * @return void
-	 */
-	public function setFileExtension($fileExtension)
-	{
-		$this->fileExtension = $fileExtension;
-	}
+    /**
+     * Sets the file extension used to look for mapping files under.
+     *
+     * @param string|null $fileExtension The file extension to set.
+     *
+     * @return void
+     */
+    public function setFileExtension($fileExtension)
+    {
+        $this->fileExtension = $fileExtension;
+    }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public function findMappingFile($className)
-	{
-		$fileName = str_replace('\\', '.', $className) . $this->fileExtension;
+    /**
+     * {@inheritDoc}
+     */
+    public function findMappingFile($className)
+    {
+        $fileName = str_replace('\\', '.', $className) . $this->fileExtension;
 
-		// Check whether file exists
-		foreach ($this->paths as $path) {
-			if (is_file($path . DIRECTORY_SEPARATOR . $fileName)) {
-				return $path . DIRECTORY_SEPARATOR . $fileName;
-			}
-		}
+        // Check whether file exists
+        foreach ($this->paths as $path) {
+            if (is_file($path . DIRECTORY_SEPARATOR . $fileName)) {
+                return $path . DIRECTORY_SEPARATOR . $fileName;
+            }
+        }
 
-		throw MappingException::mappingFileNotFound($className, $fileName);
-	}
+        throw MappingException::mappingFileNotFound($className, $fileName);
+    }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public function getAllClassNames($globalBasename)
-	{
-		$classes = array();
+    /**
+     * {@inheritDoc}
+     */
+    public function getAllClassNames($globalBasename)
+    {
+        $classes = array();
 
-		if ($this->paths) {
-			foreach ($this->paths as $path) {
-				if (!is_dir($path)) {
-					throw MappingException::fileMappingDriversRequireConfiguredDirectoryPath($path);
-				}
+        if ($this->paths) {
+            foreach ($this->paths as $path) {
+                if ( ! is_dir($path)) {
+                    throw MappingException::fileMappingDriversRequireConfiguredDirectoryPath($path);
+                }
 
-				$iterator = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($path), \RecursiveIteratorIterator::LEAVES_ONLY);
+                $iterator = new \RecursiveIteratorIterator(
+                    new \RecursiveDirectoryIterator($path),
+                    \RecursiveIteratorIterator::LEAVES_ONLY
+                );
 
-				foreach ($iterator as $file) {
-					$fileName = $file->getBasename($this->fileExtension);
+                foreach ($iterator as $file) {
+                    $fileName = $file->getBasename($this->fileExtension);
 
-					if ($fileName == $file->getBasename() || $fileName == $globalBasename) {
-						continue;
-					}
+                    if ($fileName == $file->getBasename() || $fileName == $globalBasename) {
+                        continue;
+                    }
 
-					// NOTE: All files found here means classes are not transient!
-					$classes[] = str_replace('.', '\\', $fileName);
-				}
-			}
-		}
+                    // NOTE: All files found here means classes are not transient!
+                    $classes[] = str_replace('.', '\\', $fileName);
+                }
+            }
+        }
 
-		return $classes;
-	}
+        return $classes;
+    }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public function fileExists($className)
-	{
-		$fileName = str_replace('\\', '.', $className) . $this->fileExtension;
+    /**
+     * {@inheritDoc}
+     */
+    public function fileExists($className)
+    {
+        $fileName = str_replace('\\', '.', $className) . $this->fileExtension;
 
-		// Check whether file exists
-		foreach ((array)$this->paths as $path) {
-			if (is_file($path . DIRECTORY_SEPARATOR . $fileName)) {
-				return true;
-			}
-		}
+        // Check whether file exists
+        foreach ((array) $this->paths as $path) {
+            if (is_file($path . DIRECTORY_SEPARATOR . $fileName)) {
+                return true;
+            }
+        }
 
-		return false;
-	}
+        return false;
+    }
 }

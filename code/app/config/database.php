@@ -51,21 +51,6 @@ return array(
 			'database' => __DIR__ . '/../database/production.sqlite',
 			'prefix'   => 'gd_',
 		),
-		//		'mysql'  => array(
-		//			'read'      => array(
-		//				'host' => '192.168.1.99'
-		//			),
-		//			'write'     => array(
-		//				'host' => '192.168.1.99'
-		//			),
-		//			'driver'    => 'mysql',
-		//			'database'  => 'amicar',
-		//			'username'  => 'root',
-		//			'password'  => 'inteladmin',
-		//			'charset'   => 'utf8',
-		//			'collation' => 'utf8_unicode_ci',
-		//			'prefix'    => '',
-		//		),
 		'mysql'  => array(
 			'read'      => array(
 				'host' => Config::get('config.database.host', 'localhost')

@@ -24,11 +24,7 @@ $app = new Illuminate\Foundation\Application;
 |
 */
 
-$env = $app->detectEnvironment(array('local' => array('MAZEPC'),
-                                     'dev'   => array('DPINTO'),
-                                     'debug' => array('homestead'),
-
-));
+$env = $app->detectEnvironment(array('local' => array('DPINTO')));
 
 /*
 |--------------------------------------------------------------------------

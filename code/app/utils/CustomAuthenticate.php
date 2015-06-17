@@ -17,7 +17,6 @@ class DummyAuthProvider implements UserProviderInterface
 	 */
 	private $credentials;
 
-
 	/**
 	 * @param mixed $identifier
 	 *

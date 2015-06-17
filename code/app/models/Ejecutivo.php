@@ -46,4 +46,9 @@ class Ejecutivo extends Eloquent
 	{
 		return $this->errors;
 	}
+
+	public function local()
+	{
+		return $this->hasOne('Local', 'idLocal', 'locales_idLocal1');
+	}
 }

@@ -11,116 +11,119 @@
 /**
  * Generated when a message is being sent.
  *
- * @author     Chris Corbyn
+ * @author Chris Corbyn
  */
 class Swift_Events_SendEvent extends Swift_Events_EventObject
 {
-	/** Sending has yet to occur */
-	const RESULT_PENDING = 0x0001;
+    /** Sending has yet to occur */
+    const RESULT_PENDING = 0x0001;
 
-	/** Sending was successful */
-	const RESULT_SUCCESS = 0x0010;
+    /** Email is spooled, ready to be sent */
+    const RESULT_SPOOLED = 0x0011;
 
-	/** Sending worked, but there were some failures */
-	const RESULT_TENTATIVE = 0x0100;
+    /** Sending was successful */
+    const RESULT_SUCCESS = 0x0010;
 
-	/** Sending failed */
-	const RESULT_FAILED = 0x1000;
+    /** Sending worked, but there were some failures */
+    const RESULT_TENTATIVE = 0x0100;
 
-	/**
-	 * The Message being sent.
-	 *
-	 * @var Swift_Mime_Message
-	 */
-	private $_message;
+    /** Sending failed */
+    const RESULT_FAILED = 0x1000;
 
-	/**
-	 * Any recipients which failed after sending.
-	 *
-	 * @var string[]
-	 */
-	private $_failedRecipients = array();
+    /**
+     * The Message being sent.
+     *
+     * @var Swift_Mime_Message
+     */
+    private $_message;
 
-	/**
-	 * The overall result as a bitmask from the class constants.
-	 *
-	 * @var int
-	 */
-	private $_result;
+    /**
+     * Any recipients which failed after sending.
+     *
+     * @var string[]
+     */
+    private $_failedRecipients = array();
 
-	/**
-	 * Create a new SendEvent for $source and $message.
-	 *
-	 * @param Swift_Transport    $source
-	 * @param Swift_Mime_Message $message
-	 */
-	public function __construct(Swift_Transport $source, Swift_Mime_Message $message)
-	{
-		parent::__construct($source);
-		$this->_message = $message;
-		$this->_result  = self::RESULT_PENDING;
-	}
+    /**
+     * The overall result as a bitmask from the class constants.
+     *
+     * @var int
+     */
+    private $_result;
 
-	/**
-	 * Get the Transport used to send the Message.
-	 *
-	 * @return Swift_Transport
-	 */
-	public function getTransport()
-	{
-		return $this->getSource();
-	}
+    /**
+     * Create a new SendEvent for $source and $message.
+     *
+     * @param Swift_Transport    $source
+     * @param Swift_Mime_Message $message
+     */
+    public function __construct(Swift_Transport $source, Swift_Mime_Message $message)
+    {
+        parent::__construct($source);
+        $this->_message = $message;
+        $this->_result = self::RESULT_PENDING;
+    }
 
-	/**
-	 * Get the Message being sent.
-	 *
-	 * @return Swift_Mime_Message
-	 */
-	public function getMessage()
-	{
-		return $this->_message;
-	}
+    /**
+     * Get the Transport used to send the Message.
+     *
+     * @return Swift_Transport
+     */
+    public function getTransport()
+    {
+        return $this->getSource();
+    }
 
-	/**
-	 * Set the array of addresses that failed in sending.
-	 *
-	 * @param array $recipients
-	 */
-	public function setFailedRecipients($recipients)
-	{
-		$this->_failedRecipients = $recipients;
-	}
+    /**
+     * Get the Message being sent.
+     *
+     * @return Swift_Mime_Message
+     */
+    public function getMessage()
+    {
+        return $this->_message;
+    }
 
-	/**
-	 * Get an recipient addresses which were not accepted for delivery.
-	 *
-	 * @return string[]
-	 */
-	public function getFailedRecipients()
-	{
-		return $this->_failedRecipients;
-	}
+    /**
+     * Set the array of addresses that failed in sending.
+     *
+     * @param array $recipients
+     */
+    public function setFailedRecipients($recipients)
+    {
+        $this->_failedRecipients = $recipients;
+    }
 
-	/**
-	 * Set the result of sending.
-	 *
-	 * @param int $result
-	 */
-	public function setResult($result)
-	{
-		$this->_result = $result;
-	}
+    /**
+     * Get an recipient addresses which were not accepted for delivery.
+     *
+     * @return string[]
+     */
+    public function getFailedRecipients()
+    {
+        return $this->_failedRecipients;
+    }
 
-	/**
-	 * Get the result of this Event.
-	 *
-	 * The return value is a bitmask from
-	 * {@see RESULT_PENDING, RESULT_SUCCESS, RESULT_TENTATIVE, RESULT_FAILED}
-	 *
-	 * @return int
-	 */
-	public function getResult()
-	{
-		return $this->_result;
-	}
+    /**
+     * Set the result of sending.
+     *
+     * @param int $result
+     */
+    public function setResult($result)
+    {
+        $this->_result = $result;
+    }
+
+    /**
+     * Get the result of this Event.
+     *
+     * The return value is a bitmask from
+     * {@see RESULT_PENDING, RESULT_SUCCESS, RESULT_TENTATIVE, RESULT_FAILED}
+     *
+     * @return int
+     */
+    public function getResult()
+    {
+        return $this->_result;
+    }
 }

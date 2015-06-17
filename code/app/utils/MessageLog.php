@@ -14,7 +14,8 @@ class MessageLog
 		$this->name = $name;
 
 		//		$logRoot   = storage_path() . '/logs/' . $this->name . '.log';
-		$logRoot = Config::get('config.logs.path') . $this->name . '.log';
+		$logRoot = \Config::get('config.logs.path') . $this->name . '.log';
+		$logRoot = \Config::get('config.logs.path') . $this->name . '.log';
 		$format    = array(
 			'date'    => "Y-m-d H:i:s",
 			'message' => "[%datetime%] [%channel%] [%level_name%] : %message%\n",

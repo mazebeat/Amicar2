@@ -33,57 +33,57 @@ use Doctrine\Common\Persistence\ObjectManager;
  */
 class LifecycleEventArgs extends EventArgs
 {
-	/**
-	 * @var ObjectManager
-	 */
-	private $objectManager;
+    /**
+     * @var ObjectManager
+     */
+    private $objectManager;
 
-	/**
-	 * @var object
-	 */
-	private $object;
+    /**
+     * @var object
+     */
+    private $object;
 
-	/**
-	 * Constructor.
-	 *
-	 * @param object        $object
-	 * @param ObjectManager $objectManager
-	 */
-	public function __construct($object, ObjectManager $objectManager)
-	{
-		$this->object        = $object;
-		$this->objectManager = $objectManager;
-	}
+    /**
+     * Constructor.
+     *
+     * @param object        $object
+     * @param ObjectManager $objectManager
+     */
+    public function __construct($object, ObjectManager $objectManager)
+    {
+        $this->object = $object;
+        $this->objectManager = $objectManager;
+    }
 
-	/**
-	 * Retrieves the associated entity.
-	 *
-	 * @deprecated
-	 *
-	 * @return object
-	 */
-	public function getEntity()
-	{
-		return $this->object;
-	}
+    /**
+     * Retrieves the associated entity.
+     *
+     * @deprecated
+     *
+     * @return object
+     */
+    public function getEntity()
+    {
+        return $this->object;
+    }
 
-	/**
-	 * Retrieves the associated object.
-	 *
-	 * @return object
-	 */
-	public function getObject()
-	{
-		return $this->object;
-	}
+    /**
+     * Retrieves the associated object.
+     *
+     * @return object
+     */
+    public function getObject()
+    {
+        return $this->object;
+    }
 
-	/**
-	 * Retrieves the associated ObjectManager.
-	 *
-	 * @return ObjectManager
-	 */
-	public function getObjectManager()
-	{
-		return $this->objectManager;
-	}
+    /**
+     * Retrieves the associated ObjectManager.
+     *
+     * @return ObjectManager
+     */
+    public function getObjectManager()
+    {
+        return $this->objectManager;
+    }
 }
