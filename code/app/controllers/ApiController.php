@@ -37,9 +37,12 @@ class ApiController extends BaseController
 	public static function mailEjecutivo($idProceso)
 	{
 		try {
-			$proceso = Proceso::find($idProceso);
+			$api = new \ApiController();
+
+			$proceso = \Proceso::find($idProceso);
 			$id      = $proceso->idProceso;
 
+			$api->getLog()->info('VERIFICANDO MAIL EJECUTIVO');
 			static::verifyMailEjecutivo($id);
 
 			// fonoparticular
@@ -66,7 +69,7 @@ class ApiController extends BaseController
 				$cel = 'NULL';
 			}
 
-			$list = array(Texto::$LLAVE_INICIO,
+			$list = array(\Texto::$LLAVE_INICIO,
 			              $proceso->ejecutivo->correoEjecutivo, // correoejecutivo
 			              $proceso->cliente->rutCliente, // rutcliente
 			              $proceso->ejecutivo->local->nombreLocal, // nombrelocal
@@ -83,19 +86,38 @@ class ApiController extends BaseController
 			              $proceso->cliente->idBody, // bodyid
 			);
 
-			$line          = static::formatLine($list);
-			$nameFile      = 'Ejecutivos' . $id . '_' . static::milliseconds() . '.txt';
-			$path          = Config::get('config.params.salidamailejecutivo');
-			$file          = $path . $nameFile;
-			$bytes_written = File::put($file, $line);
+			$line     = static::formatLine($list);
+			$nameFile = 'Ejecutivos' . $id . '_' . static::milliseconds() . '.txt';
+			$path     = \Config::get('config.params.salidamailejecutivo');
+			$file     = $path . $nameFile;
 
-			if ($bytes_written === false) {
-				echo 'Error writing to file';
+			$api->getLog()->info('GENERANDO ARCHIVO EJECUTIVO');
+			$bw = \File::put($file, $line);
+
+			if ($bw === false) {
+				$api->getLog()->error('ERROR AL GENERAR ARCHIVO EJECUTIVO');
 			}
 
+			$api->getLog()->info('ARCHIVO EJECUTIVO GENERADO');
 		} catch (Exception $e) {
-			echo $e->getMessage() . ' //     ' . $e->getLine();
+			$api->getLog()->error($e->getMessage() . ' //     ' . $e->getLine());
 		}
+	}
+
+	/**
+	 * @return \MessageLog
+	 */
+	public function getLog()
+	{
+		return $this->log;
+	}
+
+	/**
+	 * @param \MessageLog $log
+	 */
+	public function setLog($log)
+	{
+		$this->log = $log;
 	}
 
 	/**
@@ -108,27 +130,40 @@ class ApiController extends BaseController
 	{
 		try {
 			if ($path == '') {
-				$path = Config::get('config.params.salidamailejecutivo');
+				$path = \Config::get('config.params.salidamailejecutivo');
 			}
 
-			if (isset($idProceso) && $idProceso != 0) {
-				$nameFile = 'Ejecutivos' . $idProceso;
-				$files    = File::files($path);
+			$api = new \ApiController();
+			$api->getLog()->info('CARPETA EJECUTIVO: ' . $path);
 
-				foreach ($files as $key => $value) {
-					$tempName = explode('_', $value);
-					$tempName = str_replace('/', '', str_replace($path, '', $tempName));
+			if (\File::exists($path)) {
+				if (isset($idProceso) && $idProceso != 0) {
+					$api->getLog()->info('VERIFICANDO PROCESO: ' . $idProceso);
 
-					if (count($tempName) > 1 && $tempName[0] != '') {
-						if ($nameFile === $tempName[0]) {
-							File::delete($value);
+					$nameFile = 'Ejecutivos' . $idProceso;
+					$files    = File::files($path);
+
+					foreach ($files as $key => $value) {
+						$tempName = explode('_', $value);
+						$tempName = str_replace('/', '', str_replace($path, '', $tempName));
+
+						if (count($tempName) > 1 && $tempName[0] != '') {
+							if ($nameFile === $tempName[0]) {
+								$api->getLog()->info('ARCHIVO ' . $value . ' ELIMINADO');
+								\File::delete($value);
+							}
 						}
 					}
 				}
+				else {
+					$api->getLog()->info('ERROR ID PROCESO: ' . $idProceso);
+				}
 			}
-
+			else {
+				$api->getLog()->warning('NO SE ENCUENTRA DIRECTORIO: ' . $path);
+			}
 		} catch (Exception $e) {
-			echo $e->getMessage() . ' || ' . $e->getLine();
+			$api->getLog()->error($e->getMessage() . ' || ' . $e->getLine());
 		}
 	}
 
@@ -160,22 +195,6 @@ class ApiController extends BaseController
 		$mt = explode(' ', microtime());
 
 		return $mt[1] * 1000 + round($mt[0] * 1000);
-	}
-
-	/**
-	 * @return \MessageLog
-	 */
-	public function getLog()
-	{
-		return $this->log;
-	}
-
-	/**
-	 * @param \MessageLog $log
-	 */
-	public function setLog($log)
-	{
-		$this->log = $log;
 	}
 
 	/**

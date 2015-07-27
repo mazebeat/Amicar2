@@ -25,7 +25,8 @@ class ServletController extends ApiController
 		try {
 			$params = new Params(Input::all());
 
-			$this->getLog()->info('PARAMETROS DE ENTRADA: CLIENTE: %s COTIZACION: %s CAMPAÑA: %s', Input::all());
+
+			$this->getLog()->info('PARAMETROS DE ENTRADA: CLIENTE: %s COTIZACION: %s CAMPAÑA: %s', array($params->getIdCliente(), $params->getIdCotizacion(), $params->getCampana()));
 
 			if ($params->validate()) {
 				$action = $params->getAction();

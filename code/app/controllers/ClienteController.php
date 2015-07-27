@@ -98,7 +98,7 @@ class ClienteController extends ApiController
 				if ($changes) {
 					$cliente->save();
 
-					$this->getLog()->warning("CLIENTE ACTUALIZADO: %s", array($cliente->idCliente));
+					$this->getLog()->warning("CLIENTE ACTUALIZADO: ID CLIENTE (%s)", array($cliente->idCliente));
 
 					$message = array('message' => 'Cliente actualizado con exito', 'ID Cliente' => $cliente->idCliente);
 
@@ -106,7 +106,7 @@ class ClienteController extends ApiController
 					ApiController::mailEjecutivo($idProceso);
 				}
 				else {
-					$this->getLog()->warning("CLIENTE: SIN CAMBIOS: %s", array($cliente->idCliente));
+					$this->getLog()->warning("CLIENTE SIN CAMBIOS: ID CLIENTE (%s)", array($cliente->idCliente));
 					$message = array('message' => 'Cliente actualizado con exito', 'ID Cliente' => $cliente->idCliente);
 				}
 

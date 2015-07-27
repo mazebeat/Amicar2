@@ -75,14 +75,14 @@
 					</div>
 					<div class="col-md-12 hidden-xs">
 						@if($campana == 2)
-							{{ HTML::image('images/parlante.png', '', array('class', 'img-responsive')) }}
+							{{ HTML::image('images/gosound.jpg', '', array('class', 'img-responsive')) }}
 						@else
 							{{ HTML::image('images/gopro.png', '', array('class', 'img-responsive')) }}
 						@endif
 					</div>
 					<div class="col-md-12 text-center visible-xs">
 						@if($campana == 2)
-							{{ HTML::image('images/parlante.png', '', array('class', 'img-responsive')) }}
+							{{ HTML::image('images/gosound.jpg', '', array('class', 'img-responsive')) }}
 						@else
 							{{ HTML::image('images/gopro.png', '', array('class', 'img-responsive')) }}
 						@endif

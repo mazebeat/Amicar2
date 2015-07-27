@@ -1,0 +1,39 @@
+.lead-big {
+    line-height: 30px;
+    color: #e76113;
+}
+
+.center-block {
+    float: none;
+}
+
+h1 small {
+    color: #e76113;
+}
+
+h3 {
+    color: #666666;
+}
+
+.aa, .aa:active, .aa:focus, .aa:visited, a.aa, a.aa:active, a.aa:focus, a.aa:visited {
+    padding: 10px 6px;
+    font-size: larger;
+    font-weight: bold;
+    background: #e76113;
+    border: 1px solid #e76113;
+    color: #ffffff !important;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 5px 0px #de3214;
+    -moz-box-shadow: 0px 5px 0px #de3214;
+    box-shadow: 0px 5px 0px #de3214;
+}
+
+.aa:active, a.aa:active {
+    -webkit-box-shadow: 0px 5px 0px #de3214;
+    -moz-box-shadow: 0px 5px 0px #de3214;
+    box-shadow: 0px 5px 0px #de3214;
+    position: relative;
+    top: 6px;
+}
